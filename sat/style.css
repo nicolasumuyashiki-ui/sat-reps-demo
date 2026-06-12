@@ -1,0 +1,893 @@
+/* ============================================================
+   SAT Reps Demo — Practice & Results stylesheet
+   ============================================================
+   The practice pages live under /sat/. This file owns the shell
+   chrome (top nav, split layout, navigator, results) but defers
+   to css/common.css for design tokens, fonts, and i18n.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  font-family:var(--font-en),var(--font-jp);
+  background:var(--cream);
+  color:var(--ink-900);
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ============================================================
+   Top nav — brand + timer + question count + flag/review/finish
+   ============================================================ */
+.top-nav{
+  background:var(--white);
+  border-bottom:1px solid var(--paper);
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-shrink:0;
+}
+.top-nav-left{display:flex;align-items:center;gap:12px;min-width:0}
+.top-nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+
+.tn-brand{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tn-brand img{height:22px}
+.tn-brand .tn-product{
+  font-family:var(--font-en);
+  font-size:.72em;font-weight:800;
+  color:var(--green);letter-spacing:.14em;text-transform:uppercase;
+}
+.tn-divider{width:1px;height:18px;background:var(--ink-200)}
+
+.tn-section{
+  font-family:var(--font-jp);
+  font-size:.84em;color:var(--ink-500);
+  font-weight:600;
+  white-space:nowrap;
+}
+.tn-section strong{color:var(--ink-900);font-weight:700;margin-right:2px}
+
+.tn-timer{
+  font-family:var(--font-en);
+  font-weight:800;
+  font-size:1.1em;
+  letter-spacing:.04em;
+  background:var(--cream);
+  border:1px solid var(--paper);
+  border-radius:8px;
+  padding:7px 14px;
+  color:var(--ink-900);
+  min-width:88px;text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+.tn-timer.warn{background:#FCEEEA;border-color:var(--terracotta);color:var(--terracotta)}
+.tn-timer.crit{background:var(--terracotta);border-color:var(--terracotta);color:#fff;animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.7}}
+
+.tn-btn{
+  font-family:var(--font-en);
+  font-size:.82em;font-weight:700;
+  background:var(--white);
+  color:var(--ink-900);
+  border:1.5px solid var(--paper);
+  border-radius:999px;
+  padding:8px 16px;
+  cursor:pointer;
+  transition:all .15s;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.tn-btn:hover{border-color:var(--green);color:var(--green-deep)}
+.tn-btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.tn-btn.primary:hover{background:var(--green-dark);border-color:var(--green-dark)}
+
+/* Flag toggle — color flips when flagged */
+.tn-btn.flag-on{background:var(--gold);color:var(--green-deep);border-color:var(--gold)}
+.tn-btn .flag-icon{display:inline-block;margin-right:4px;font-family:var(--font-en)}
+
+/* ============================================================
+   Start screen — pre-test directions
+   ============================================================ */
+.start-wrap{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:32px 20px;
+}
+.start-card{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:18px;
+  padding:40px 44px 36px;
+  max-width:520px;
+  width:100%;
+  box-shadow:0 12px 36px rgba(0,40,23,.08);
+  text-align:left;
+}
+.start-eyebrow{
+  font-family:var(--font-en);
+  font-size:.72em;font-weight:800;
+  color:var(--green);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.start-card h1{
+  font-family:var(--font-en);
+  font-size:1.7em;font-weight:800;
+  color:var(--green-deep);
+  letter-spacing:-0.015em;
+  line-height:1.2;
+  margin:0 0 8px;
+}
+.start-card .subtitle{
+  font-family:var(--font-jp);
+  font-size:.94em;color:var(--ink-700);line-height:1.7;margin:0 0 26px;
+}
+.start-spec{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  background:var(--cream);
+  border:1px solid var(--paper);
+  border-radius:12px;
+  padding:16px 12px;
+  margin-bottom:22px;
+}
+.start-spec .spec-num{
+  font-family:var(--font-en);font-size:1.5em;font-weight:800;
+  color:var(--green-deep);text-align:center;line-height:1.1;
+}
+.start-spec .spec-label{
+  font-family:var(--font-jp);font-size:.74em;color:var(--ink-500);
+  text-align:center;margin-top:3px;line-height:1.4;
+}
+.start-directions{
+  font-family:var(--font-jp);font-size:.88em;color:var(--ink-700);
+  line-height:1.75;
+  background:var(--cream);
+  border-left:3px solid var(--green);
+  padding:14px 18px;
+  border-radius:6px;
+  margin-bottom:24px;
+}
+.start-directions strong{color:var(--green-deep);font-weight:700}
+.start-cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;
+  padding:15px;
+  background:var(--green);color:#fff;
+  border:none;border-radius:999px;
+  font-family:var(--font-en);font-size:1.02em;font-weight:800;
+  cursor:pointer;
+  transition:all .2s;
+  letter-spacing:.02em;
+  box-shadow:0 8px 22px rgba(0,118,70,.22);
+}
+.start-cta:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 12px 28px rgba(0,118,70,.3)}
+.start-resume-note{
+  margin-top:14px;
+  text-align:center;
+  font-size:.82em;
+  color:var(--ink-500);
+}
+
+/* ============================================================
+   Question screen — split passage / question
+   ============================================================ */
+.qa-wrap{
+  flex:1;
+  display:flex;
+  min-height:0;
+  overflow:hidden;
+}
+.passage-pane{
+  flex:1 1 50%;
+  overflow-y:auto;
+  padding:28px 36px 60px;
+  background:var(--white);
+  border-right:1px solid var(--paper);
+  font-family:Georgia,"Iowan Old Style","Source Serif Pro",ui-serif,serif;
+  /* `--passage-fs` is owned by the Text-size tool. Default = 17px,
+     stepped by app.js between 14 and 22 in 1px increments. */
+  font-size:var(--passage-fs,17px);
+  line-height:1.75;
+  color:var(--ink-900);
+  /* user-select is INTENTIONALLY enabled — the Highlight tool
+     depends on Selection/Range APIs against passage text. */
+}
+.question-pane .q-stem{font-size:calc(0.06em + var(--passage-fs,17px) * 0.062)}
+.passage-pane p{margin:0 0 1em}
+.passage-pane em.emph{font-style:italic;background:linear-gradient(transparent 60%,rgba(201,169,97,.4) 60%)}
+.passage-pane .note-bullets{
+  list-style:none;padding:0;margin:0 0 1em;
+}
+.passage-pane .note-bullets li{
+  position:relative;
+  padding:6px 0 6px 22px;
+  border-bottom:1px dashed var(--paper);
+  font-family:var(--font-jp),Georgia,serif;
+  font-size:15.5px;
+  line-height:1.7;
+}
+.passage-pane .note-bullets li:last-child{border-bottom:none}
+.passage-pane .note-bullets li::before{
+  content:"•";
+  position:absolute;left:6px;top:6px;
+  color:var(--green);font-weight:800;
+}
+.passage-pane .ct-label{
+  display:inline-block;
+  font-family:var(--font-en);
+  font-size:.74em;font-weight:800;
+  color:var(--green);letter-spacing:.12em;text-transform:uppercase;
+  margin:1em 0 .35em;
+  padding:3px 8px;
+  background:rgba(0,118,70,.08);
+  border-radius:4px;
+}
+.passage-pane .ct-label:first-child{margin-top:0}
+.passage-pane .figure-block{
+  background:var(--cream);
+  border:1px solid var(--paper);
+  border-radius:10px;
+  padding:16px 18px 14px;
+  margin:0 0 18px;
+}
+.passage-pane .figure-block .figure-title{
+  font-family:var(--font-en);
+  font-size:.82em;font-weight:700;
+  color:var(--green-deep);
+  margin-bottom:10px;
+  line-height:1.45;
+}
+.passage-pane .figure-block .figure-caption{
+  font-family:var(--font-jp);
+  font-size:.76em;color:var(--ink-500);
+  margin-top:8px;line-height:1.55;
+}
+
+.question-pane{
+  flex:1 1 50%;
+  overflow-y:auto;
+  padding:28px 36px 60px;
+  background:var(--cream);
+  display:flex;flex-direction:column;
+}
+.q-num-row{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.q-num-badge{
+  font-family:var(--font-en);
+  font-weight:800;font-size:.86em;
+  background:var(--green-deep);color:#fff;
+  padding:5px 12px;border-radius:6px;
+  letter-spacing:.04em;
+}
+.q-skill-tag{
+  font-family:var(--font-jp);
+  font-size:.74em;
+  color:var(--ink-500);
+  background:var(--white);
+  border:1px solid var(--paper);
+  padding:4px 10px;border-radius:999px;
+  font-weight:600;
+}
+.q-stem{
+  font-family:var(--font-en),var(--font-jp);
+  font-size:1.02em;
+  font-weight:600;
+  color:var(--ink-900);
+  line-height:1.55;
+  margin-bottom:18px;
+}
+
+.choices{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.choice{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--white);
+  border:1.5px solid var(--paper);
+  border-radius:10px;
+  padding:14px 16px;
+  cursor:pointer;
+  transition:all .15s;
+  text-align:left;
+  font:inherit;
+  width:100%;
+  min-height:44px;            /* WCAG tap target */
+}
+.choice:hover{border-color:var(--green);background:#FAFCFA}
+.choice.selected{
+  border-color:var(--green);
+  background:rgba(0,118,70,.06);
+  box-shadow:inset 0 0 0 1px var(--green);
+}
+.choice:focus-visible{outline:3px solid rgba(0,118,70,.35);outline-offset:2px}
+.choice .ch-letter{
+  flex-shrink:0;
+  width:30px;height:30px;
+  border-radius:50%;
+  border:1.5px solid var(--ink-200);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-weight:800;font-size:.92em;
+  color:var(--ink-500);
+  background:var(--white);
+  transition:all .15s;
+}
+.choice.selected .ch-letter{
+  background:var(--green);color:#fff;border-color:var(--green);
+}
+.choice .ch-text{
+  flex:1;min-width:0;
+  font-family:var(--font-en),var(--font-jp);
+  font-size:.96em;
+  color:var(--ink-900);
+  line-height:1.55;
+}
+
+/* Choice-elimination annotation: small strike toggle on each row.
+   Lets students "cross out" choices they've ruled out without
+   losing the ability to select them later. */
+.choice .ch-strike{
+  flex-shrink:0;
+  background:transparent;border:none;
+  color:var(--ink-200);
+  font-family:var(--font-en);font-weight:800;font-size:.9em;
+  padding:4px 6px;
+  cursor:pointer;
+  border-radius:6px;
+  transition:all .15s;
+}
+.choice .ch-strike:hover{color:var(--terracotta);background:rgba(184,92,60,.08)}
+.choice.eliminated .ch-text{text-decoration:line-through;color:var(--ink-500);opacity:.7}
+.choice.eliminated .ch-strike{color:var(--terracotta)}
+
+/* Nav row at the bottom of the question pane */
+.q-nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px solid var(--paper);
+}
+.q-nav-row .nav-btn{
+  font-family:var(--font-en);
+  font-size:.92em;font-weight:700;
+  background:var(--white);
+  border:1.5px solid var(--paper);
+  color:var(--ink-900);
+  padding:11px 22px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:all .15s;
+}
+.q-nav-row .nav-btn:hover:not(:disabled){border-color:var(--green);color:var(--green-deep)}
+.q-nav-row .nav-btn:disabled{opacity:.4;cursor:not-allowed}
+.q-nav-row .nav-btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.q-nav-row .nav-btn.primary:hover:not(:disabled){background:var(--green-dark);border-color:var(--green-dark)}
+.q-nav-row .nav-progress{
+  font-family:var(--font-en);
+  font-size:.78em;color:var(--ink-500);
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+/* ============================================================
+   Question navigator overlay (1..N grid + flag state)
+   ============================================================ */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(15,21,17,.45);
+  display:none;
+  align-items:center;justify-content:center;
+  z-index:200;
+  padding:20px;
+}
+.overlay.active{display:flex}
+.overlay-card{
+  background:var(--white);
+  border-radius:18px;
+  width:100%;max-width:600px;
+  max-height:88vh;
+  display:flex;flex-direction:column;
+  box-shadow:0 24px 60px rgba(0,40,23,.25);
+}
+.overlay-head{
+  padding:20px 24px 14px;
+  border-bottom:1px solid var(--paper);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.overlay-head h2{
+  margin:0;
+  font-family:var(--font-en);
+  font-size:1.1em;font-weight:800;
+  color:var(--green-deep);
+  letter-spacing:-0.01em;
+}
+.overlay-head .overlay-close{
+  background:transparent;border:none;
+  font-size:1.4em;
+  color:var(--ink-500);cursor:pointer;
+  width:32px;height:32px;border-radius:50%;
+}
+.overlay-head .overlay-close:hover{background:var(--paper);color:var(--ink-900)}
+.overlay-body{
+  padding:18px 24px 22px;
+  overflow-y:auto;
+}
+.overlay-legend{
+  display:flex;gap:14px;flex-wrap:wrap;
+  font-family:var(--font-en);font-size:.78em;color:var(--ink-500);
+  font-weight:600;
+  margin-bottom:14px;
+}
+.overlay-legend .leg{display:inline-flex;align-items:center;gap:6px}
+.overlay-legend .leg-dot{
+  width:14px;height:14px;border-radius:4px;
+  border:1.5px solid var(--paper);
+  display:inline-block;background:var(--white);
+}
+.overlay-legend .leg-dot.answered{background:var(--green);border-color:var(--green)}
+.overlay-legend .leg-dot.flagged{background:var(--gold);border-color:var(--gold)}
+.overlay-legend .leg-dot.current{border-color:var(--green-deep);border-width:2px}
+
+.nav-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(46px,1fr));
+  gap:8px;
+}
+.nav-cell{
+  position:relative;
+  aspect-ratio:1/1;
+  border:1.5px solid var(--paper);
+  background:var(--white);
+  border-radius:8px;
+  font-family:var(--font-en);font-weight:700;font-size:.95em;
+  color:var(--ink-900);
+  cursor:pointer;
+  transition:all .15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-cell:hover{border-color:var(--green)}
+.nav-cell.answered{background:var(--green);color:#fff;border-color:var(--green)}
+.nav-cell.flagged::after{
+  content:"";
+  position:absolute;top:3px;right:3px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);
+  border:1.5px solid var(--white);
+}
+.nav-cell.current{box-shadow:0 0 0 2px var(--green-deep)}
+
+.overlay-foot{
+  padding:14px 24px 18px;
+  border-top:1px solid var(--paper);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  flex-wrap:wrap;
+}
+.overlay-foot .summary{
+  font-family:var(--font-en);font-size:.82em;
+  color:var(--ink-500);font-weight:600;
+}
+.overlay-foot .submit-btn{
+  background:var(--green);color:#fff;
+  border:none;border-radius:999px;
+  font-family:var(--font-en);font-weight:800;font-size:.92em;
+  padding:11px 24px;cursor:pointer;
+  transition:all .15s;
+}
+.overlay-foot .submit-btn:hover{background:var(--green-dark)}
+
+/* Confirm dialog (small overlay variant for submit/finish prompts) */
+.confirm-card{
+  background:var(--white);border-radius:14px;
+  width:100%;max-width:380px;
+  padding:24px 24px 20px;
+  box-shadow:0 24px 60px rgba(0,40,23,.25);
+  text-align:center;
+}
+.confirm-card h3{
+  font-family:var(--font-en);font-size:1.1em;font-weight:800;
+  color:var(--green-deep);margin:0 0 8px;letter-spacing:-0.01em;
+}
+.confirm-card p{
+  font-family:var(--font-jp);font-size:.9em;color:var(--ink-700);
+  margin:0 0 18px;line-height:1.7;
+}
+.confirm-row{display:flex;gap:8px}
+.confirm-row .tn-btn{flex:1;text-align:center}
+
+/* ============================================================
+   Responsive — stack the split on phones/tablets
+   ============================================================ */
+@media (max-width:768px){
+  .qa-wrap{flex-direction:column;overflow:auto}
+  .passage-pane{flex:0 0 auto;max-height:46vh;border-right:none;border-bottom:1px solid var(--paper);padding:20px 20px 28px}
+  .question-pane{flex:1 0 auto;padding:20px 20px 36px}
+  .top-nav{flex-wrap:wrap;padding:8px 12px;gap:8px;row-gap:6px}
+  .top-nav-left,.top-nav-right{gap:8px;flex-wrap:wrap}
+  .tn-section{font-size:.78em}
+  .tn-timer{font-size:1em;min-width:80px;padding:6px 12px}
+}
+@media (max-width:480px){
+  .passage-pane{line-height:1.7}
+  .start-card{padding:32px 24px 28px}
+  .start-card h1{font-size:1.4em}
+  .start-spec{padding:14px 8px}
+  .start-spec .spec-num{font-size:1.3em}
+  .choice{padding:12px 14px}
+  .choice .ch-letter{width:26px;height:26px;font-size:.86em}
+  .nav-grid{grid-template-columns:repeat(auto-fill,minmax(40px,1fr))}
+  .tn-btn{padding:8px 12px;font-size:.78em}
+  .tn-menu-item .mi-shortcut{display:none}
+}
+
+/* ==============================================================
+   ============================================================
+   EXTENDED PRACTICE TOOLS — annotation, focus, hide-timer, etc.
+   ============================================================
+   Below: timer-with-hide cluster, Tools dropdown, Highlight tool
+   (popover + 3-color marks + note marker), Line-focus overlay,
+   End-of-module Review screen, narrow modals (Directions /
+   Shortcuts / Help / Text-size).
+   ============================================================
+   ============================================================== */
+
+/* ---------- Timer cluster (digit + "eye" hide button) ---------- */
+.tn-timer-cluster{
+  display:inline-flex;
+  align-items:stretch;
+  background:var(--cream);
+  border:1px solid var(--paper);
+  border-radius:10px;
+  overflow:hidden;
+}
+.tn-timer-cluster .tn-timer{
+  border:none;
+  border-radius:0;
+  background:transparent;
+  padding:7px 12px 7px 14px;
+}
+.tn-eye{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:transparent;border:none;border-left:1px solid var(--paper);
+  width:34px;
+  color:var(--ink-500);
+  cursor:pointer;
+  font-size:.95em;
+  transition:color .15s, background .15s;
+}
+.tn-eye:hover{color:var(--green-deep);background:rgba(0,118,70,.05)}
+.tn-eye .eye-off{display:none}
+.tn-eye[aria-pressed="true"] .eye-on{display:none}
+.tn-eye[aria-pressed="true"] .eye-off{display:inline}
+.tn-timer.hidden-digits{color:transparent;letter-spacing:0;position:relative}
+.tn-timer.hidden-digits::after{
+  content:"—:—";
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-500);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---------- Tools dropdown ---------- */
+.tn-menu-wrap{position:relative}
+.tn-btn .caret{display:inline-block;margin-left:4px;font-size:.7em;opacity:.7}
+.tn-menu{
+  position:absolute;top:calc(100% + 6px);right:0;
+  z-index:150;
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:12px;
+  box-shadow:0 12px 32px rgba(0,40,23,.16);
+  min-width:240px;
+  padding:6px;
+}
+.tn-menu-item{
+  display:flex;align-items:center;gap:10px;
+  width:100%;
+  background:transparent;border:none;
+  padding:9px 12px;border-radius:8px;
+  font-family:var(--font-en),var(--font-jp);
+  font-size:.88em;font-weight:600;
+  color:var(--ink-900);
+  cursor:pointer;text-align:left;
+  transition:background .12s;
+}
+.tn-menu-item:hover{background:var(--cream)}
+.tn-menu-item.is-on{background:rgba(0,118,70,.08);color:var(--green-deep)}
+.tn-menu-item .mi-icon{
+  flex-shrink:0;
+  width:24px;height:24px;border-radius:6px;
+  background:var(--cream);border:1px solid var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-weight:800;font-size:.84em;
+  color:var(--green-deep);
+}
+.tn-menu-item.is-on .mi-icon{background:var(--green);color:#fff;border-color:var(--green)}
+.tn-menu-item .mi-label{flex:1;min-width:0}
+.tn-menu-item .mi-state,.tn-menu-item .mi-shortcut{
+  font-family:var(--font-en);
+  font-size:.72em;color:var(--ink-500);
+  font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.tn-menu-item.is-on .mi-state{color:var(--green-dark)}
+
+/* ---------- Highlight mode button + swatch hint ---------- */
+.tn-btn .hi-swatch{
+  display:inline-block;
+  width:12px;height:12px;
+  border-radius:3px;
+  background:linear-gradient(135deg, #FFE38C 0% 33%, #BFDDF2 33% 66%, #F4C8D4 66% 100%);
+  margin-right:6px;
+  vertical-align:-1px;
+  border:1px solid rgba(0,0,0,.06);
+}
+.tn-btn.hi-on{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+.tn-btn.hi-on .hi-swatch{filter:brightness(.95)}
+
+/* ---------- Highlight marks (inside the passage) ---------- */
+.passage-pane mark.hl,
+.rv-passage mark.hl{
+  background:#FFE38C;
+  color:inherit;
+  padding:0 1px;
+  border-radius:2px;
+  /* Subtle bottom rule signals "this is intentional, not a default browser mark." */
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.05);
+}
+.passage-pane mark.hl-yellow,.rv-passage mark.hl-yellow{background:#FFE38C}
+.passage-pane mark.hl-blue,  .rv-passage mark.hl-blue  {background:#BFDDF2}
+.passage-pane mark.hl-pink,  .rv-passage mark.hl-pink  {background:#F4C8D4}
+.passage-pane mark.hl-active{outline:2px solid var(--green-deep);outline-offset:1px}
+.passage-pane mark.hl[data-note]{
+  /* A small triangular nick in the corner cues "there's a note here"
+     without crowding the line height. */
+  position:relative;
+}
+.passage-pane mark.hl[data-note]::after{
+  content:"";
+  position:absolute;top:-2px;right:-1px;
+  width:0;height:0;
+  border-left:6px solid transparent;
+  border-right:0 solid transparent;
+  border-top:8px solid var(--green-deep);
+}
+
+/* ---------- Selection popover (color swatches + actions) ---------- */
+.hi-popover{
+  position:absolute;
+  z-index:300;
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:999px;
+  box-shadow:0 12px 28px rgba(0,40,23,.18);
+  padding:5px 8px;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-en);
+}
+.hi-popover .hi-sep{
+  width:1px;align-self:stretch;background:var(--paper);margin:2px 2px;
+}
+.hi-swatch-btn{
+  width:22px;height:22px;border-radius:50%;
+  border:1.5px solid rgba(0,0,0,.08);
+  cursor:pointer;
+  transition:transform .12s, box-shadow .12s;
+  padding:0;
+}
+.hi-swatch-btn:hover{transform:scale(1.1);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.hi-w-yellow{background:#FFE38C}
+.hi-w-blue  {background:#BFDDF2}
+.hi-w-pink  {background:#F4C8D4}
+.hi-action-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  background:transparent;border:none;
+  padding:5px 10px;border-radius:999px;
+  font-family:inherit;font-size:.82em;font-weight:700;
+  color:var(--ink-900);
+  cursor:pointer;
+  transition:background .12s, color .12s;
+}
+.hi-action-btn:hover{background:var(--cream);color:var(--green-deep)}
+.hi-action-btn.hi-danger{color:var(--terracotta)}
+.hi-action-btn.hi-danger:hover{background:#FDEDE6}
+
+/* Note editor popover (appears below the active highlight) */
+.hi-note-popover{
+  position:absolute;
+  z-index:301;
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:12px;
+  box-shadow:0 12px 28px rgba(0,40,23,.18);
+  width:280px;
+  padding:12px;
+}
+.hi-note-popover textarea{
+  width:100%;
+  resize:none;
+  border:1px solid var(--paper);
+  border-radius:8px;
+  background:var(--cream);
+  padding:8px 10px;
+  font-family:var(--font-jp),var(--font-en);
+  font-size:.9em;line-height:1.55;color:var(--ink-900);
+}
+.hi-note-popover textarea:focus{outline:none;border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(0,118,70,.1)}
+.hi-note-actions{display:flex;justify-content:space-between;gap:8px;margin-top:8px}
+.hi-note-actions .tn-btn{padding:6px 12px;font-size:.78em}
+.hi-note-actions .tn-btn.hi-danger{color:var(--terracotta);border-color:var(--paper)}
+.hi-note-actions .tn-btn.hi-danger:hover{border-color:var(--terracotta)}
+
+/* ---------- Line-focus overlay (two shades sandwich a clear window) ---------- */
+.line-focus{position:fixed;inset:0;z-index:180;pointer-events:none}
+.lf-shade{
+  position:absolute;left:0;right:0;
+  background:rgba(15,21,17,0.55);
+  transition:height .04s linear, top .04s linear;
+}
+.lf-top{top:0}
+.lf-bottom{bottom:0}
+/* When line-focus is on the passage gets a calm pulse cue so the
+   student notices the tool is active. */
+body.lf-active .passage-pane{box-shadow:inset 4px 0 0 var(--gold)}
+
+/* ---------- End-of-module Review (dedicated screen) ---------- */
+.endreview-wrap{
+  flex:1;display:flex;align-items:flex-start;justify-content:center;
+  padding:36px 20px;
+  overflow:auto;
+}
+.endreview-card{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:18px;
+  padding:36px 40px;
+  max-width:640px;width:100%;
+  box-shadow:0 12px 36px rgba(0,40,23,.08);
+}
+.er-eyebrow{
+  font-family:var(--font-en);
+  font-size:.72em;font-weight:800;
+  color:var(--terracotta);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.er-title{
+  font-family:var(--font-en);
+  font-size:1.6em;font-weight:800;
+  color:var(--green-deep);
+  letter-spacing:-0.015em;
+  line-height:1.2;
+  margin:0 0 6px;
+}
+.er-sub{
+  font-family:var(--font-jp);
+  font-size:.9em;color:var(--ink-700);
+  line-height:1.7;margin:0 0 20px;
+}
+.er-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  background:var(--cream);border:1px solid var(--paper);
+  border-radius:12px;
+  padding:14px 12px;
+  margin-bottom:22px;
+}
+.er-stats .er-stat{text-align:center}
+.er-stats .er-stat-num{
+  font-family:var(--font-en);font-size:1.7em;font-weight:800;
+  color:var(--green-deep);line-height:1.1;
+}
+.er-stats .er-stat-num.warn{color:var(--terracotta)}
+.er-stats .er-stat-label{
+  font-family:var(--font-jp);font-size:.74em;color:var(--ink-500);
+  margin-top:3px;line-height:1.4;
+}
+.er-grid{margin:14px 0 22px}
+.er-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.er-actions .tn-btn{flex:1;min-width:160px;justify-content:center;padding:12px 18px;font-size:.92em;display:inline-flex;align-items:center}
+
+@media (max-width:520px){
+  .endreview-card{padding:28px 22px}
+  .er-title{font-size:1.3em}
+  .er-stats{grid-template-columns:1fr;gap:8px}
+}
+
+/* ---------- Narrow overlay variant (Directions / Shortcuts / Help) ---------- */
+.overlay-card.overlay-card--narrow{max-width:520px}
+.overlay-body .help-p{
+  font-family:var(--font-jp),var(--font-en);
+  font-size:.92em;line-height:1.75;color:var(--ink-700);
+  margin:0 0 12px;
+}
+.overlay-body .help-p a{color:var(--green-dark);font-weight:600}
+.overlay-body ul{margin:0;padding-left:20px}
+.overlay-body li{font-family:var(--font-jp),var(--font-en);font-size:.92em;color:var(--ink-700);line-height:1.75;margin-bottom:8px}
+.overlay-body p{font-family:var(--font-jp),var(--font-en);font-size:.92em;line-height:1.7;margin:0 0 10px}
+
+.sc-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.9em;
+}
+.sc-table th{
+  text-align:left;
+  padding:9px 12px;
+  font-family:var(--font-jp),var(--font-en);
+  font-weight:600;color:var(--ink-700);
+  border-bottom:1px solid var(--paper);
+  width:60%;
+}
+.sc-table td{
+  text-align:right;
+  padding:9px 12px;
+  border-bottom:1px solid var(--paper);
+  font-family:var(--font-en);
+}
+.sc-table kbd{
+  display:inline-block;
+  min-width:1.6em;text-align:center;
+  font-family:var(--font-en);font-size:.84em;font-weight:700;
+  background:var(--cream);
+  border:1px solid var(--paper);
+  border-radius:4px;
+  padding:2px 6px;
+  margin:0 1px;
+  color:var(--ink-900);
+  box-shadow:0 1px 0 var(--paper);
+}
+
+/* ---------- Text-size mini modal ---------- */
+.size-card{max-width:380px}
+.size-card .size-row{
+  display:flex;justify-content:center;gap:8px;
+  margin:8px 0 14px;
+}
+.size-card .size-row .tn-btn{
+  font-family:var(--font-en);font-weight:800;
+  min-width:48px;
+  font-size:1.05em;
+}
+.size-card .size-row .tn-btn[data-size="-"]{font-size:.86em}
+.size-card .size-row .tn-btn[data-size="+"]{font-size:1.2em}
+.size-card .size-row .tn-btn.is-active{background:var(--green);color:#fff;border-color:var(--green)}
+.size-card .size-preview{
+  background:var(--cream);border:1px dashed var(--paper);
+  border-radius:10px;
+  padding:14px 16px;
+  font-family:Georgia,serif;
+  font-size:var(--passage-fs,17px);
+  line-height:1.7;color:var(--ink-900);
+  text-align:left;
+  margin-bottom:14px;
+  min-height:84px;
+}
+
+/* ---------- A small wobble for "saving" feedback on highlights ---------- */
+@keyframes hl-pop{
+  0%{transform:scale(.86);opacity:0}
+  60%{transform:scale(1.06);opacity:1}
+  100%{transform:scale(1);opacity:1}
+}
+.passage-pane mark.hl.hl-just-added{animation:hl-pop .22s ease-out}
+
+/* ---------- Tools dropdown placement tweak for narrow viewports ---------- */
+@media (max-width:600px){
+  .tn-menu{
+    position:fixed;
+    top:auto;bottom:0;left:0;right:0;
+    border-radius:14px 14px 0 0;
+    min-width:0;
+    padding:8px 8px 14px;
+    box-shadow:0 -10px 28px rgba(0,40,23,.18);
+  }
+  .tn-menu-item{padding:14px 12px;font-size:.94em}
+  .hi-popover{padding:6px 10px;gap:8px}
+  .hi-swatch-btn{width:26px;height:26px}
+}

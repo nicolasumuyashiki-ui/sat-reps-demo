@@ -1,0 +1,118 @@
+/* TCK Workshop — Shared Design Tokens
+   Page-local <style> blocks still win via specificity; this file
+   provides a baseline so newly styled pages can drop color hacks. */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --green: #007646;
+  --green-dark: #004D2E;
+  --green-deep: #002817;
+  --gold: #C9A961;
+  --sky: #4A90B8;
+  --terracotta: #B85C3C;
+  --paper: #F5E9D3;
+  --cream: #FBF6EC;
+  --ink-900: #0F1511;
+  --ink-500: #5A6861;
+  --ink-200: #D6DAD7;
+  --white: #FFFFFF;
+  --radius: 14px;
+  --font-jp: "Zen Kaku Gothic New", "Noto Sans JP", system-ui, sans-serif;
+  --font-en: "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* i18n primitives — pages opt-in by adding data-lang to <body> and using .jp/.en spans */
+body[data-lang="jp"] .en { display: none; }
+body[data-lang="en"] .jp { display: none; }
+.jp { font-family: var(--font-jp); }
+.en { font-family: var(--font-en); letter-spacing: -0.005em; }
+
+/* Reusable language toggle pill */
+.tck-lang-toggle {
+  display: inline-flex;
+  background: var(--white);
+  border: 1px solid var(--paper);
+  border-radius: 999px;
+  padding: 3px;
+  font-family: var(--font-en);
+  font-size: .72em;
+  font-weight: 600;
+}
+.tck-lang-toggle button {
+  border: none; background: transparent;
+  padding: 5px 12px; border-radius: 999px;
+  cursor: pointer; color: var(--ink-500);
+  font-family: inherit; font-weight: inherit;
+  letter-spacing: .04em;
+}
+.tck-lang-toggle button.active { background: var(--green); color: var(--white); }
+
+/* ============================================================
+   Suppress HubSpot marketing pop-ups (newsletter / CTA) on this app
+   while keeping embedded forms (.hs-form-frame) working.
+   Long-term fix: exclude this domain in HubSpot > Marketing > Pop-up.
+   ============================================================ */
+#leadinModal-div,
+.leadinModal,
+.leadinModal-v3,
+.leadinModal-v3-theme-default,
+[id^="hs-interactives-modal"],
+[id^="leadin-"][data-hs-cta-type="popup"],
+iframe[title*="popup"],
+iframe[id^="hs-web-interactives-"]:not([id*="form"]) {
+  display: none !important;
+}
+
+/* TCK brand mark image — replaces the legacy dot+text combo */
+.brand-logo{height:28px;width:auto;display:inline-block;vertical-align:middle;flex-shrink:0}
+.brand-logo--lg{height:48px}
+.brand-logo--xs{height:22px}
+.brand-logo--xl{height:72px}
+
+/* ============================================================
+   Mobile / iPad responsiveness — added 2026-05
+   Practice pages were originally authored with desktop-first
+   flex/grid layouts and have their own inline <style> blocks
+   (which override common.css on equal specificity). The
+   `!important` flags here are deliberate: they let media
+   queries beat per-page styles for layout-only properties so
+   we don't have to edit ~120 practice files individually.
+   Touch only layout (flex-direction, padding, wrap, dimensions)
+   — never color/font.
+   ============================================================ */
+
+/* Split-pane Reading layouts (RDL, Academic Passage) — stack panels on phones */
+@media (max-width: 768px) {
+  .split-main { flex-direction: column !important; overflow: auto !important; }
+  .passage-panel { border-right: none !important; border-bottom: 1px solid var(--paper); max-height: 50vh !important; flex: 0 0 auto !important; }
+  .question-panel { flex: 1 1 auto !important; }
+}
+
+/* Top-nav (timer + review + user pill) — wrap on phones to prevent overflow */
+@media (max-width: 600px) {
+  .top-nav { flex-wrap: wrap !important; padding: 8px 12px !important; gap: 8px !important; row-gap: 6px !important; }
+  .top-nav-left, .top-nav-right { gap: 8px !important; flex-wrap: wrap !important; }
+}
+
+/* CTW input cells scale down on very narrow phones to avoid horizontal scroll */
+@media (max-width: 480px) {
+  .bx { width: 1.25em !important; height: 1.7em !important; }
+  .passage { font-size: .9em !important; line-height: 2 !important; }
+}
+
+/* Start cards / instruction cards — shrink padding on narrow phones */
+@media (max-width: 480px) {
+  .start-card, .instruction-card { padding: 28px 20px !important; }
+}
+
+/* Print styles — keep the logo and clean up chrome on printed reports */
+@media print{
+  .brand-logo{height:36px!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .btn-logout,.btn-start,.btn-next,.user-pill,.tck-lang-toggle,
+  .modal-overlay,.section-footer{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  a{color:#000!important;text-decoration:none}
+}

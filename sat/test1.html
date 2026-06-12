@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="shortcut icon" href="../assets/favicon.ico">
+<title>TCK Reps for SAT (Demo) — Module 1 · Test 1</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="jp" data-screen="start">
+
+<!-- ============================================================
+     TOP NAV — visible only while the module is live.
+     Layout: brand | module label || timer-cluster | tools | flag | review | finish
+     ============================================================ -->
+<header class="top-nav" id="topNav" hidden>
+  <div class="top-nav-left">
+    <div class="tn-brand">
+      <img src="../assets/tck-logo.png" alt="TCK Workshop">
+      <span class="tn-product">TCK Reps</span>
+    </div>
+    <span class="tn-divider"></span>
+    <span class="tn-section" id="moduleLabel">Module 1 · Test 1</span>
+  </div>
+  <div class="top-nav-right">
+
+    <!-- Timer cluster: digit display + an "eye" button to hide/show.
+         The clock keeps counting while hidden. -->
+    <div class="tn-timer-cluster">
+      <div class="tn-timer" id="timer" aria-live="polite">32:00</div>
+      <button type="button" class="tn-eye" id="timerEyeBtn" aria-pressed="false"
+              aria-label="Hide or show the timer">
+        <span class="eye-on" aria-hidden="true">◉</span>
+        <span class="eye-off" aria-hidden="true">○</span>
+      </button>
+    </div>
+
+    <!-- Highlight mode: when on, selecting passage text reveals the
+         pop-over toolbar. Off by default so accidental selections
+         don't fire the toolbar. -->
+    <button type="button" class="tn-btn" id="highlightBtn" aria-pressed="false"
+            title="Toggle highlight mode (H)">
+      <span class="hi-swatch" aria-hidden="true"></span>
+      <span class="jp">ハイライト</span><span class="en">Highlight</span>
+    </button>
+
+    <!-- "ツール" (Tools) dropdown — bundles the less-used features so
+         the bar stays scannable. -->
+    <div class="tn-menu-wrap">
+      <button type="button" class="tn-btn" id="toolsBtn" aria-haspopup="true" aria-expanded="false">
+        <span class="jp">ツール</span><span class="en">Tools</span>
+        <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="tn-menu" id="toolsMenu" role="menu" hidden>
+        <button type="button" class="tn-menu-item" role="menuitem" data-tool="line-focus">
+          <span class="mi-icon" aria-hidden="true">≡</span>
+          <span class="mi-label"><span class="jp">1行集中</span><span class="en">Line focus</span></span>
+          <span class="mi-state" id="lineFocusState"></span>
+        </button>
+        <button type="button" class="tn-menu-item" role="menuitem" data-tool="text-size">
+          <span class="mi-icon" aria-hidden="true">A</span>
+          <span class="mi-label"><span class="jp">文字サイズ</span><span class="en">Text size</span></span>
+          <span class="mi-shortcut">A−/A+</span>
+        </button>
+        <button type="button" class="tn-menu-item" role="menuitem" data-tool="directions">
+          <span class="mi-icon" aria-hidden="true">✎</span>
+          <span class="mi-label"><span class="jp">進め方を見直す</span><span class="en">Directions</span></span>
+        </button>
+        <button type="button" class="tn-menu-item" role="menuitem" data-tool="shortcuts">
+          <span class="mi-icon" aria-hidden="true">⌨</span>
+          <span class="mi-label"><span class="jp">キーボード操作</span><span class="en">Shortcuts</span></span>
+        </button>
+        <button type="button" class="tn-menu-item" role="menuitem" data-tool="help">
+          <span class="mi-icon" aria-hidden="true">?</span>
+          <span class="mi-label"><span class="jp">ヘルプ</span><span class="en">Help</span></span>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="tn-btn" id="flagBtn" aria-pressed="false"
+            title="Flag this question for review (F)">
+      <span class="flag-icon" aria-hidden="true">⚑</span>
+      <span class="jp">フラグ</span><span class="en">Flag</span>
+    </button>
+    <button type="button" class="tn-btn" id="navBtn" title="Open the question navigator (R)">
+      <span class="jp">問題一覧</span><span class="en">Review</span>
+    </button>
+    <button type="button" class="tn-btn primary" id="finishBtn">
+      <span class="jp">提出</span><span class="en">Finish</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     START SCREEN
+     ============================================================ -->
+<div class="start-wrap" id="screenStart">
+  <div class="start-card">
+    <div class="start-eyebrow">TCK Reps · for SAT® · Module 1</div>
+    <h1 id="startTitle">Reading &amp; Writing — Module 1</h1>
+    <p class="subtitle">
+      <span class="jp">Digital SAT の Reading &amp; Writing 標準モジュールです。本番と同じ形式で 1 セットお試しください。</span>
+      <span class="en">A Digital SAT Reading &amp; Writing module in the standard format. One sitting, real-time, real format.</span>
+    </p>
+
+    <div class="start-spec">
+      <div>
+        <div class="spec-num" id="specCount">27</div>
+        <div class="spec-label"><span class="jp">問題数</span><span class="en">Questions</span></div>
+      </div>
+      <div>
+        <div class="spec-num">32:00</div>
+        <div class="spec-label"><span class="jp">制限時間</span><span class="en">Time limit</span></div>
+      </div>
+      <div>
+        <div class="spec-num">4</div>
+        <div class="spec-label"><span class="jp">出題ドメイン</span><span class="en">Domains</span></div>
+      </div>
+    </div>
+
+    <div class="start-directions" id="startDirections">
+      <p><span class="jp"><strong>進め方</strong></span><span class="en"><strong>How it works</strong></span></p>
+      <ul>
+        <li><span class="jp">各問題には選択肢が <strong>4 つ</strong>。1 つ選んで「次へ」。モジュール内なら <strong>前後に自由に戻れます</strong>。</span><span class="en">Four choices per question. Pick one and continue — <strong>you can move freely</strong> within the module.</span></li>
+        <li><span class="jp">気になる問題は <strong>⚑ フラグ</strong>。「問題一覧」から未回答・フラグ済みを一覧できます。</span><span class="en"><strong>⚑ Flag</strong> anything to revisit; the navigator surfaces unanswered + flagged.</span></li>
+        <li><span class="jp">本文を選択すると <strong>ハイライト</strong>(3色)と <strong>メモ</strong> を残せます(ツールバーの「ハイライト」を ON に)。</span><span class="en">Turn on <strong>Highlight</strong> in the top bar, then select any passage text to highlight (3 colors) or attach a short note.</span></li>
+        <li><span class="jp">選択肢右の <strong>⊘</strong> で消去線。<strong>1行集中</strong>(ツール内)で本文の1行に集中。<strong>文字サイズ</strong>も変更可能。</span><span class="en">Use <strong>⊘</strong> to cross out a choice, <strong>Line focus</strong> (in Tools) to narrow your gaze, or <strong>Text size</strong> to enlarge.</span></li>
+        <li><span class="jp">残り 5 分で警告。<strong>0:00 で自動提出</strong>されます。</span><span class="en">A 5-minute warning fires near the end; the module <strong>auto-submits at 0:00</strong>.</span></li>
+      </ul>
+    </div>
+
+    <button type="button" class="start-cta" id="startBtn">
+      <span class="jp">演習を始める</span><span class="en">Begin module</span>
+      <span class="arrow">→</span>
+    </button>
+    <div class="start-resume-note" id="resumeNote" hidden>
+      <span class="jp">中断したセッションを再開します（残り時間と回答が保存されています）。</span>
+      <span class="en">Resuming your saved session (answers and timer were preserved).</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     QUESTION SCREEN
+     ============================================================ -->
+<div class="qa-wrap" id="screenQuestion" hidden>
+  <section class="passage-pane" id="passagePane" aria-label="Passage"></section>
+  <section class="question-pane" aria-label="Question">
+    <div class="q-num-row">
+      <span class="q-num-badge" id="qNumBadge">Q 1</span>
+      <span class="q-skill-tag" id="qSkillTag"></span>
+    </div>
+    <div class="q-stem" id="qStem"></div>
+    <div class="choices" id="choices" role="radiogroup" aria-label="Answer choices"></div>
+
+    <div class="q-nav-row">
+      <button type="button" class="nav-btn" id="prevBtn">← <span class="jp">前へ</span><span class="en">Back</span></button>
+      <span class="nav-progress" id="navProgress">1 / 9</span>
+      <button type="button" class="nav-btn primary" id="nextBtn"><span class="jp">次へ</span><span class="en">Next</span> →</button>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     END-OF-MODULE REVIEW — dedicated screen (not an overlay).
+     Shown when the student hits "Next" on the last question, or
+     when they choose "最終チェック" from the navigator. From here
+     they can return to any question or submit the module.
+     ============================================================ -->
+<div class="endreview-wrap" id="screenEndReview" hidden>
+  <div class="endreview-card">
+    <div class="er-eyebrow"><span class="jp">最終チェック</span><span class="en">Final review</span></div>
+    <h2 class="er-title"><span class="jp">提出前のチェック</span><span class="en">Before you submit</span></h2>
+    <p class="er-sub" id="erSub"></p>
+
+    <div class="er-stats" id="erStats"></div>
+
+    <div class="overlay-legend">
+      <span class="leg"><span class="leg-dot answered"></span><span class="jp">回答済み</span><span class="en">Answered</span></span>
+      <span class="leg"><span class="leg-dot"></span><span class="jp">未回答</span><span class="en">Unanswered</span></span>
+      <span class="leg"><span class="leg-dot flagged"></span><span class="jp">フラグ</span><span class="en">Flagged</span></span>
+    </div>
+    <div class="nav-grid er-grid" id="erGrid"></div>
+
+    <div class="er-actions">
+      <button type="button" class="tn-btn" id="erBackBtn">
+        <span class="jp">← 問題に戻る</span><span class="en">← Back to questions</span>
+      </button>
+      <button type="button" class="tn-btn primary" id="erSubmitBtn">
+        <span class="jp">モジュールを提出 →</span><span class="en">Submit module →</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SELECTION POPOVER — appears next to a passage selection while
+     highlight mode is on. Anchored & positioned by app.js.
+     ============================================================ -->
+<div class="hi-popover" id="hiPopover" hidden role="toolbar" aria-label="Highlight options">
+  <button type="button" class="hi-swatch-btn hi-w-yellow" data-hi="yellow" aria-label="Yellow highlight"></button>
+  <button type="button" class="hi-swatch-btn hi-w-blue"   data-hi="blue"   aria-label="Blue highlight"></button>
+  <button type="button" class="hi-swatch-btn hi-w-pink"   data-hi="pink"   aria-label="Pink highlight"></button>
+  <span class="hi-sep"></span>
+  <button type="button" class="hi-action-btn" data-hi="note" aria-label="Add a note">
+    <span aria-hidden="true">✎</span><span class="jp">メモ</span><span class="en">Note</span>
+  </button>
+  <button type="button" class="hi-action-btn hi-danger" data-hi="clear" aria-label="Remove highlight">
+    <span aria-hidden="true">✕</span><span class="jp">削除</span><span class="en">Clear</span>
+  </button>
+</div>
+
+<!-- Note popover — shown when a highlight with a note is clicked, or
+     when the popover's "Note" button is pressed on a new highlight. -->
+<div class="hi-note-popover" id="hiNotePopover" hidden role="dialog" aria-label="Edit note">
+  <textarea id="hiNoteText" rows="3" maxlength="280"
+            placeholder="このハイライトへのメモ (max 280)…"></textarea>
+  <div class="hi-note-actions">
+    <button type="button" class="tn-btn hi-danger" id="hiNoteDelete">
+      <span class="jp">削除</span><span class="en">Delete</span>
+    </button>
+    <button type="button" class="tn-btn primary" id="hiNoteSave">
+      <span class="jp">保存</span><span class="en">Save</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     LINE FOCUS OVERLAY — top/bottom shades that follow the cursor.
+     A clear "window" sits between them.
+     ============================================================ -->
+<div class="line-focus" id="lineFocus" hidden aria-hidden="true">
+  <div class="lf-shade lf-top"    id="lfTop"></div>
+  <div class="lf-shade lf-bottom" id="lfBottom"></div>
+</div>
+
+<!-- ============================================================
+     MODALS (overlays)
+     ============================================================ -->
+
+<!-- Question navigator -->
+<div class="overlay" id="navOverlay" role="dialog" aria-modal="true" aria-labelledby="navTitle">
+  <div class="overlay-card">
+    <div class="overlay-head">
+      <h2 id="navTitle"><span class="jp">問題一覧</span><span class="en">Question review</span></h2>
+      <button class="overlay-close" type="button" aria-label="Close" data-overlay-close="navOverlay">×</button>
+    </div>
+    <div class="overlay-body">
+      <div class="overlay-legend">
+        <span class="leg"><span class="leg-dot answered"></span><span class="jp">回答済み</span><span class="en">Answered</span></span>
+        <span class="leg"><span class="leg-dot"></span><span class="jp">未回答</span><span class="en">Unanswered</span></span>
+        <span class="leg"><span class="leg-dot flagged"></span><span class="jp">フラグ</span><span class="en">Flagged</span></span>
+        <span class="leg"><span class="leg-dot current"></span><span class="jp">現在の問題</span><span class="en">Current</span></span>
+      </div>
+      <div class="nav-grid" id="navGrid" role="grid" aria-label="Question navigator"></div>
+    </div>
+    <div class="overlay-foot">
+      <span class="summary" id="navSummary">0 answered · 0 flagged</span>
+      <button type="button" class="submit-btn" id="navGoEndBtn">
+        <span class="jp">最終チェックへ →</span><span class="en">Go to final review →</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm submit -->
+<div class="overlay" id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="confirm-card">
+    <h3 id="confirmTitle"><span class="jp">本当に提出しますか？</span><span class="en">Submit module?</span></h3>
+    <p id="confirmBody">
+      <span class="jp">提出後は回答を変更できません。</span>
+      <span class="en">You won't be able to change your answers after this.</span>
+    </p>
+    <div class="confirm-row">
+      <button type="button" class="tn-btn" data-overlay-close="confirmOverlay">
+        <span class="jp">戻る</span><span class="en">Go back</span>
+      </button>
+      <button type="button" class="tn-btn primary" id="confirmSubmitBtn">
+        <span class="jp">提出する</span><span class="en">Submit</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 5-minute warning -->
+<div class="overlay" id="warn5Overlay" role="dialog" aria-modal="true" aria-labelledby="warn5Title">
+  <div class="confirm-card">
+    <h3 id="warn5Title" style="color:var(--terracotta)">
+      <span class="jp">残り 5 分</span><span class="en">5 minutes left</span>
+    </h3>
+    <p>
+      <span class="jp">未回答の問題は「問題一覧」から素早く確認できます。</span>
+      <span class="en">Jump to any unanswered item from the question navigator.</span>
+    </p>
+    <div class="confirm-row">
+      <button type="button" class="tn-btn primary" data-overlay-close="warn5Overlay">
+        <span class="jp">続ける</span><span class="en">Got it</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Time-up (auto-submit) -->
+<div class="overlay" id="timeupOverlay" role="dialog" aria-modal="true" aria-labelledby="timeupTitle">
+  <div class="confirm-card">
+    <h3 id="timeupTitle" style="color:var(--terracotta)">
+      <span class="jp">時間終了</span><span class="en">Time's up</span>
+    </h3>
+    <p>
+      <span class="jp">32 分のセクション時間が終了しました。回答は自動的に保存されます。</span>
+      <span class="en">The 32-minute section is over. Your answers have been saved automatically.</span>
+    </p>
+    <div class="confirm-row">
+      <button type="button" class="tn-btn primary" id="timeupContinueBtn">
+        <span class="jp">結果を見る →</span><span class="en">See results →</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Directions modal (re-openable) -->
+<div class="overlay" id="dirOverlay" role="dialog" aria-modal="true" aria-labelledby="dirTitle">
+  <div class="overlay-card overlay-card--narrow">
+    <div class="overlay-head">
+      <h2 id="dirTitle"><span class="jp">進め方</span><span class="en">Directions</span></h2>
+      <button class="overlay-close" type="button" aria-label="Close" data-overlay-close="dirOverlay">×</button>
+    </div>
+    <div class="overlay-body" id="dirBody">
+      <!-- Cloned from #startDirections by app.js when first opened. -->
+    </div>
+    <div class="overlay-foot">
+      <span class="summary"></span>
+      <button type="button" class="submit-btn" data-overlay-close="dirOverlay">
+        <span class="jp">閉じる</span><span class="en">Close</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Shortcuts modal -->
+<div class="overlay" id="shortcutsOverlay" role="dialog" aria-modal="true" aria-labelledby="scTitle">
+  <div class="overlay-card overlay-card--narrow">
+    <div class="overlay-head">
+      <h2 id="scTitle"><span class="jp">キーボード操作</span><span class="en">Keyboard shortcuts</span></h2>
+      <button class="overlay-close" type="button" aria-label="Close" data-overlay-close="shortcutsOverlay">×</button>
+    </div>
+    <div class="overlay-body">
+      <table class="sc-table">
+        <tbody>
+          <tr><th><span class="jp">選択肢を選ぶ</span><span class="en">Pick a choice</span></th><td><kbd>1</kbd>–<kbd>4</kbd> / <kbd>A</kbd>–<kbd>D</kbd></td></tr>
+          <tr><th><span class="jp">選択肢を消去</span><span class="en">Eliminate a choice</span></th><td><kbd>Shift</kbd>+<kbd>1</kbd>–<kbd>4</kbd></td></tr>
+          <tr><th><span class="jp">前 / 次の問題</span><span class="en">Previous / Next</span></th><td><kbd>←</kbd> / <kbd>→</kbd></td></tr>
+          <tr><th><span class="jp">フラグ</span><span class="en">Flag for review</span></th><td><kbd>F</kbd></td></tr>
+          <tr><th><span class="jp">問題一覧</span><span class="en">Open navigator</span></th><td><kbd>R</kbd></td></tr>
+          <tr><th><span class="jp">ハイライト ON/OFF</span><span class="en">Highlight mode</span></th><td><kbd>H</kbd></td></tr>
+          <tr><th><span class="jp">1行集中 ON/OFF</span><span class="en">Line focus</span></th><td><kbd>L</kbd></td></tr>
+          <tr><th><span class="jp">タイマーを隠す/表示</span><span class="en">Hide / show timer</span></th><td><kbd>T</kbd></td></tr>
+          <tr><th><span class="jp">文字サイズ</span><span class="en">Text size</span></th><td><kbd>+</kbd> / <kbd>−</kbd> / <kbd>0</kbd></td></tr>
+          <tr><th><span class="jp">進め方を再表示</span><span class="en">Reopen directions</span></th><td><kbd>?</kbd></td></tr>
+          <tr><th><span class="jp">モーダルを閉じる</span><span class="en">Close any modal</span></th><td><kbd>Esc</kbd></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="overlay-foot">
+      <span class="summary"></span>
+      <button type="button" class="submit-btn" data-overlay-close="shortcutsOverlay">
+        <span class="jp">閉じる</span><span class="en">Close</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Help modal -->
+<div class="overlay" id="helpOverlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="overlay-card overlay-card--narrow">
+    <div class="overlay-head">
+      <h2 id="helpTitle"><span class="jp">ヘルプ</span><span class="en">Help</span></h2>
+      <button class="overlay-close" type="button" aria-label="Close" data-overlay-close="helpOverlay">×</button>
+    </div>
+    <div class="overlay-body">
+      <p class="help-p">
+        <span class="jp">回答は自動保存されます。ページを再読込しても、残り時間・回答・フラグ・ハイライトはそのまま復元されます(同じブラウザで操作している間のみ)。</span>
+        <span class="en">Your work auto-saves. If you reload, your remaining time, answers, flags, and highlights all come back (same browser only).</span>
+      </p>
+      <p class="help-p">
+        <span class="jp">ハイライトとメモはモジュール内のみ有効です。提出後の Review 画面では使用できません。</span>
+        <span class="en">Highlights and notes live inside the module — they're not carried into the post-submit review.</span>
+      </p>
+      <p class="help-p">
+        <span class="jp">不具合のご報告は <a href="mailto:hello@tckworkshop.co.jp">hello@tckworkshop.co.jp</a> までお願いします。</span>
+        <span class="en">Bug reports: <a href="mailto:hello@tckworkshop.co.jp">hello@tckworkshop.co.jp</a>.</span>
+      </p>
+    </div>
+    <div class="overlay-foot">
+      <span class="summary"></span>
+      <button type="button" class="submit-btn" data-overlay-close="helpOverlay">
+        <span class="jp">閉じる</span><span class="en">Close</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Text-size mini modal -->
+<div class="overlay" id="sizeOverlay" role="dialog" aria-modal="true" aria-labelledby="sizeTitle">
+  <div class="confirm-card size-card">
+    <h3 id="sizeTitle"><span class="jp">文字サイズ</span><span class="en">Text size</span></h3>
+    <div class="size-row">
+      <button type="button" class="tn-btn" data-size="-">A−</button>
+      <button type="button" class="tn-btn" data-size="0">A</button>
+      <button type="button" class="tn-btn" data-size="+">A+</button>
+    </div>
+    <p class="size-preview" id="sizePreview">本文の見え方はここでプレビューできます。<br>Preview your passage typeface here.</p>
+    <div class="confirm-row">
+      <button type="button" class="tn-btn primary" data-overlay-close="sizeOverlay">
+        <span class="jp">閉じる</span><span class="en">Close</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="../config.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/api.js"></script>
+<script src="app.js"></script>
+<script>
+  /* Language toggle is inherited from common.css i18n primitives.
+     Read the persisted choice so the practice page matches the menu. */
+  (function(){
+    var l = localStorage.getItem('tck_lang') || 'jp';
+    document.body.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l === 'jp' ? 'ja' : 'en');
+  })();
+
+  /* Practice pages are gated. Bounce to /login.html?return=... if
+     the shared TCK Reps session isn't present. */
+  if (typeof Auth !== 'undefined') Auth.require();
+
+  /* Boot the practice engine. Data file lives at /data/test1.json
+     relative to repo root; we're served from /sat/, so resolve up. */
+  SATPractice.boot({
+    testId: 'test1',
+    dataUrl: '../data/test1.json',
+    resultsUrl: 'test1-results.html'
+  });
+</script>
+</body>
+</html>

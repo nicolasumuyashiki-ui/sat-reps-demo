@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCK Reps for SAT — 無料体験 · TCK Workshop</title>
+<meta name="description" content="TCK Workshop / TCK Reps for SAT — Digital SAT® Reading & Writing 形式の演習を無料で1モジュール体験。30秒で登録、クレジットカード不要。">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TCK Reps for SAT — 無料体験">
+<meta property="og:description" content="Digital SAT® Reading & Writing 形式の演習を1モジュール、無料で。">
+<meta property="og:image" content="https://apps.tckworkshop.co.jp/sat-reps-demo/assets/ogp-card.jpg">
+<meta property="og:site_name" content="TCK Workshop">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-jp);background:var(--cream);color:var(--ink-900);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(251,246,236,0.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--paper)}
+.nav-inner{max-width:880px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.brand-name{font-family:var(--font-en);font-size:.78em;font-weight:800;color:var(--green);letter-spacing:.14em;text-transform:uppercase}
+.brand-demo-pill{font-family:var(--font-en);font-size:.6em;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--terracotta);padding:3px 8px 2px;border-radius:3px;line-height:1;margin-left:4px}
+.nav-actions{display:flex;align-items:center;gap:6px}
+.nav-link{font-family:var(--font-jp);font-size:.86em;color:var(--ink-700);text-decoration:none;padding:10px 10px;font-weight:600}
+.nav-link:hover{color:var(--green-dark)}
+.nav-cta{font-family:var(--font-jp);font-size:.86em;font-weight:700;color:var(--white);background:var(--green);padding:10px 18px;border-radius:999px;text-decoration:none;transition:all .18s}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* ===== Hero ===== */
+.hero{padding:64px 24px 28px;max-width:720px;margin:0 auto;text-align:center}
+.hero-eyebrow{display:inline-block;font-family:var(--font-en);font-size:.72em;font-weight:800;color:var(--terracotta);letter-spacing:.16em;text-transform:uppercase;background:rgba(184,92,60,.08);padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(1.75em,4vw,2.45em);font-weight:800;color:var(--green-deep);line-height:1.28;letter-spacing:-0.018em;margin-bottom:16px}
+.hero h1 .accent{color:var(--green)}
+.hero p.lead{font-size:.98em;color:var(--ink-700);max-width:540px;margin:0 auto 28px;line-height:1.85}
+
+/* ===== Center CTA ===== */
+.cta-big{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 38px;background:var(--green);color:var(--white);border-radius:999px;text-decoration:none;font-weight:800;font-size:1.06em;font-family:var(--font-jp);box-shadow:0 10px 28px rgba(0,118,70,.24);transition:all .2s;border:none;cursor:pointer}
+.cta-big:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,118,70,.32)}
+.cta-big .arrow{font-family:var(--font-en);font-weight:800}
+.cta-note{margin-top:12px;font-family:var(--font-en);font-size:.76em;color:var(--ink-500);letter-spacing:.04em}
+
+/* ===== Format strip — the SAT-specific spec ===== */
+.format-strip{padding:36px 24px 8px;max-width:720px;margin:0 auto}
+.format-strip-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:var(--white);border:1px solid var(--paper);border-radius:14px;padding:22px 24px}
+.fs-item{text-align:center}
+.fs-num{font-family:var(--font-en);font-size:1.7em;font-weight:800;color:var(--green-deep);letter-spacing:-0.01em;line-height:1.1}
+.fs-label{font-family:var(--font-jp);font-size:.78em;color:var(--ink-500);margin-top:4px;line-height:1.45}
+
+/* ===== Benefits ===== */
+.benefits{padding:48px 24px 32px;max-width:720px;margin:0 auto}
+.benefits-head{text-align:center;margin-bottom:28px}
+.benefits-head h2{font-family:var(--font-jp);font-size:clamp(1.2em,2.6vw,1.5em);font-weight:800;color:var(--green-deep);line-height:1.4;letter-spacing:-0.005em}
+.benefits-head p{font-size:.88em;color:var(--ink-500);margin-top:6px}
+.benefit-list{display:flex;flex-direction:column;gap:12px}
+.benefit{display:flex;align-items:flex-start;gap:16px;background:var(--white);border:1px solid var(--paper);border-radius:14px;padding:18px 20px}
+.benefit .check{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.82em;font-weight:800;font-family:var(--font-en);margin-top:1px}
+.benefit-body strong{display:block;font-family:var(--font-jp);font-size:1em;font-weight:800;color:var(--green-deep);margin-bottom:2px;letter-spacing:-0.005em}
+.benefit-body span{display:block;font-size:.9em;color:var(--ink-700);line-height:1.7}
+
+/* ===== Mid-page CTA ===== */
+.mid-cta{padding:36px 24px 56px;max-width:720px;margin:0 auto;text-align:center}
+.mid-cta-card{background:var(--green-deep);color:var(--white);border-radius:18px;padding:40px 28px;box-shadow:0 14px 40px rgba(0,40,23,.16)}
+.mid-cta-card h2{font-family:var(--font-jp);font-size:clamp(1.2em,2.6vw,1.5em);font-weight:800;line-height:1.45;margin-bottom:8px;color:var(--white);letter-spacing:-0.005em}
+.mid-cta-card p{font-size:.92em;color:rgba(255,255,255,.78);margin-bottom:24px;line-height:1.8}
+.mid-cta-card .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 38px;background:var(--gold);color:var(--green-deep);border-radius:999px;text-decoration:none;font-weight:800;font-size:1.04em;font-family:var(--font-jp);box-shadow:0 8px 22px rgba(201,169,97,.28);transition:all .2s}
+.mid-cta-card .btn-gold:hover{background:#D9BA72;transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,169,97,.4)}
+.mid-cta-card .btn-gold .arrow{font-family:var(--font-en);font-weight:800}
+.mid-cta-card .small{margin-top:12px;font-family:var(--font-en);font-size:.74em;color:rgba(255,255,255,.55);letter-spacing:.04em}
+
+/* ===== Sibling apps strip ===== */
+.siblings{padding:18px 24px 64px;max-width:720px;margin:0 auto;text-align:center;border-top:1px solid var(--paper)}
+.siblings .pill{display:inline-block;font-family:var(--font-en);font-size:.7em;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green);background:rgba(0,118,70,.06);padding:5px 14px;border-radius:999px;margin:36px 0 14px}
+.siblings h2{font-family:var(--font-jp);font-size:clamp(1.15em,2.4vw,1.35em);font-weight:800;color:var(--green-deep);line-height:1.45;margin-bottom:8px;letter-spacing:-0.005em}
+.siblings p{font-size:.9em;color:var(--ink-700);line-height:1.8;max-width:520px;margin:0 auto 18px}
+.siblings-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:transparent;color:var(--green-dark);border:1.5px solid var(--green);border-radius:999px;text-decoration:none;font-weight:700;font-size:.9em;font-family:var(--font-jp);transition:all .2s}
+.siblings-cta:hover{background:var(--green);color:var(--white)}
+
+/* ===== Footer ===== */
+.footer{background:var(--cream);padding:28px 24px;border-top:1px solid var(--paper)}
+.footer-inner{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--font-en);font-size:.76em;color:var(--ink-500)}
+.footer a{color:var(--green-dark);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@media(max-width:560px){
+  .hero{padding:48px 20px 24px}
+  .benefits,.mid-cta,.siblings,.format-strip{padding-left:20px;padding-right:20px}
+  .mid-cta-card{padding:32px 22px}
+  .cta-big{padding:16px 30px;font-size:1em}
+  .nav-link{padding:10px 6px}
+  .format-strip-inner{grid-template-columns:1fr;gap:12px}
+  .fs-item{border-bottom:1px solid var(--paper);padding-bottom:10px}
+  .fs-item:last-child{border-bottom:none;padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img class="brand-logo brand-logo--xs" src="assets/tck-logo.png" alt="TCK Workshop">
+      <span class="brand-name">TCK Workshop</span>
+      <span class="brand-demo-pill">Demo</span>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-link">ログイン</a>
+      <a href="login.html" class="nav-cta">無料で始める</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <span class="hero-eyebrow">TCK Reps · for SAT® Reading &amp; Writing</span>
+  <h1>本番と同じ形式で、<br><span class="accent">Digital SAT®</span> 対策を始める。</h1>
+  <p class="lead">
+    1モジュール（27問・32分）の演習を無料で1セット。<br>
+    終了後は解説・誤答の罠分析・スキル別の弱点ブレイクダウン付き。
+  </p>
+  <a href="login.html" class="cta-big" id="heroCta">無料で始める <span class="arrow">→</span></a>
+  <p class="cta-note">No credit card · Sign up in 30 seconds</p>
+</section>
+
+<!-- ===== Format strip — the SAT-specific numbers up front ===== -->
+<section class="format-strip">
+  <div class="format-strip-inner">
+    <div class="fs-item">
+      <div class="fs-num">27</div>
+      <div class="fs-label">問／モジュール<br>Digital SAT 準拠</div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-num">32:00</div>
+      <div class="fs-label">セクションタイマー<br>残り 5 分で警告</div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-num">4</div>
+      <div class="fs-label">ドメイン横断<br>スキル別ブレイクダウン</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Benefits ===== -->
+<section class="benefits">
+  <div class="benefits-head">
+    <h2>無料アカウントでできること</h2>
+  </div>
+  <div class="benefit-list">
+    <div class="benefit">
+      <span class="check">✓</span>
+      <div class="benefit-body">
+        <strong>本番準拠の 1 モジュール（27 問・32 分）演習</strong>
+        <span>本番の Digital SAT と同じ問題数・制限時間で 1 セット体験。Flag for Review、問題ナビゲータ、自動提出まで再現。</span>
+      </div>
+    </div>
+    <div class="benefit">
+      <span class="check">✓</span>
+      <div class="benefit-body">
+        <strong>誤答ごとの罠分析（trap タグ + why）</strong>
+        <span>正解の根拠だけでなく、各選択肢が「なぜ引っかかるのか」を罠コードと日本語の解説で言語化。次に同じ罠を踏まない学習に直結します。</span>
+      </div>
+    </div>
+    <div class="benefit">
+      <span class="check">✓</span>
+      <div class="benefit-body">
+        <strong>ドメイン × スキル別の弱点ブレイクダウン</strong>
+        <span>Information &amp; Ideas / Craft &amp; Structure / Expression of Ideas / Standard English Conventions の 4 ドメインに加え、SEC は所有格・修飾語位置・主述一致などサブタイプ単位で可視化。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Mid-page CTA ===== -->
+<section class="mid-cta">
+  <div class="mid-cta-card">
+    <h2>まずは試してみる。</h2>
+    <p>30秒で登録 → メニューから Module 1 を開いて 27 問にチャレンジ。<br>解き終わったら、誤答の罠と弱点スキルが一目で分かります。</p>
+    <a href="login.html" class="btn-gold">無料で始める <span class="arrow">→</span></a>
+    <p class="small">No credit card · Free forever</p>
+  </div>
+</section>
+
+<!-- ===== TCK Reps series sibling — link to TOEFL demo ===== -->
+<section class="siblings">
+  <span class="pill">TCK Reps シリーズ</span>
+  <h2>TOEFL 対策も同じシリーズで。</h2>
+  <p>TCK Workshop は TOEFL 用の Reps Demo（Reading・Listening・Writing・Speaking 全 12 タスク）も無料公開しています。同じアカウントでログイン可能です。</p>
+  <a href="https://apps.tckworkshop.co.jp/toefl-reps-demo/" class="siblings-cta" target="_blank" rel="noopener">TOEFL Reps Demo を開く →</a>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© TCK Workshop · TCK Reps for SAT (Demo)</span>
+    <span><a href="terms.html">利用規約</a> · <a href="privacy.html">プライバシーポリシー</a> · <a href="https://tckwshop.com" target="_blank" rel="noopener">tckwshop.com</a></span>
+  </div>
+</footer>
+
+<script>
+/* If already logged into the shared TCK Reps session, swap CTAs to menu. */
+(function(){
+  try {
+    var u = JSON.parse(sessionStorage.getItem('tck_demo_user'));
+    if (!u || !u.userId) return;
+    document.querySelectorAll('a[href="login.html"]').forEach(function(a){
+      a.setAttribute('href', 'menu.html');
+      var t = (a.textContent || '').trim();
+      if (t.indexOf('無料で始める') === 0) a.innerHTML = 'メニューを開く <span class="arrow">→</span>';
+      else if (t === 'ログイン') a.textContent = u.userName || 'メニュー';
+    });
+  } catch(e){}
+})();
+</script>
+
+<p class="tm-disclaimer" style="margin:0;padding:14px 20px;font-size:11px;line-height:1.65;color:#8a948f;text-align:center">SAT® is a registered trademark of the College Board, which is not affiliated with and does not endorse this product.</p>
+</body>
+</html>

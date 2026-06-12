@@ -1,0 +1,235 @@
+{
+  "test_id": "test1",
+  "module": 1,
+  "difficulty": "standard",
+  "title_en": "Module 1 — Test 1 (Sample)",
+  "title_jp": "Module 1 — Test 1（サンプル）",
+  "notes": "DRAFT / SAMPLE BANK — these 6 items exercise every render path the engine supports (plain passage, *emphasis*, Text 1/Text 2 cross-text via \\n, rhetorical synthesis with bullet notes, figure-backed item, and three distinct SEC subtypes). Replace with the real 27-question bank produced by SAT_RW_作問プロンプト_v1.md before shipping.",
+
+  "questions": [
+
+    {
+      "num": 1,
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "difficulty": "easy",
+      "passage": "Marine biologist Edith Widder has spent decades studying bioluminescence — the production of light by living organisms. Far from being a *rare* curiosity, she argues, the trait is one of the most common in the deep ocean, where the majority of species can produce some form of light.",
+      "stem": "As used in the text, what does the word \"rare\" most nearly mean?",
+      "figure": null,
+      "choices": [
+        "Undercooked.",
+        "Valuable.",
+        "Uncommon.",
+        "Delicate."
+      ],
+      "answer_index": 2,
+      "rationale": "Widder is correcting a presumed view of bioluminescence as a fringe phenomenon, then asserts the trait is actually *common* in the deep ocean. The contrast (\"Far from being … one of the most common\") requires \"rare\" to mean the opposite of \"common\" — i.e., \"uncommon.\"",
+      "distractors": {
+        "0": { "trap": "T7", "why": "\"Undercooked\" is a literal sense of \"rare\" (as for steak) but is irrelevant in a biology passage. Choosing it means matching dictionary entries rather than reading the contrast in the passage." },
+        "1": { "trap": "T6", "why": "Bioluminescence may well be \"valuable\" scientifically, but \"valuable\" does not produce the contrast the sentence sets up against \"common.\" The author is not arguing about worth." },
+        "3": { "trap": "T7", "why": "\"Delicate\" picks up a connotation occasionally attached to \"rare\" specimens (e.g., a \"rare\" flower) but does not fit the opposition with \"common\" that the sentence demands." }
+      }
+    },
+
+    {
+      "num": 2,
+      "domain": "Information and Ideas",
+      "skill": "Central Ideas and Details",
+      "difficulty": "medium",
+      "passage": "Historians long credited the printing press alone with the rapid spread of literacy in early modern Europe. Recent scholarship complicates that picture. While Gutenberg's invention undoubtedly lowered the per-page cost of books, scholars now point to a parallel and arguably more decisive factor: the emergence of vernacular schoolrooms — small, often church-affiliated institutions that taught reading in local languages rather than Latin. Without these schoolrooms, the argument runs, cheap books would have had few readers prepared to use them.",
+      "stem": "Which choice best states the main idea of the text?",
+      "figure": null,
+      "choices": [
+        "The printing press is no longer believed to have contributed to the spread of literacy in early modern Europe.",
+        "Recent scholarship argues that the spread of literacy in early modern Europe depended on vernacular schoolrooms as well as on the printing press.",
+        "Vernacular schoolrooms taught reading more effectively than the printing press allowed.",
+        "Early modern European readers preferred books in local languages to those in Latin."
+      ],
+      "answer_index": 1,
+      "rationale": "The passage opens with the older view (printing press alone) and then advances a corrective: vernacular schoolrooms were a *parallel and arguably more decisive* factor. The main idea joins the two — not press alone, but press together with schoolrooms.",
+      "distractors": {
+        "0": { "trap": "T5", "why": "Overstates the revision. The passage says press \"undoubtedly\" lowered cost; it does not claim the press played no role. \"No longer believed to have contributed\" is too strong." },
+        "2": { "trap": "T8", "why": "Confused comparison. The passage compares two *factors* in literacy's spread; it does not rank classroom teaching against printing as instructional methods." },
+        "3": { "trap": "T6", "why": "An incidental detail (instruction was in local languages) is promoted to the main idea. The author's central claim is about literacy's spread, not reader preference." }
+      }
+    },
+
+    {
+      "num": 3,
+      "domain": "Craft and Structure",
+      "skill": "Cross-Text Connections",
+      "difficulty": "hard",
+      "passage": "Text 1\nIn debates over urban housing, economists have generally argued that the cleanest way to lower rents is to permit more construction. New supply, the argument goes, eases competition for existing units and pulls prices downward across the market.\nText 2\nSociologist Mei Lin counters that recent studies in a half-dozen U.S. cities show new market-rate buildings concentrating in higher-income areas, where additional supply does little for the lower-income renters most exposed to rising rents. The aggregate logic of supply and demand, she suggests, can mask very uneven effects across neighborhoods.",
+      "stem": "Based on the texts, how would Lin (Text 2) most likely respond to the argument presented in Text 1?",
+      "figure": null,
+      "choices": [
+        "By agreeing that new construction is the most effective way to lower rents in any neighborhood.",
+        "By conceding the market-wide logic but arguing that it understates uneven local impacts.",
+        "By denying that supply has any effect on prices in housing markets.",
+        "By proposing that lower-income renters relocate to higher-income neighborhoods."
+      ],
+      "answer_index": 1,
+      "rationale": "Lin does not reject Text 1's market-wide reasoning outright (\"the aggregate logic of supply and demand … can mask\"); she accepts it as aggregate but argues it conceals uneven neighborhood-level effects. \"Conceding the market-wide logic but arguing it understates uneven local impacts\" captures both halves.",
+      "distractors": {
+        "0": { "trap": "T3", "why": "Reversed. Lin is challenging, not endorsing, the supply-side framing as a complete answer." },
+        "2": { "trap": "T5", "why": "Too extreme. Lin does not deny supply has any effect — she questions where the effect lands. \"No effect\" goes further than the passage." },
+        "3": { "trap": "T1", "why": "Out of scope. Lin says nothing about where renters should live; she diagnoses an unequal distribution of benefits." }
+      }
+    },
+
+    {
+      "num": 4,
+      "domain": "Information and Ideas",
+      "skill": "Command of Evidence (Quantitative)",
+      "difficulty": "medium",
+      "passage": "Agronomists in a 2024 field trial compared four soil-management practices on identical wheat plots in eastern Washington, measuring soil organic carbon (SOC) — a proxy for long-term soil health — after three growing seasons. The team hypothesized that practices reducing mechanical disturbance would retain the most SOC.",
+      "stem": "Which choice best uses the data in the graph to support the team's hypothesis?",
+      "figure": "soil_carbon",
+      "choices": [
+        "Conventional tillage retained the highest SOC at 28 g/kg.",
+        "No-till retained the highest SOC at 41 g/kg, while conventional tillage retained the lowest at 28 g/kg.",
+        "Cover crop plots retained more SOC than conventional tillage but less than reduced tillage.",
+        "All four practices retained roughly the same level of SOC, around 35 g/kg."
+      ],
+      "answer_index": 1,
+      "rationale": "The hypothesis predicts that less mechanical disturbance → more retained SOC. The graph shows no-till (least disturbance) at 41 g/kg and conventional tillage (most disturbance) at 28 g/kg — i.e., the lowest-disturbance practice retained the most SOC and the highest-disturbance practice the least. That is the cleanest support for the hypothesis.",
+      "distractors": {
+        "0": { "trap": "T3", "why": "Reverses the data. Conventional tillage is the lowest bar (28), not the highest." },
+        "2": { "trap": "T2", "why": "Half-right at best. Cover crop (36) does exceed conventional tillage (28), but reduced tillage (33) is lower than cover crop, not higher — the ordering is wrong, and the choice does not actually speak to the hypothesis about disturbance." },
+        "3": { "trap": "T5", "why": "Contradicts the graph: the four bars span 28 to 41, a 13-point gap, not \"roughly the same.\" The choice would have to be supported by similar values, which the figure does not show." }
+      }
+    },
+
+    {
+      "num": 5,
+      "domain": "Expression of Ideas",
+      "skill": "Rhetorical Synthesis",
+      "difficulty": "medium",
+      "passage": "While researching the Atacama Desert in Chile, a student took the following notes:\n\n- The Atacama is one of the driest non-polar deserts on Earth.\n- Some weather stations there have recorded no measurable rainfall for decades.\n- NASA tests Mars-rover instruments in the Atacama because the soil chemistry resembles Martian regolith.\n- The 2023 Mars Sample Return mission used Atacama field sites to calibrate its sampling protocols.\n- Calibration runs reduced sampling errors in the mission's first operational phase by an estimated 18 percent.",
+      "stem": "The student wants to emphasize the practical value of the Atacama for the Mars Sample Return mission. Which choice most effectively uses the relevant information from the notes to accomplish this goal?",
+      "figure": null,
+      "choices": [
+        "The Atacama Desert in Chile is one of the driest non-polar deserts on Earth, with some weather stations recording no measurable rainfall for decades.",
+        "Because the Atacama's soil chemistry resembles Martian regolith, NASA tests Mars-rover instruments there.",
+        "Field calibrations in the Atacama for the 2023 Mars Sample Return mission reduced sampling errors in the mission's first operational phase by an estimated 18 percent.",
+        "Although the Atacama is one of the driest non-polar deserts on Earth, NASA uses it as a testing ground for Mars instruments."
+      ],
+      "answer_index": 2,
+      "rationale": "The student's stated goal is to *emphasize the practical value* of the Atacama for the *Mars Sample Return mission* specifically. Only choice C names that mission, names a concrete benefit (calibration), and quantifies the value (an 18 percent reduction in sampling error). The other options either omit the mission, omit the practical outcome, or both.",
+      "distractors": {
+        "0": { "trap": "T6", "why": "Describes the desert's dryness — true and from the notes, but neither names the Mars Sample Return mission nor mentions any practical value for it." },
+        "1": { "trap": "T6", "why": "Names NASA's instrument testing — closer — but does not connect to the *Mars Sample Return mission* the student wants to emphasize, and gives no quantified or otherwise practical outcome." },
+        "3": { "trap": "T7", "why": "Combines two true facts but the framing (\"Although … driest, NASA uses it\") is contrastive rhetoric, not emphasis of practical mission value. The mission name is absent." }
+      }
+    },
+
+    {
+      "num": 6,
+      "domain": "Standard English Conventions",
+      "skill": "Subject-Verb Agreement",
+      "difficulty": "easy",
+      "passage": "A team of researchers studying coral reefs ______ that even brief marine heat waves can trigger lasting changes in reef community composition.",
+      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "figure": null,
+      "choices": [
+        "have shown",
+        "show",
+        "has shown",
+        "are showing"
+      ],
+      "answer_index": 2,
+      "rationale": "The subject is the singular noun \"team,\" not the plural \"researchers\" inside the modifying phrase \"of researchers studying coral reefs.\" A singular subject takes a singular verb form: \"has shown.\"",
+      "distractors": {
+        "0": { "trap": "SVA-INTERVENING-PLURAL", "why": "Mistakes the nearer plural noun \"researchers\" (inside a prepositional phrase) for the actual subject. The subject is the singular head noun \"team.\"" },
+        "1": { "trap": "SVA-INTERVENING-PLURAL", "why": "Same root error as A — treating \"researchers\" as the subject. \"Show\" is also a present-tense form that doesn't fit the report-of-finding context the sentence sets up." },
+        "3": { "trap": "SVA-INTERVENING-PLURAL", "why": "\"Are showing\" agrees with a plural subject, but the head noun is singular (\"team\"). The progressive aspect is also a poor fit for a claim about what the team's research has already established." }
+      }
+    },
+
+    {
+      "num": 7,
+      "domain": "Standard English Conventions",
+      "skill": "Possessive Apostrophe",
+      "difficulty": "medium",
+      "passage": "After the storm passed, the city assessed the damage to the ______ historic waterfront district.",
+      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "figure": null,
+      "choices": [
+        "citys'",
+        "citys",
+        "city's",
+        "cities"
+      ],
+      "answer_index": 2,
+      "rationale": "One city possesses one historic waterfront district: a singular possessive, formed by adding apostrophe + s to the singular noun. \"City's\" is correct.",
+      "distractors": {
+        "0": { "trap": "POSS-MISPLACED-APOS", "why": "Places the apostrophe after a non-existent plural \"citys.\" Plural possessive would require the correctly spelled plural \"cities'\" — and the context is singular anyway." },
+        "1": { "trap": "POSS-NO-APOS", "why": "Omits the apostrophe entirely and is also a misspelled plural. No possessive is formed." },
+        "3": { "trap": "POSS-PLURAL-NOT-POSS", "why": "\"Cities\" is the correct plural of \"city\" but signals no possession; the sentence requires the district to belong to the city." }
+      }
+    },
+
+    {
+      "num": 8,
+      "domain": "Standard English Conventions",
+      "skill": "Modifier Placement",
+      "difficulty": "medium",
+      "passage": "______ the violinist began the piece with an unusual variation on the opening theme.",
+      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "figure": null,
+      "choices": [
+        "Walking onto the stage in a black gown,",
+        "Walking onto the stage in a black gown by the violinist,",
+        "Walked onto the stage in a black gown,",
+        "After walking onto the stage in a black gown by the audience,"
+      ],
+      "answer_index": 0,
+      "rationale": "The introductory participial phrase \"Walking onto the stage in a black gown\" must modify the subject of the main clause. The subject is \"the violinist\" — the person who walked onto the stage — so the unmarked participial phrase attaches cleanly to her.",
+      "distractors": {
+        "1": { "trap": "MOD-DOUBLE-AGENT", "why": "Tries to name the agent twice — once inside the modifier (\"by the violinist\") and again as the main-clause subject. The result is ungrammatical and redundant." },
+        "2": { "trap": "MOD-TENSE-MISMATCH", "why": "\"Walked\" is a finite past-tense verb, not a participle, so the result is a comma splice between two independent clauses, not a modifier attaching to a subject." },
+        "3": { "trap": "MOD-DANGLING", "why": "The agent named inside the modifier (\"by the audience\") doesn't match the main-clause subject (\"the violinist\"). Classic dangling/illogically attached modifier." }
+      }
+    },
+
+    {
+      "num": 9,
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "difficulty": "easy",
+      "passage": "Most introductory chemistry texts present the periodic table as the unambiguous discovery of Dmitri Mendeleev in 1869. ______ several near-contemporaries — among them Julius Lothar Meyer in Germany — had independently arrived at strikingly similar arrangements within the same decade.",
+      "stem": "Which choice completes the text with the most logical transition?",
+      "figure": null,
+      "choices": [
+        "For instance,",
+        "In fact,",
+        "Therefore,",
+        "Similarly,"
+      ],
+      "answer_index": 1,
+      "rationale": "The first sentence presents a tidy textbook view; the second sentence complicates that view by naming rivals who arrived at similar arrangements. \"In fact,\" introduces a corrective elaboration that pushes against the prior generalization — exactly the relationship the two sentences have.",
+      "distractors": {
+        "0": { "trap": "TRANS-EXAMPLE-NOT-EXAMPLE", "why": "\"For instance\" would introduce a supporting example of the prior claim. Meyer's case is not an example of Mendeleev's sole discovery; it's a counterexample." },
+        "2": { "trap": "TRANS-CAUSE-NOT-CAUSE", "why": "\"Therefore\" implies the second sentence follows logically from the first. The sentences are in tension, not in cause-and-effect." },
+        "3": { "trap": "TRANS-COMPARE-NOT-COMPARE", "why": "\"Similarly\" presumes the two sentences make parallel observations. Here the second sentence revises the first rather than parallels it." }
+      }
+    }
+
+  ],
+
+  "figures": [
+    {
+      "id": "soil_carbon",
+      "type": "bar",
+      "title": "Soil Organic Carbon (SOC) after 3 growing seasons, by soil-management practice",
+      "x_label": "Soil-management practice",
+      "y_label": "Soil organic carbon (g/kg)",
+      "series": [
+        { "label": "Conventional tillage", "value": 28 },
+        { "label": "Reduced tillage",      "value": 33 },
+        { "label": "Cover crop",           "value": 36 },
+        { "label": "No-till",              "value": 41 }
+      ]
+    }
+  ]
+}

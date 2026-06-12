@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="shortcut icon" href="../assets/favicon.ico">
+<title>TCK Reps for SAT (Demo) — Module 2 · Test 1 · Results</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ============================================================
+   Results-page specific layout — keep it inside this file so
+   style.css stays focused on the live practice chrome.
+   ============================================================ */
+.results-shell{
+  max-width:920px;
+  margin:0 auto;
+  padding:24px 24px 60px;
+  width:100%;
+}
+
+.results-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+.results-back{
+  font-family:var(--font-en);
+  font-size:.82em;font-weight:700;
+  color:var(--green-dark);
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.results-back:hover{color:var(--green-deep)}
+.results-eyebrow{
+  font-family:var(--font-en);
+  font-size:.7em;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green);
+}
+
+/* ---- Score banner ---- */
+.score-banner{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:14px;
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:18px;
+  padding:24px 26px;
+  box-shadow:0 8px 24px rgba(0,40,23,.06);
+}
+.score-banner .sb-block{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.score-banner .sb-label{
+  font-family:var(--font-en);
+  font-size:.7em;font-weight:700;
+  color:var(--ink-500);letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.score-banner .sb-value{
+  font-family:var(--font-en);
+  font-size:2.6em;font-weight:800;
+  color:var(--green-deep);letter-spacing:-0.02em;line-height:1;
+}
+.score-banner .sb-value .sb-of{font-size:.42em;font-weight:600;color:var(--ink-500);margin-left:6px}
+.score-banner .sb-sub{
+  font-family:var(--font-jp);
+  font-size:.84em;color:var(--ink-500);
+  margin-top:6px;line-height:1.5;
+}
+.score-banner .sb-scaled .sb-value{color:var(--green-deep)}
+.score-banner .sb-scaled.unset .sb-value{color:var(--ink-500);font-size:1.4em;font-weight:700}
+.score-banner .sb-scaled.unset .sb-sub{color:var(--ink-500);font-style:italic}
+.score-banner .sb-flag{
+  display:inline-block;
+  font-family:var(--font-en);
+  font-size:.66em;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;
+  margin-top:8px;
+  background:var(--terracotta);color:#fff;
+  align-self:flex-start;
+}
+@media (max-width:680px){
+  .score-banner{grid-template-columns:1fr 1fr;gap:18px;padding:20px}
+  .score-banner .sb-block:first-child{grid-column:1 / -1}
+  .score-banner .sb-value{font-size:2.2em}
+}
+
+/* ---- Section card (used for both breakdowns and review) ---- */
+.section-card{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:16px;
+  padding:22px 26px;
+  margin-top:18px;
+}
+.section-card h2{
+  font-family:var(--font-en);
+  font-size:1.05em;font-weight:800;
+  color:var(--green-deep);
+  letter-spacing:-0.01em;
+  margin:0 0 4px;
+}
+.section-card .section-sub{
+  font-family:var(--font-jp);
+  font-size:.84em;color:var(--ink-500);
+  margin:0 0 18px;line-height:1.6;
+}
+
+/* ---- Horizontal bar list ---- */
+.bar-list{display:flex;flex-direction:column;gap:10px}
+.bar-row{display:grid;grid-template-columns:minmax(140px,28%) 1fr auto;gap:14px;align-items:center}
+.bar-label{
+  font-family:var(--font-jp),var(--font-en);
+  font-size:.9em;font-weight:600;
+  color:var(--ink-900);
+  line-height:1.4;
+}
+.bar-label .bar-label-skill{
+  display:block;
+  font-family:var(--font-en);
+  font-size:.78em;font-weight:600;
+  color:var(--ink-500);
+  letter-spacing:.02em;
+  margin-top:1px;
+}
+.bar-track{
+  position:relative;
+  height:22px;
+  background:var(--paper);
+  border-radius:6px;
+  overflow:hidden;
+}
+.bar-fill{
+  position:absolute;left:0;top:0;height:100%;
+  background:var(--green);
+  border-radius:6px;
+  transition:width .4s ease;
+}
+.bar-fill.low{background:var(--terracotta)}
+.bar-fill.mid{background:var(--gold)}
+.bar-fill.high{background:var(--green)}
+.bar-value{
+  font-family:var(--font-en);
+  font-size:.86em;font-weight:700;
+  color:var(--ink-900);
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.bar-value .bar-value-pct{color:var(--ink-500);font-weight:600;margin-left:6px}
+
+.section-card .group-label{
+  font-family:var(--font-en);
+  font-size:.7em;font-weight:800;
+  color:var(--green);letter-spacing:.14em;text-transform:uppercase;
+  margin:18px 0 10px;
+  padding-bottom:6px;
+  border-bottom:1px dashed var(--paper);
+}
+
+/* ---- Review cards (per question) ---- */
+.review-list{display:flex;flex-direction:column;gap:12px}
+.review-card{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:12px;
+  overflow:hidden;
+}
+.review-card.correct{border-left:4px solid var(--green)}
+.review-card.wrong{border-left:4px solid var(--terracotta)}
+.review-card.unanswered{border-left:4px solid var(--ink-200)}
+.review-head{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:14px 18px;
+  cursor:pointer;
+  background:var(--white);
+  transition:background .15s;
+}
+.review-head:hover{background:#FAFCFA}
+.review-head-left{display:flex;align-items:center;gap:12px;min-width:0}
+.review-num{
+  font-family:var(--font-en);font-weight:800;font-size:.92em;
+  background:var(--green-deep);color:#fff;
+  padding:4px 10px;border-radius:6px;
+  letter-spacing:.04em;
+  flex-shrink:0;
+}
+.review-meta{
+  display:flex;flex-direction:column;min-width:0;
+}
+.review-meta .rm-skill{
+  font-family:var(--font-en);font-size:.86em;font-weight:700;
+  color:var(--ink-900);letter-spacing:-0.005em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.review-meta .rm-domain{
+  font-family:var(--font-en);font-size:.74em;
+  color:var(--ink-500);font-weight:600;
+}
+.review-status{
+  display:flex;align-items:center;gap:8px;flex-shrink:0;
+  font-family:var(--font-en);font-size:.78em;font-weight:700;
+}
+.status-tag{padding:4px 10px;border-radius:999px;letter-spacing:.04em}
+.status-tag.correct{background:rgba(0,118,70,.12);color:var(--green-dark)}
+.status-tag.wrong{background:rgba(184,92,60,.12);color:var(--terracotta)}
+.status-tag.unanswered{background:var(--paper);color:var(--ink-500)}
+.status-tag.flag{background:rgba(201,169,97,.2);color:#856319}
+.review-toggle{
+  font-family:var(--font-en);font-size:.78em;font-weight:700;
+  color:var(--green-dark);
+  background:transparent;border:none;
+  cursor:pointer;padding:4px 8px;
+}
+
+.review-body{
+  border-top:1px solid var(--paper);
+  padding:18px 22px 22px;
+  background:var(--cream);
+  display:none;
+}
+.review-card.open .review-body{display:block}
+.review-card.open .review-toggle::after{content:" ▴"}
+.review-card .review-toggle::after{content:" ▾"}
+
+.rv-passage{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:8px;
+  padding:14px 18px;
+  font-family:Georgia,"Iowan Old Style",serif;
+  font-size:15.5px;
+  line-height:1.7;
+  color:var(--ink-900);
+  margin-bottom:14px;
+}
+.rv-passage p{margin:0 0 .8em}
+.rv-passage em.emph{font-style:italic;background:linear-gradient(transparent 60%,rgba(201,169,97,.4) 60%)}
+.rv-passage .ct-label{
+  display:inline-block;
+  font-family:var(--font-en);font-size:.74em;font-weight:800;
+  color:var(--green);letter-spacing:.12em;text-transform:uppercase;
+  margin:.6em 0 .3em;
+  padding:2px 7px;background:rgba(0,118,70,.08);border-radius:4px;
+}
+.rv-passage .note-bullets{list-style:none;padding:0;margin:0 0 .6em}
+.rv-passage .note-bullets li{padding:4px 0 4px 18px;position:relative}
+.rv-passage .note-bullets li::before{content:"•";color:var(--green);position:absolute;left:4px;top:4px;font-weight:800}
+.rv-figure{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:8px;
+  padding:14px 16px;
+  margin-bottom:14px;
+}
+.rv-figure .figure-title{
+  font-family:var(--font-en);font-size:.82em;font-weight:700;
+  color:var(--green-deep);margin-bottom:10px;
+}
+
+.rv-stem{
+  font-family:var(--font-en),var(--font-jp);
+  font-size:.95em;font-weight:600;color:var(--ink-900);
+  margin-bottom:12px;line-height:1.55;
+}
+.rv-choices{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.rv-choice{
+  background:var(--white);
+  border:1.5px solid var(--paper);
+  border-radius:8px;
+  padding:10px 14px;
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.92em;line-height:1.5;
+}
+.rv-choice .rv-ch-letter{
+  flex-shrink:0;
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-weight:800;font-size:.84em;
+  background:var(--white);border:1.5px solid var(--ink-200);
+  color:var(--ink-500);
+}
+.rv-choice .rv-ch-text{flex:1;min-width:0;color:var(--ink-900)}
+.rv-choice .rv-ch-marker{
+  flex-shrink:0;
+  font-family:var(--font-en);font-size:.74em;font-weight:800;
+  letter-spacing:.06em;
+  padding:3px 8px;border-radius:999px;
+  white-space:nowrap;
+}
+.rv-choice.correct{border-color:var(--green);background:rgba(0,118,70,.05)}
+.rv-choice.correct .rv-ch-letter{background:var(--green);color:#fff;border-color:var(--green)}
+.rv-choice.correct .rv-ch-marker{background:rgba(0,118,70,.14);color:var(--green-dark)}
+.rv-choice.picked{border-color:var(--terracotta)}
+.rv-choice.picked.correct{border-color:var(--green)}
+.rv-choice.picked-wrong .rv-ch-marker{background:rgba(184,92,60,.14);color:var(--terracotta)}
+.rv-choice.picked-wrong .rv-ch-letter{background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
+
+.rv-rationale{
+  background:var(--white);
+  border-left:3px solid var(--green);
+  border-radius:6px;
+  padding:14px 18px;
+  font-family:var(--font-jp),var(--font-en);
+  font-size:.92em;line-height:1.7;color:var(--ink-900);
+  margin-bottom:16px;
+}
+.rv-rationale strong{color:var(--green-deep);font-weight:700}
+.rv-rationale .rv-rationale-label{
+  display:block;
+  font-family:var(--font-en);font-size:.7em;font-weight:800;
+  color:var(--green);letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+.rv-distractors{display:flex;flex-direction:column;gap:8px}
+.rv-distract{
+  background:var(--white);
+  border:1px solid var(--paper);
+  border-radius:8px;
+  padding:12px 14px 12px 14px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:12px;
+  align-items:flex-start;
+}
+.rv-distract .d-letter{
+  font-family:var(--font-en);font-weight:800;font-size:.88em;
+  color:var(--terracotta);
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(184,92,60,.1);border:1.5px solid rgba(184,92,60,.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.rv-distract .d-body{font-family:var(--font-jp),var(--font-en);font-size:.88em;line-height:1.65;color:var(--ink-700)}
+.rv-distract .trap-tag{
+  display:inline-block;
+  font-family:var(--font-en);font-size:.66em;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:var(--paper);color:var(--ink-700);
+  padding:2px 7px;border-radius:4px;
+  margin-right:8px;vertical-align:1px;
+}
+
+.results-actions{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  margin-top:26px;
+}
+.results-actions .tn-btn{padding:12px 22px;font-size:.92em}
+
+.meta-strip{
+  margin-top:14px;
+  font-family:var(--font-en);
+  font-size:.74em;color:var(--ink-500);
+  text-align:center;font-weight:500;
+  letter-spacing:.02em;
+}
+</style>
+</head>
+<body data-lang="jp">
+
+<header class="top-nav">
+  <div class="top-nav-left">
+    <div class="tn-brand">
+      <img src="../assets/tck-logo.png" alt="TCK Workshop">
+      <span class="tn-product">TCK Reps</span>
+    </div>
+    <span class="tn-divider"></span>
+    <span class="tn-section"><span class="jp">結果 &amp; 解説</span><span class="en">Results &amp; review</span></span>
+  </div>
+  <div class="top-nav-right">
+    <a class="tn-btn" href="../menu.html"><span class="jp">メニューへ戻る</span><span class="en">Back to menu</span></a>
+  </div>
+</header>
+
+<main class="results-shell" id="resultsShell">
+  <div class="results-header">
+    <a class="results-back" href="../menu.html">← <span class="jp">メニュー</span><span class="en">Menu</span></a>
+    <span class="results-eyebrow" id="resultsTitle">Module 2 · Test 1</span>
+  </div>
+
+  <!-- ===== Score banner ===== -->
+  <div class="score-banner" id="scoreBanner">
+    <div class="sb-block">
+      <span class="sb-label"><span class="jp">スコア（Raw）</span><span class="en">Raw score</span></span>
+      <span class="sb-value"><span id="sbRaw">–</span><span class="sb-of">/ <span id="sbTotal">–</span></span></span>
+      <span class="sb-sub" id="sbDuration"></span>
+    </div>
+    <div class="sb-block">
+      <span class="sb-label"><span class="jp">正答率</span><span class="en">Accuracy</span></span>
+      <span class="sb-value"><span id="sbPct">–</span><span class="sb-of">%</span></span>
+    </div>
+    <div class="sb-block sb-scaled" id="sbScaledBlock">
+      <span class="sb-label"><span class="jp">スケールスコア</span><span class="en">Scaled score</span></span>
+      <span class="sb-value" id="sbScaled">–</span>
+      <span class="sb-sub" id="sbScaledNote"></span>
+    </div>
+  </div>
+
+  <div class="meta-strip" id="metaStrip"></div>
+
+  <!-- ===== Domain breakdown ===== -->
+  <section class="section-card" id="domainCard">
+    <h2><span class="jp">ドメイン別の正答数</span><span class="en">Per-domain breakdown</span></h2>
+    <p class="section-sub">
+      <span class="jp">SAT R&amp;W は 4 ドメインから出題されます。どこで稼げて、どこで落としたかを一目で把握できます。</span>
+      <span class="en">SAT R&amp;W draws from four domains. Here's where you scored and where you lost points.</span>
+    </p>
+    <div class="bar-list" id="domainBars"></div>
+  </section>
+
+  <!-- ===== Skill breakdown (esp. SEC subtypes) ===== -->
+  <section class="section-card" id="skillCard">
+    <h2><span class="jp">スキル別の正答数</span><span class="en">Per-skill breakdown</span></h2>
+    <p class="section-sub">
+      <span class="jp">Standard English Conventions などはサブスキルに分解して表示します。たとえば「Subject-Verb Agreement は強いが Modifier Placement で落としている」のように弱点を特定できます。</span>
+      <span class="en">Domains like Standard English Conventions are broken into subskills so you can see, e.g., that subject–verb agreement is solid but modifier placement is weak.</span>
+    </p>
+    <div id="skillGroups"></div>
+  </section>
+
+  <!-- ===== Review list ===== -->
+  <section class="section-card">
+    <h2><span class="jp">解説・誤答分析</span><span class="en">Question-by-question review</span></h2>
+    <p class="section-sub">
+      <span class="jp">各問題をクリックして展開してください。正解の根拠と、各誤答が <em>なぜ引っかかるのか</em>（罠コード付き）を確認できます。</span>
+      <span class="en">Click any item to expand. You'll see the rationale for the correct answer and a per-distractor explanation tagged with the underlying trap.</span>
+    </p>
+    <div class="review-list" id="reviewList"></div>
+  </section>
+
+  <div class="results-actions">
+    <a class="tn-btn primary" href="../menu.html"><span class="jp">メニューへ戻る</span><span class="en">Back to menu</span></a>
+    <button type="button" class="tn-btn" id="retakeBtn"><span class="jp">同じテストをもう一度</span><span class="en">Retake this test</span></button>
+  </div>
+</main>
+
+<script src="../config.js"></script>
+<script src="../js/auth.js"></script>
+<script src="app.js"></script>
+<script src="results.js"></script>
+<script>
+  (function(){
+    var l = localStorage.getItem('tck_lang') || 'jp';
+    document.body.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l === 'jp' ? 'ja' : 'en');
+  })();
+  if (typeof Auth !== 'undefined') Auth.require();
+
+  SATResults.render({
+    testId: 'test1-m2',
+    dataUrl: '../data/test1-m2.json',
+    practiceUrl: 'test1-m2.html'
+  });
+</script>
+
+<p class="tm-disclaimer" style="margin:0;padding:14px 20px;font-size:11px;line-height:1.65;color:#8a948f;text-align:center">SAT® is a registered trademark of the College Board, which is not affiliated with and does not endorse this product.</p>
+</body>
+</html>

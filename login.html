@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TCK Reps for SAT (Demo) — Sign in">
+<meta property="og:description" content="無料体験版 — Digital SAT® Reading & Writing 形式の演習を1モジュールお試しいただけます。">
+<meta property="og:image" content="https://apps.tckworkshop.co.jp/sat-reps-demo/assets/ogp-card.jpg">
+<meta property="og:site_name" content="TCK Workshop · TCK Reps for SAT (Demo)">
+<title>TCK Reps for SAT (Demo) — Sign in</title>
+<link rel="stylesheet" href="css/common.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-en),var(--font-jp);background:var(--cream);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--ink-900);padding:20px;-webkit-font-smoothing:antialiased}
+
+.lang-floater{position:fixed;top:20px;right:20px;z-index:10}
+
+.card{background:var(--white);border:1px solid var(--paper);border-radius:18px;box-shadow:0 16px 48px rgba(0,40,23,.08);padding:48px 40px 38px;width:100%;max-width:440px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)}
+
+.brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.brand-name{font-family:var(--font-en);font-size:.74em;font-weight:800;color:var(--green);letter-spacing:.16em;text-transform:uppercase}
+.product-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin:-6px 0 7px;user-select:none;position:relative}
+.product-logo .pl-chip{font-family:var(--font-en);font-size:.78em;font-weight:900;letter-spacing:.14em;color:#fff;background:var(--green-deep);padding:4px 10px 3px;border-radius:4px;line-height:1}
+.product-logo .pl-name{font-family:var(--font-jp,var(--font-en));font-size:1.55em;font-weight:800;color:var(--green-deep);letter-spacing:-0.015em;line-height:1}
+.product-logo .pl-name .dot{color:var(--green);margin-left:2px}
+.product-logo .pl-demo{font-family:var(--font-en);font-size:.62em;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--terracotta);padding:3px 8px 2px;border-radius:3px;line-height:1;align-self:flex-start;margin-top:2px}
+.product-tagline{font-family:var(--font-jp);font-size:.78em;font-weight:600;color:var(--ink-500);text-align:center;margin:0 0 22px;line-height:1.55}
+.tm-disclaimer{max-width:480px}
+
+h1{font-family:var(--font-en);font-size:1.55em;font-weight:800;color:var(--green-deep);letter-spacing:-0.015em;line-height:1.2;margin-bottom:6px;text-align:center}
+h2{font-family:var(--font-en);font-size:1.35em;font-weight:800;color:var(--green-deep);letter-spacing:-0.015em;margin-bottom:6px}
+.sub{font-size:.86em;color:var(--ink-500);margin-bottom:24px;text-align:center;line-height:1.6}
+.view-sub{font-size:.84em;color:var(--ink-500);margin-bottom:18px;line-height:1.6}
+
+.field{text-align:left;margin-bottom:16px}
+.field label{display:block;font-family:var(--font-en);font-size:.72em;font-weight:700;color:var(--ink-500);margin-bottom:6px;letter-spacing:.08em;text-transform:uppercase}
+.field input{width:100%;padding:11px 14px;border:1.5px solid var(--paper);border-radius:10px;font-size:.94em;font-family:inherit;color:var(--ink-900);background:var(--cream);transition:all .18s}
+.field input:focus{outline:none;border-color:var(--green);background:var(--white);box-shadow:0 0 0 3px rgba(0,118,70,.10)}
+.field .hint{font-size:.74em;color:var(--ink-500);margin-top:4px}
+
+.btn{width:100%;padding:13px;border:none;border-radius:999px;font-size:.95em;font-weight:700;font-family:var(--font-en);cursor:pointer;transition:all .18s;letter-spacing:.02em}
+.btn-primary{background:var(--green);color:var(--white);margin-top:6px}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,118,70,.18)}
+.btn-primary:disabled{background:#A8C9B8;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-outline{background:var(--white);color:var(--green-dark);border:1.5px solid var(--green);margin-top:8px}
+.btn-outline:hover{background:var(--green);color:var(--white)}
+
+.msg{font-size:.84em;margin-top:12px;min-height:1.2em}
+.msg.error{color:var(--terracotta)}
+.msg.success{color:var(--green-dark)}
+
+.spinner{display:none;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.3);border-top-color:var(--white);border-radius:50%;animation:spin .6s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.divider{display:flex;align-items:center;text-align:center;color:var(--ink-500);font-size:.8em;margin:22px 0 14px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--paper)}
+.divider span{padding:0 12px}
+
+.links{margin-top:18px;font-size:.82em;text-align:center;color:var(--ink-500)}
+.links a{color:var(--green-dark);font-weight:600;text-decoration:none}
+.links a:hover{text-decoration:underline}
+
+.back-link{display:inline-flex;align-items:center;gap:5px;background:transparent;border:none;font-family:var(--font-en);font-size:.82em;color:var(--green-dark);cursor:pointer;padding:6px 0 16px;font-weight:600}
+.back-link:hover{color:var(--green-deep)}
+
+.view{display:none}
+.view.active{display:block}
+
+.gate-notice{background:#fff4e0;border:1px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:.84em;color:#7a5a1c;margin-bottom:16px;display:none}
+
+.consent-row{display:flex;align-items:flex-start;gap:9px;margin:2px 0 12px;cursor:pointer;text-align:left}
+.consent-row input[type="checkbox"]{margin-top:3px;width:16px;height:16px;accent-color:var(--green);flex-shrink:0;cursor:pointer}
+.consent-row .consent-text{font-size:.8em;color:var(--ink-500);line-height:1.6}
+.consent-row .consent-text a{color:var(--green-dark);font-weight:600}
+
+.shared-account{margin-top:18px;padding:14px 16px;background:var(--cream);border:1px dashed var(--ink-200);border-radius:10px;font-size:.78em;color:var(--ink-500);line-height:1.65;text-align:center}
+.shared-account strong{color:var(--green-dark);font-weight:700}
+</style>
+</head>
+<body data-lang="jp">
+
+<div class="lang-floater">
+  <div class="tck-lang-toggle">
+    <button type="button" data-lang-btn="jp" class="active">日本語</button>
+    <button type="button" data-lang-btn="en">EN</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="brand">
+    <img class="brand-logo" src="assets/tck-logo.png" alt="TCK Workshop">
+    <span class="brand-name">TCK Workshop</span>
+  </div>
+  <div class="product-logo" aria-label="TCK Reps for SAT">
+    <span class="pl-chip">TCK</span>
+    <span class="pl-name">Reps<span class="dot">.</span></span>
+    <span class="pl-demo">Demo</span>
+  </div>
+  <p class="product-tagline"><span class="jp">for SAT® — Digital SAT® Reading &amp; Writing 形式の演習 無料体験版</span><span class="en">for the SAT® — Digital SAT® Reading &amp; Writing practice, free trial</span></p>
+
+  <div class="gate-notice" id="gateNotice">
+    <span class="jp">先にログインまたはアカウント作成が必要です。</span>
+    <span class="en">Please sign in or create an account first.</span>
+  </div>
+
+  <!-- ===== LOGIN VIEW ===== -->
+  <div class="view active" id="viewLogin">
+    <h1><span class="jp">ようこそ</span><span class="en">Welcome back</span></h1>
+    <p class="sub"><span class="jp">無料体験版にログインして、続きから学習を再開しましょう。</span><span class="en">Sign in to your free trial and pick up where you left off.</span></p>
+    <div class="field">
+      <label><span class="jp">ID または メールアドレス</span><span class="en">ID or Email</span></label>
+      <input type="text" id="loginEmail" autocomplete="username">
+    </div>
+    <div class="field">
+      <label><span class="jp">パスワード</span><span class="en">Password</span></label>
+      <input type="password" id="loginPass" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" id="btnLogin" onclick="doLogin()">
+      <span class="btn-text"><span class="jp">ログイン</span><span class="en">Sign in</span></span>
+      <div class="spinner" id="spinLogin"></div>
+    </button>
+    <div class="msg error" id="errLogin"></div>
+
+    <div class="divider"><span><span class="jp">はじめての方は</span><span class="en">New here?</span></span></div>
+    <button class="btn btn-outline" onclick="showView('viewRegister')">
+      <span class="jp">無料アカウントを作成</span><span class="en">Create a free account</span>
+    </button>
+
+    <div class="links">
+      <a href="#" onclick="showView('viewRecover');return false;">
+        <span class="jp">パスワードを忘れた方</span><span class="en">Forgot your password?</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== REGISTER VIEW ===== -->
+  <div class="view" id="viewRegister">
+    <button class="back-link" onclick="showView('viewLogin')">
+      ← <span class="jp">ログインに戻る</span><span class="en">Back to sign in</span>
+    </button>
+    <h2><span class="jp">無料アカウントを作成</span><span class="en">Create your free account</span></h2>
+    <p class="view-sub"><span class="jp">30秒で完了。クレジットカード不要。</span><span class="en">Takes 30 seconds. No credit card required.</span></p>
+    <div class="field">
+      <label><span class="jp">お名前</span><span class="en">Name</span></label>
+      <input type="text" id="regName">
+    </div>
+    <div class="field">
+      <label><span class="jp">メールアドレス</span><span class="en">Email</span></label>
+      <input type="email" id="regEmail" autocomplete="email">
+      <div class="hint"><span class="jp">パスワード再発行時に使用します</span><span class="en">Used for password recovery</span></div>
+    </div>
+    <div class="field">
+      <label><span class="jp">パスワード</span><span class="en">Password</span></label>
+      <input type="password" id="regPass" autocomplete="new-password">
+      <div class="hint"><span class="jp">4文字以上</span><span class="en">At least 4 characters</span></div>
+    </div>
+    <label class="consent-row" for="regConsent">
+      <input type="checkbox" id="regConsent">
+      <span class="consent-text">
+        <span class="jp"><a href="terms.html" target="_blank" rel="noopener">利用規約</a>と<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span>
+        <span class="en">I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </span>
+    </label>
+    <button class="btn btn-primary" id="btnRegister" onclick="doRegister()">
+      <span class="btn-text"><span class="jp">登録して体験スタート</span><span class="en">Register and start</span></span>
+      <div class="spinner" id="spinReg"></div>
+    </button>
+    <div class="msg error" id="errReg"></div>
+    <div class="msg success" id="succReg"></div>
+  </div>
+
+  <!-- ===== RECOVER VIEW ===== -->
+  <div class="view" id="viewRecover">
+    <button class="back-link" onclick="showView('viewLogin')">
+      ← <span class="jp">ログインに戻る</span><span class="en">Back to sign in</span>
+    </button>
+    <h2><span class="jp">パスワードの再発行</span><span class="en">Recover your password</span></h2>
+    <p class="view-sub"><span class="jp">登録メールアドレスに仮パスワードを送信します。</span><span class="en">We'll email a temporary password to your registered address.</span></p>
+    <div class="field">
+      <label><span class="jp">メールアドレス</span><span class="en">Email</span></label>
+      <input type="email" id="recoverEmail" autocomplete="email">
+    </div>
+    <button class="btn btn-primary" id="btnRecover" onclick="doRecover()">
+      <span class="btn-text"><span class="jp">送信する</span><span class="en">Send</span></span>
+      <div class="spinner" id="spinRecover"></div>
+    </button>
+    <div class="msg error" id="errRecover"></div>
+    <div class="msg success" id="succRecover"></div>
+  </div>
+
+  <div class="shared-account">
+    <span class="jp"><strong>TCK Reps シリーズ共通アカウント</strong>です。TOEFL Reps Demo に登録済みの方は、そのままログインいただけます。</span>
+    <span class="en"><strong>Shared across TCK Reps series.</strong> If you already have a TOEFL Reps Demo account, sign in with the same credentials.</span>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script>
+(function(){
+  var stored = localStorage.getItem('tck_lang') || 'jp';
+  setLang(stored);
+  document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang-btn')); });
+  });
+  function setLang(l){
+    document.body.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l === 'jp' ? 'ja' : 'en');
+    localStorage.setItem('tck_lang', l);
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang-btn') === l);
+    });
+  }
+})();
+
+if (location.search.indexOf('gate=denied') !== -1) {
+  document.getElementById('gateNotice').style.display = 'block';
+}
+
+function showView(id) {
+  document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.msg').forEach(function(m){ m.textContent = ''; });
+}
+
+function setLoading(btnId, spinId, on) {
+  var b = document.getElementById(btnId);
+  var s = document.getElementById(spinId);
+  var t = b.querySelector('.btn-text');
+  b.disabled = on;
+  t.style.display = on ? 'none' : '';
+  s.style.display = on ? 'inline-block' : 'none';
+}
+
+function tMsg(jp, en) {
+  return (localStorage.getItem('tck_lang') || 'jp') === 'en' ? en : jp;
+}
+
+function saveAndGo(res, pass) {
+  Auth.setUser({ userId: res.userId, userName: res.userName, email: res.email || '' });
+  if (pass) sessionStorage.setItem('kickstart_pass', pass);
+  var ret = new URLSearchParams(location.search).get('return') || 'menu.html';
+  if (!/^[\w\-./?=&%]+$/.test(ret) || ret.indexOf('://') !== -1) ret = 'menu.html';
+  location.href = ret;
+}
+
+function doLogin() {
+  var email = document.getElementById('loginEmail').value.trim();
+  var pass  = document.getElementById('loginPass').value.trim();
+  var err   = document.getElementById('errLogin');
+  err.textContent = '';
+  if (!email || !pass) {
+    err.textContent = tMsg('メールアドレスとパスワードを入力してください。', 'Please enter your email and password.');
+    return;
+  }
+  setLoading('btnLogin', 'spinLogin', true);
+  Api.login(email, pass).then(function(r){
+    if (r.success) { saveAndGo(r, pass); return; }
+    var map = {
+      invalid_credentials: tMsg('メールアドレスまたはパスワードが正しくありません。', 'Wrong email or password.'),
+      temp_password_expired: tMsg('仮パスワードの有効期限が切れています。再度発行してください。', 'Temporary password expired. Please request a new one.'),
+      no_sheet: tMsg('サーバーエラー。少し時間をおいて再度お試しください。', 'Server error. Please try again shortly.')
+    };
+    err.textContent = map[r.error] || tMsg('ログインに失敗しました。', 'Login failed.');
+    setLoading('btnLogin', 'spinLogin', false);
+  }).catch(function(){
+    err.textContent = tMsg('通信エラーが発生しました。', 'A network error occurred.');
+    setLoading('btnLogin', 'spinLogin', false);
+  });
+}
+
+function doRegister() {
+  var name  = document.getElementById('regName').value.trim();
+  var email = document.getElementById('regEmail').value.trim();
+  var pass  = document.getElementById('regPass').value.trim();
+  var err   = document.getElementById('errReg');
+  var succ  = document.getElementById('succReg');
+  err.textContent = ''; succ.textContent = '';
+  if (!name || !email || !pass) {
+    err.textContent = tMsg('すべての項目を入力してください。', 'Please fill in every field.');
+    return;
+  }
+  if (pass.length < 4) {
+    err.textContent = tMsg('パスワードは4文字以上にしてください。', 'Password must be at least 4 characters.');
+    return;
+  }
+  if (!document.getElementById('regConsent').checked) {
+    err.textContent = tMsg('利用規約とプライバシーポリシーへの同意が必要です。', 'Please agree to the Terms of Service and Privacy Policy.');
+    return;
+  }
+  setLoading('btnRegister', 'spinReg', true);
+  Api.signup('', pass, name, email).then(function(r){
+    if (r.success) { saveAndGo(r, pass); return; }
+    var map = {
+      duplicate_email: tMsg('このメールアドレスはすでに登録されています。', 'This email is already registered.'),
+      invalid_email: tMsg('メールアドレスの形式が正しくありません。', 'Email format looks wrong.'),
+      pass_too_short: tMsg('パスワードは4文字以上にしてください。', 'Password must be at least 4 characters.'),
+      missing_params: tMsg('すべての項目を入力してください。', 'Please fill in every field.')
+    };
+    err.textContent = map[r.error] || tMsg('登録に失敗しました。', 'Registration failed.');
+    setLoading('btnRegister', 'spinReg', false);
+  }).catch(function(){
+    err.textContent = tMsg('通信エラーが発生しました。', 'A network error occurred.');
+    setLoading('btnRegister', 'spinReg', false);
+  });
+}
+
+function doRecover() {
+  var email = document.getElementById('recoverEmail').value.trim();
+  var err   = document.getElementById('errRecover');
+  var succ  = document.getElementById('succRecover');
+  err.textContent = ''; succ.textContent = '';
+  if (!email) {
+    err.textContent = tMsg('メールアドレスを入力してください。', 'Please enter your email.');
+    return;
+  }
+  setLoading('btnRecover', 'spinRecover', true);
+  Api.recover(email).then(function(r){
+    if (r.success) {
+      succ.textContent = tMsg('仮パスワードを送信しました。メールをご確認ください（24時間以内に変更してください）。', 'Temporary password sent. Check your inbox (change it within 24h).');
+      setLoading('btnRecover', 'spinRecover', false);
+      return;
+    }
+    var map = {
+      not_found: tMsg('このメールアドレスは登録されていません。', 'No account found for that email.'),
+      mail_failed: tMsg('メール送信に失敗しました。サポートまでご連絡ください。', 'Email send failed. Please contact support.')
+    };
+    err.textContent = map[r.error] || tMsg('送信に失敗しました。', 'Send failed.');
+    setLoading('btnRecover', 'spinRecover', false);
+  }).catch(function(){
+    err.textContent = tMsg('通信エラーが発生しました。', 'A network error occurred.');
+    setLoading('btnRecover', 'spinRecover', false);
+  });
+}
+
+['loginPass','regPass','recoverEmail'].forEach(function(id){
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter') return;
+    if (id === 'loginPass') doLogin();
+    else if (id === 'regPass') doRegister();
+    else doRecover();
+  });
+});
+</script>
+
+<p class="tm-disclaimer" style="margin:0;padding:14px 20px;font-size:11px;line-height:1.65;color:#8a948f;text-align:center">SAT® is a registered trademark of the College Board, which is not affiliated with and does not endorse this product.</p>
+</body>
+</html>
