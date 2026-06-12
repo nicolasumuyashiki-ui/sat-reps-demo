@@ -1,0 +1,946 @@
+{
+ "test_id": "test1-m2",
+ "module": 2,
+ "tier_mix": {
+  "Hard": 11,
+  "Super Hard": 16
+ },
+ "title_en": "Reading & Writing — Module 2",
+ "title_jp": "Reading & Writing — Module 2",
+ "questions": [
+  {
+   "num": 1,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "WiC, following-sentence hint: the dismissive 'mere clerks' framing plus 'anything but ______' is resolved by the next sentence's emphasis on detecting subtle patterns machines could not.",
+   "passage": "In the late nineteenth century, the women employed at the observatory were often dismissed as mere clerks. Yet their labor was anything but ______: classifying tens of thousands of stellar spectra required them to notice faint patterns that the automated instruments of the era simply could not detect.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "collaborative",
+    "lucrative",
+    "speculative",
+    "mechanical"
+   ],
+   "answer_index": 3,
+   "rationale": "The phrase 'anything but ______' must name what the dismissive 'mere clerks' view wrongly implies, and the following sentence stresses that the work demanded perceptive judgment beyond any machine. 'Mechanical'—rote, automatic—is exactly the quality the sentence denies.",
+   "distractors": {
+    "0": {
+     "trap": "T3",
+     "why": "'Collaborative' introduces teamwork, a dimension the passage never raises; the contrast is about skill versus routine, not group versus solo work."
+    },
+    "1": {
+     "trap": "T5",
+     "why": "'Lucrative' plausibly attaches to the clerk framing and pay, but the contrast set up by the next sentence is about skill, not earnings."
+    },
+    "2": {
+     "trap": "T8",
+     "why": "'Speculative' borrows scientific flavor but distorts the logic: the women's empirical classification was the opposite of guesswork, so denying it would make no sense."
+    }
+   }
+  },
+  {
+   "num": 2,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "WiC, enumeration-plus-restatement clue (deeper camouflage): a three-item list of sources and the appositive 'reconciling their piecemeal and often contradictory reports into a single coherent map' fix the blank as merging diverse accounts into one; the distractors borrow a scholarly register (abridged, corroborated) or reverse the sense (discarded).",
+   "passage": "Commissioned to chart the known world for Roger II of Sicily, the geographer al-Idrisi refused to lean on any single authority. Instead he ______ the divergent testimony of merchants, pilgrims, and sea captains, reconciling their piecemeal and often contradictory reports into a single coherent map of the inhabited earth.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "abridged",
+    "synthesized",
+    "corroborated",
+    "discarded"
+   ],
+   "answer_index": 1,
+   "rationale": "The blank names what al-Idrisi did with testimony from three kinds of travelers, and the appositive 'reconciling their piecemeal and often contradictory reports into a single coherent map' describes merging diverse, conflicting accounts into one whole. 'Synthesized' precisely captures combining separate sources into a unified product.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "'Abridged' borrows a bookish register and is plausible for lengthy reports, but it means to shorten or condense a single text, not to fuse many sources into one coherent whole."
+    },
+    "2": {
+     "trap": "T8",
+     "why": "'Corroborated' fits the scholarly setting and the mention of contradictory reports, yet it means to confirm something's truth with evidence, not to combine accounts into a single map."
+    },
+    "3": {
+     "trap": "T1",
+     "why": "'Discarded' reverses the action: al-Idrisi gathered and unified the testimony rather than throwing it out, which contradicts 'reconciling … into a single coherent map.'"
+    }
+   }
+  },
+  {
+   "num": 3,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "WiC, dash-restatement clue: the em-dash gloss frames volcanic lightning as 'a paradox that seems to defy' normal cloud physics, fixing the blank as a state of being baffled.",
+   "passage": "Volcanic lightning has long ______ observers—the very ash plume that blocks sunlight and grounds aircraft somehow throws off flashes rivaling a thunderstorm's, a paradox that seems to defy everything known about how clouds normally build up an electric charge.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "confounded",
+    "vindicated",
+    "deterred",
+    "captivated"
+   ],
+   "answer_index": 0,
+   "rationale": "The dash introduces a restatement calling the phenomenon 'a paradox that seems to defy' known physics, so the blank must convey that observers are baffled. 'Confounded' precisely names the puzzled, can't-explain-it response the restatement spells out.",
+   "distractors": {
+    "1": {
+     "trap": "T1",
+     "why": "'Vindicated' reverses the sense: the plume confirms nothing for observers but instead presents a contradiction they cannot account for."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "'Deterred' (discouraged from acting) is out of scope; nothing suggests observers are dissuaded, only that they are puzzled by a paradox."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "'Captivated' is tempting because such a sight does fascinate, but the dash restatement explains a puzzle, not mere allure, so 'confounded' fits the gloss far better."
+    }
+   }
+  },
+  {
+   "num": 4,
+   "domain": "Craft and Structure",
+   "skill": "Text Structure and Purpose",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "TSP main-purpose (deeper camouflage): the text builds from coffeehouses being 'never merely places to drink' to their function as an early cross-class public sphere, with the official closures offered as confirming evidence; the distractors elevate a supporting detail (the closures, the pastimes) or reverse the threat the authorities perceived.",
+   "passage": "When coffee reached Istanbul in the sixteenth century, the coffeehouses that proliferated were never merely places to drink. Patrons of widely varying rank gathered to trade news, recite verse, and dispute the day's politics, and because such talk flowed across the social boundaries that elsewhere held people apart, some historians cast these rooms as an early public sphere—an arena in which ordinary subjects, not only officials, helped shape opinion. The authorities seem to have drawn the same conclusion: they periodically ordered the houses shuttered, wary of the very exchanges the rooms made possible.",
+   "stem": "Which choice best describes the main purpose of the text?",
+   "figure": null,
+   "choices": [
+    "It documents the assorted measures Ottoman authorities took to suppress the gatherings they judged seditious.",
+    "It contends that coffeehouses posed little genuine threat to Ottoman authority despite the officials' anxieties.",
+    "It explains how coffeehouses became a venue for cross-class exchange whose influence the authorities themselves acknowledged.",
+    "It catalogs the varied pastimes—news, poetry, debate—that drew patrons of every rank to the coffeehouses."
+   ],
+   "answer_index": 2,
+   "rationale": "The passage moves from coffeehouses being 'never merely places to drink' to their role as an early public sphere of cross-class exchange and closes with rulers shuttering them—evidence that confirms their influence. The main purpose is to explain that function and the recognition it drew, which only this choice captures.",
+   "distractors": {
+    "0": {
+     "trap": "T6",
+     "why": "The closures are offered as confirming evidence of the rooms' influence, not as the text's subject; treating the suppression measures as the purpose overweights a supporting detail and drops the public-sphere thesis."
+    },
+    "1": {
+     "trap": "T1",
+     "why": "This reverses the passage: the authorities feared the talk and repeatedly shut the houses, so the rooms plainly did pose a perceived threat."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "Listing the pastimes names the means by which exchange occurred but misses the point of the text—that this exchange amounted to an influential early public sphere."
+    }
+   }
+  },
+  {
+   "num": 5,
+   "domain": "Craft and Structure",
+   "skill": "Text Structure and Purpose",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "TSP function-of-underlined-sentence: an extended border-crossing analogy translates the technical immune-tolerance mechanism into accessible terms; the marked sentence is that analogy.",
+   "passage": "The immune system faces a constant problem: it must attack genuine threats while tolerating the trillions of harmless microbes that live in the gut. Recent work suggests that the microbes themselves help draw this line, releasing molecules that tune the sensitivity of nearby immune cells. *Think of the gut lining as a border crossing where the resident microbes act as trusted guides, vouching for familiar travelers so that the guards reserve their force for genuine intruders.* Without such signals, researchers find, the immune system tends to overreact, treating ordinary food and flora as enemies.",
+   "stem": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+   "figure": null,
+   "choices": [
+    "It recasts the preceding technical mechanism as an accessible analogy that clarifies how tolerance works.",
+    "It introduces a counterexample that challenges the claim made in the opening sentence.",
+    "It supplies the experimental evidence proving that gut microbes release signaling molecules.",
+    "It qualifies the earlier claim by noting important exceptions to microbial tolerance."
+   ],
+   "answer_index": 0,
+   "rationale": "The sentence before describes microbes 'tuning' immune cells with signaling molecules; the underlined sentence restages that mechanism as a border crossing with trusted guides. Its function is to translate a difficult idea into a clarifying analogy.",
+   "distractors": {
+    "1": {
+     "trap": "T1",
+     "why": "The sentence supports and illustrates the opening problem rather than challenging it; it is an analogy, not a counterexample."
+    },
+    "2": {
+     "trap": "T6",
+     "why": "It offers no evidence; the empirical support comes from the final sentence about overreaction, while the underlined sentence is purely figurative."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "'Qualifies … exceptions' sounds plausible, but the analogy illustrates the rule rather than carving out cases where it fails."
+    }
+   }
+  },
+  {
+   "num": 6,
+   "domain": "Craft and Structure",
+   "skill": "Cross-Text Connections",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "Cross-Text: Text 2 reinterprets the same inertia Text 1 praises, recasting the 'freedom to opt out' as nominal because the option is so rarely exercised.",
+   "passage": "Text 1\nPolicymakers increasingly favor default rules—the option that takes effect unless a person actively chooses otherwise. When employees are automatically enrolled in a retirement plan, far more end up saving than when they must sign up on their own. Because the default requires no effort, it harnesses our tendency toward inertia. To many economists this is a rare win: participation rises sharply, yet anyone who dislikes the default remains free to opt out.\nText 2\nDefaults are powerful precisely because so few people override them, and that is what troubles some observers. A setting almost no one changes is, in effect, a decision made for the user by whoever designed the form. To call that choice free overlooks how rarely it is ever exercised. The same inertia that lifts savings rates could just as easily be enlisted to serve the form-designer's interests rather than the chooser's own.",
+   "stem": "Based on the texts, how would the author of Text 2 most likely respond to the claim in Text 1 that defaults preserve freedom because people 'remain free to opt out'?",
+   "figure": null,
+   "choices": [
+    "By agreeing wholeheartedly, since Text 2 likewise celebrates automatic enrollment as a way to raise retirement savings while still letting reluctant participants withdraw without any penalty.",
+    "By insisting that defaults should be banned outright, because any rule that exploits human inertia amounts to a form of coercion no free society should ever tolerate.",
+    "By noting that defaults work only for retirement savings and fail in other domains, so Text 1 plainly overstates how broadly the strategy can be applied.",
+    "By contending that this freedom is largely nominal: because people so seldom override a default, leaving the option open does little to ensure the choice reflects the chooser's wishes."
+   ],
+   "answer_index": 3,
+   "rationale": "Text 2 argues that defaults are powerful because almost no one overrides them, so calling the choice 'free' 'overlooks how rarely it is ever exercised.' The author would therefore treat the freedom to opt out as nominal—technically available but seldom used and thus weakly protective of the chooser's actual wishes.",
+   "distractors": {
+    "0": {
+     "trap": "T1",
+     "why": "This reverses Text 2's stance; far from celebrating defaults, Text 2 warns that they can serve the designer's interests rather than the user's."
+    },
+    "1": {
+     "trap": "T4",
+     "why": "Text 2 raises a concern about autonomy but never calls for an outright ban or labels defaults coercion that must be prohibited—an overstatement of its position."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "Text 2 never limits its critique to retirement savings or claims defaults fail elsewhere; its argument about inertia is general, making this out of scope."
+    }
+   }
+  },
+  {
+   "num": 7,
+   "domain": "Craft and Structure",
+   "skill": "Cross-Text Connections",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "Cross-Text: Text 2 reinterprets Text 1's own evidence—the reliable arithmetic—arguing it reflects only what scholars can currently decode, not the quipu's full content.",
+   "passage": "Text 1\nFor decades scholars described the Inca quipu—an array of knotted cords—as essentially an accounting tool. The knots follow a consistent decimal pattern: a cluster's position marks ones, tens, or hundreds, and the sums often reconcile neatly with known tribute totals. Because the numbers add up so reliably, many concluded that the cords recorded quantities of goods, laborers, and taxes, and little else.\nText 2\nThe decimal knots are real, but they are not the whole story. Roughly a third of surviving cords carry no numerical knots at all, and these are precisely the ones whose colors, fiber directions, and ply twists vary the most. If such features were mere decoration, we would not expect them to follow patterns as systematic as the numbers do. The reliable arithmetic, in other words, may be only the part we have so far learned to read.",
+   "stem": "Based on the texts, how would the author of Text 2 most likely respond to the conclusion in Text 1 that quipus served only as numerical records?",
+   "figure": null,
+   "choices": [
+    "By conceding that the cords were strictly numerical, while suggesting the Inca kept their narratives on separate, perishable materials that have not survived for study.",
+    "By arguing that Text 1 mistakes legibility for completeness: the sums reconcile because we can decode them, yet the non-numerical cords hint at content current methods cannot read.",
+    "By agreeing that the decimal pattern proves an accounting purpose and concluding that the varied colors and twists were simply decorative flourishes added by individual recordkeepers.",
+    "By insisting that the tribute totals in Text 1 must be miscalculations, since no knotted-cord system could ever record quantities as precisely as written numerals do."
+   ],
+   "answer_index": 1,
+   "rationale": "Text 2 accepts that the decimal knots are real but stresses that a third of cords carry no numerical knots and that their systematic variation resists the 'mere decoration' explanation, concluding that 'the reliable arithmetic … may be only the part we have so far learned to read.' The author would thus say Text 1 mistakes what is decodable for the whole of what quipus recorded.",
+   "distractors": {
+    "0": {
+     "trap": "T3",
+     "why": "Text 2 never claims the narratives lived on separate perishable media; it locates the non-numerical information in the cords' own colors, twists, and fibers."
+    },
+    "2": {
+     "trap": "T1",
+     "why": "This reverses Text 2, which explicitly argues that the systematic variation makes the 'mere decoration' reading implausible."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "Text 2 accepts that the arithmetic is reliable; it does not dispute the tribute totals, so calling them miscalculations distorts its argument."
+    }
+   }
+  },
+  {
+   "num": 8,
+   "domain": "Information and Ideas",
+   "skill": "Central Ideas and Details",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "CID literary, belated-realization-reframes-a-relationship: a discovered object (a progress notebook) overturns the narrator's long-held memory of a stern grandfather as uncaring.",
+   "passage": "For years Mira had told the story the same way: her grandfather, a stern man who taught violin, had drilled her through scales while she longed to be outside. Now, back in the narrow house after his funeral, she found his metronome and, tucked beneath it, a notebook in which he had recorded—date by date—every small improvement she had made. The cramped margins held no scolding, only quiet tallies of her progress. The lessons she had remembered as a cage, she saw now, had been the only way he knew to say he was paying attention.",
+   "stem": "Which choice best states the main idea of the text?",
+   "figure": null,
+   "choices": [
+    "Mira returns to her hometown intending to sell her late grandfather's house but is delayed by the unexpected discovery of his old violin and metronome.",
+    "Returning home after the funeral and finding her grandfather's record of her progress, Mira revises her memory of his strict lessons as his particular way of showing care.",
+    "Mira concludes that her grandfather's strictness permanently dulled her love of music, a deep wound that returning to the silent house only reopens for her now.",
+    "Mira realizes that her grandfather kept such detailed notebooks because he secretly hoped she would one day become a professional concert violinist like himself someday."
+   ],
+   "answer_index": 1,
+   "rationale": "Finding the notebook of tallied improvements, with 'no scolding,' leads Mira to see that the lessons she remembered 'as a cage' were how her grandfather expressed attention. The main idea is that the discovery reframes her memory of his strictness as care.",
+   "distractors": {
+    "0": {
+     "trap": "T6",
+     "why": "This fixates on an invented plot detail—selling the house—that the text never mentions and misses the central reframing of the relationship."
+    },
+    "2": {
+     "trap": "T1",
+     "why": "This reverses the ending's tone: Mira's understanding softens into recognition of care, not a reopened wound."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "The notebook signals attention and care, not a career ambition; reading it as a plan for professional success overreaches beyond the text."
+    }
+   }
+  },
+  {
+   "num": 9,
+   "domain": "Information and Ideas",
+   "skill": "Central Ideas and Details",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "CID main idea (deeper camouflage): the text contrasts a deliberately modest material effect with a stated larger aim (changing owners' outlook) and names the 'durable product' as the changed owner; the distractors overstate the waste claim, half-concede defeat, or drift to an unmentioned motive.",
+   "passage": "Repair cafés are volunteer-run events where people bring broken toasters, frayed jackets, and balky bicycles to be mended at no charge. Organizers seldom pretend the gatherings will appreciably shrink the global waste stream; the sheer volume of goods actually salvaged is far too small for that. Their stated ambition lies elsewhere. By mending an object alongside its owner, volunteers transmit both a skill and a disposition—the conviction that a broken thing is a problem to be solved rather than refuse to be discarded. The durable product, organizers insist, is not the revived toaster but the owner who now pauses before discarding anything at all.",
+   "stem": "Which choice best states the main idea of the text?",
+   "figure": null,
+   "choices": [
+    "Repair cafés have, despite their organizers' professed modesty, become a meaningful check on the household waste stream by mending broken goods in remarkably large numbers.",
+    "Because the quantity of goods they mend is far too small to matter, repair cafés have quietly conceded that their efforts change very little.",
+    "Repair cafés aim less at shrinking the waste stream than at instilling the skills and frame of mind that change how owners regard their possessions.",
+    "Repair cafés thrive mainly because they give retired tradespeople a welcoming, sociable setting in which to keep their old manual skills from going rusty."
+   ],
+   "answer_index": 2,
+   "rationale": "The text says organizers do not expect to dent the waste stream and that their 'stated ambition lies elsewhere,' then names the 'durable product' as an owner who pauses before discarding. The main idea is that the goal is changing owners' skills and outlook, not reducing total waste.",
+   "distractors": {
+    "0": {
+     "trap": "T1",
+     "why": "This contradicts the text, which states plainly that the volume of goods salvaged is far too small to dent the waste stream."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "The small repair volume is conceded, but the text insists the work does change something—the owner's outlook—so claiming the cafés admit their efforts 'change very little' distorts the point."
+    },
+    "3": {
+     "trap": "T3",
+     "why": "The volunteers' own social benefit is never discussed; the passage centers on what owners take away, making this out of scope."
+    }
+   }
+  },
+  {
+   "num": 10,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Textual",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "CoE-Textual (support): hypothesis (fracto-emission), rival ice account, and a stated prediction; the key finding ties near-vent charge to fresh fracture surfaces independent of ice.",
+   "passage": "Volcanic lightning often crackles within the densest, lowest part of an ash plume, near the vent. One team proposed that the flashes there arise mainly through 'fracto-emission'—the idea that as rock shatters explosively, the fresh fracture surfaces carry electrical charge, seeding sparks before ice can even form higher up. A rival account holds that the near-vent flashes, like ordinary lightning, depend on ice: tiny ice crystals collide and exchange charge as moist gas cools. To test the fracto-emission hypothesis, the team measured the size and charge of particles at several heights during eruptions, predicting that charging near the vent should track the abundance of jagged, freshly broken ash rather than the presence of ice.",
+   "stem": "Which finding, if true, would most directly support the team's fracto-emission hypothesis?",
+   "figure": null,
+   "choices": [
+    "Near the vent, the strongest electrical charge consistently appeared on the most jagged, freshly fractured ash particles, even at temperatures too warm for ice to form.",
+    "Lightning flashes proved most frequent in the upper, colder regions of the plume, where abundant ice crystals repeatedly collided as the rising gas steadily cooled.",
+    "Eruptions that ejected larger total volumes of ash tended to produce noticeably more lightning overall than smaller eruptions of the very same type did.",
+    "Freshly fractured ash particles near the vent quickly lost whatever charge they carried once they began colliding with one another in the thick, turbulent plume."
+   ],
+   "answer_index": 0,
+   "rationale": "The hypothesis predicts that near-vent charging tracks freshly fractured ash rather than ice. A finding that the strongest charge sits on the most jagged, freshly broken particles—and persists where it is too warm for ice—directly matches that prediction and excludes the ice mechanism.",
+   "distractors": {
+    "1": {
+     "trap": "T1",
+     "why": "This supports the rival ice account in the upper, colder plume and says nothing about the fracto-emission mechanism near the vent."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "A correlation between ash volume and total lightning does not distinguish fracture-driven from ice-driven charging, so it is out of scope for this specific hypothesis."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "Rapid charge loss after collisions concerns what happens to charge afterward, not whether fracturing is its source; it does not support, and arguably undercuts, the claim."
+    }
+   }
+  },
+  {
+   "num": 11,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Textual",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "CoE-Textual literary/quotation variant: the claim restricts the catalyst of the narrator’s revised judgment to an ordinary object and excludes speech; the key quotation enacts exactly that restriction.",
+   "passage": "In the short story “Tide Tables,” the narrator Ines grows up in a fishing town as the daughter of Marisol, a harbor pilot whose work keeps her at sea through birthdays, school plays, and storms. Long after leaving the coast, Ines still describes her mother as a woman who simply preferred the water to her family, and the story’s early sections are built from that verdict: missed occasions, brief shore leaves, a kitchen that always felt provisional. A student writing about the story argues that the narrative allows Ines to revise this judgment—to see her mother’s absences as a different form of attention—only through her encounter with an unremarkable physical object, never through anything that Marisol or anyone else says to her.",
+   "stem": "Which quotation from “Tide Tables” most effectively illustrates the claim that Ines’s view of her mother shifts because of an unremarkable physical object rather than anything spoken to her?",
+   "figure": null,
+   "choices": [
+    "“She missed the recital, she missed the harvest fair, she missed the night I broke my wrist; whenever I listed those absences aloud, my father would only say, ‘Your mother loves the water more than land.’”",
+    "“From the bluff the harbor looked as it always had: trawlers nosing past the breakwater at first light, gulls trailing them like loose thread, the channel markers blinking their patient green far into the morning fog.”",
+    "“Years later her first mate found me at the chandlery and said she had recited my exam results to the whole crew every spring; hearing that, I felt the old verdict against her loosen its grip a little.”",
+    "“In the chart drawer I found her tide tables, each ruled margin crowded with our birthdays, school terms, and ferry times home, and the woman I had stored away as distant rearranged herself, line by penciled line, into someone keeping watch.”"
+   ],
+   "answer_index": 3,
+   "rationale": "The claim restricts the trigger of Ines’s revision to an unremarkable object and explicitly excludes spoken words. Choice D shows Ines finding her mother’s annotated tide tables—an ordinary working object—whose penciled margins recast the “distant” mother as “someone keeping watch,” exactly the object-prompted change of judgment the claim describes.",
+   "distractors": {
+    "0": {
+     "trap": "T6",
+     "why": "This quotation centers on the father’s spoken explanation and on the verdict Ines already holds; it documents the old judgment rather than any object-driven revision, so it is the wrong kind of evidence for the claim."
+    },
+    "1": {
+     "trap": "T3",
+     "why": "Pure harbor description: nothing in it bears on Ines’s understanding of her mother at all, so it cannot illustrate a shift of any kind, object-driven or otherwise."
+    },
+    "2": {
+     "trap": "T8",
+     "why": "It does record a softening of Ines’s judgment, but the trigger is the first mate’s spoken report—precisely the words-based source the claim rules out—so this half-match fails the claim’s central restriction."
+    }
+   }
+  },
+  {
+   "num": 12,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Quantitative",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "CoE-Quantitative (table): a prediction that 3% moisture beats 8% for germination after a decade; the statement asks for the species that defied the prediction, requiring a within-species comparison.",
+   "passage": "A seed bank tested whether drying seeds to a lower moisture content before freezing would improve their ability to germinate after long storage. For each of four wildflower species, researchers stored seeds at two moisture levels—8 percent and 3 percent—and measured the percentage that germinated after ten years. If lower moisture aids long-term survival, seeds held at 3 percent moisture should germinate at higher rates than those held at 8 percent. The results mostly fit this prediction, though one species did not behave as expected: ______",
+   "stem": "Which choice best uses data from the table to complete the statement?",
+   "figure": "germination_table",
+   "choices": [
+    "wild lupine germinated at a distinctly lower rate at 3 percent moisture than it did at 8 percent, directly contradicting the researchers' central prediction here.",
+    "foxglove germinated far better at 3 percent moisture than it did at 8 percent, behaving just as the researchers had predicted rather than defying them.",
+    "marsh marigold germinated at about the same rate at 3 percent moisture as it did at 8 percent, showing essentially no improvement from the additional drying.",
+    "yellow rattle germinated far better at 8 percent moisture than it did at 3 percent, the exact reverse of the pattern the researchers had predicted."
+   ],
+   "answer_index": 2,
+   "rationale": "The prediction is that 3 percent moisture should outperform 8 percent. Marsh marigold germinated at 60 percent at 3 percent moisture versus 63 percent at 8 percent—essentially no gain from extra drying—so it is the species that did not behave as the prediction expected.",
+   "distractors": {
+    "0": {
+     "trap": "T1",
+     "why": "The table shows wild lupine higher at 3 percent (81) than at 8 percent (55); claiming it germinated worse reverses the actual data."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "This reads the foxglove data correctly (72 versus 41) but describes a species that fit the prediction, not one that defied it, so it cannot complete the statement."
+    },
+    "3": {
+     "trap": "T6",
+     "why": "Yellow rattle germinated better at 3 percent (66) than at 8 percent (38), so the claim of an 8-percent advantage misreads the table."
+    }
+   }
+  },
+  {
+   "num": 13,
+   "domain": "Information and Ideas",
+   "skill": "Inferences",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "Inference completion: the premise that orientation is convention, not fact, plus 'not an error but ______' forces a conclusion validating the mapmakers' choice as a deliberate priority.",
+   "passage": "Medieval Islamic mapmakers often placed south at the top of their world maps, with Mecca near the center. To modern eyes trained on north-up charts, such maps can look disoriented or even careless. But orientation in cartography is a convention, not a fact about the world; there is no physical reason a map must put north on top. A map's 'up' simply reflects the priorities of those who make and use it. Judged by that standard, the choice to foreground Mecca was not an error but ______",
+   "stem": "Which choice most logically completes the text?",
+   "figure": null,
+   "choices": [
+    "a sign that medieval mapmakers, lacking accurate instruments, were simply unable to determine with any confidence where true geographic north actually lay on their maps.",
+    "proof that these maps were meant for religious instruction alone rather than for any practical use in navigation or in measuring travel distances accurately at sea.",
+    "a deliberate expression of what those mapmakers valued most, no less valid as a convention than the modern habit of placing north at the top.",
+    "an oversight that later cartographers eventually corrected once north-up maps had finally become the widely accepted international standard for both navigators and scholars across the world."
+   ],
+   "answer_index": 2,
+   "rationale": "The passage argues that 'up' is a convention reflecting the priorities of mapmakers and frames the choice as 'not an error but ______.' The logical completion makes it a deliberate expression of priorities, as valid a convention as the modern north-up habit.",
+   "distractors": {
+    "0": {
+     "trap": "T3",
+     "why": "Instruments and the ability to find true north are never discussed and contradict the passage's point that orientation is convention, not a measurement failure."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "Inferring a religious-only purpose overreaches; the text says the maps reflect priorities, not that they served only instruction and not navigation."
+    },
+    "3": {
+     "trap": "T1",
+     "why": "Calling the choice an oversight later corrected reverses the explicit framing that it 'was not an error.'"
+    }
+   }
+  },
+  {
+   "num": 14,
+   "domain": "Information and Ideas",
+   "skill": "Inferences",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "Inference completion: a mismatch between celebrated results and 'unskilled' job definitions plus 'the pay scale reflected ______' points to bias about the workers rather than the work's difficulty.",
+   "passage": "At the Harvard College Observatory, the women hired to analyze photographic plates were paid far less than men would have been, and administrators sometimes justified the low wages by calling the labor routine. The work, however, produced the classification system and the period-luminosity relation that later let astronomers measure cosmic distances. The very results that reshaped astronomy thus emerged from positions the institution had defined as unskilled. This mismatch suggests that the observatory's pay scale reflected ______",
+   "stem": "Which choice most logically completes the text?",
+   "figure": null,
+   "choices": [
+    "the genuine simplicity of photographic-plate analysis, a task that demanded patience far more than the specialized judgment historians have wrongly attributed to it in recent years.",
+    "not an accurate assessment of how demanding the work actually was, but the prevailing assumptions the institution held about the women who performed that daily work.",
+    "a deliberate strategy to attract talented women who valued the observatory's scientific prestige far more than the modest salaries it was able to offer them.",
+    "the limited funding available to observatories of that era, which forced administrators to economize wherever the apparent scientific cost of doing so seemed lowest to them."
+   ],
+   "answer_index": 1,
+   "rationale": "The 'mismatch' is that field-changing results came from jobs labeled unskilled, so the pay did not track the work's true difficulty. The logical completion attributes the low wages to assumptions about the women themselves rather than to an honest measure of the labor.",
+   "distractors": {
+    "0": {
+     "trap": "T1",
+     "why": "This calls the work genuinely simple, reversing the passage's point that it yielded sophisticated, astronomy-changing results."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "No recruitment strategy or trade-off between prestige and pay is mentioned; this introduces a motive the text does not support."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "Budget constraints are a plausible external cause but unsupported here; the passage pins the low pay on defining the work as unskilled, not on funding limits."
+    }
+   }
+  },
+  {
+   "num": 15,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "Sentence boundaries and complete verbs",
+   "difficulty": "Hard",
+   "frame": "Boundaries (fragment repair): a subject buried behind a long appositive needs a finite main verb; only the finite form completes the sentence, while participles and an infinitive leave a fragment.",
+   "passage": "The bacteria that line the human gut, long dismissed as passive hitchhikers feeding on whatever the body could not digest, ______ a steady stream of molecules that help calibrate the immune system's response to perceived threats.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "release",
+    "releasing",
+    "to release",
+    "having released"
+   ],
+   "answer_index": 0,
+   "rationale": "The subject 'The bacteria that line the human gut' is separated from its verb by a long appositive and needs a finite main verb. The plural 'release' supplies that verb and completes the sentence.",
+   "distractors": {
+    "1": {
+     "trap": "fragment (present participle)",
+     "why": "'Releasing' is a participle, not a finite verb, leaving the sentence without a main predicate."
+    },
+    "2": {
+     "trap": "fragment (infinitive)",
+     "why": "'To release' is an infinitive and cannot serve as the sentence's main verb, producing a fragment."
+    },
+    "3": {
+     "trap": "fragment (perfect participle)",
+     "why": "'Having released' is a participial phrase, so the subject is still left without a finite verb."
+    }
+   }
+  },
+  {
+   "num": 16,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "Semicolons between independent clauses",
+   "difficulty": "Super Hard",
+   "frame": "Boundaries (semicolon, deeper camouflage): two contrasting independent clauses—'The price of a cup stayed low' and 'the political cost … climbed'—are separated by a parenthetical em-dash interrupter that hides the clause boundary; only a semicolon joins them, against comma-splice, fused, and colon traps.",
+   "passage": "In the coffeehouses of Ottoman Istanbul, the same copper coin admitted a patron for the better part of a day. The price of a cup stayed ______ the political cost of what that cup bought—hours of unsupervised, cross-class talk—climbed with every passing decade.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "low,",
+    "low",
+    "low:",
+    "low;"
+   ],
+   "answer_index": 3,
+   "rationale": "'The price of a cup stayed low' and 'the political cost of what that cup bought … climbed with every passing decade' are two complete, contrasting independent clauses with no coordinating conjunction. A semicolon is the only mark that joins them, and the embedded em-dash interrupter does not change that.",
+   "distractors": {
+    "0": {
+     "trap": "comma splice",
+     "why": "A comma alone cannot join two independent clauses without a coordinating conjunction."
+    },
+    "1": {
+     "trap": "run-on (fused sentence)",
+     "why": "With no punctuation, the two independent clauses fuse into a run-on."
+    },
+    "2": {
+     "trap": "colon misuse",
+     "why": "A colon introduces an explanation or list that the first clause anticipates, but here the second clause contrasts with the first rather than elaborating it."
+    }
+   }
+  },
+  {
+   "num": 17,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "Punctuating a parenthetical element",
+   "difficulty": "Super Hard",
+   "frame": "Boundaries (paired em-dashes, deeper camouflage): an interrupter opened with an em-dash and stuffed with its own internal commas must be closed with a matching em-dash before the distant main verb 'disappeared'; the internal commas make a closing comma especially tempting, but the marks must pair.",
+   "passage": "Al-Idrisi's silver planisphere—a massive disk, some four hundred pounds of engraved metal, that depicted the whole of the known ______ disappeared within a generation of his death, and modern scholars must reconstruct its lost geography from the surviving paper copies alone.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "world,",
+    "world",
+    "world—",
+    "world;"
+   ],
+   "answer_index": 2,
+   "rationale": "The phrase set off after 'planisphere—' is a parenthetical interrupter opened by an em-dash; because the bracketing marks must match, only a closing em-dash properly encloses it before the main verb 'disappeared.' The commas inside the interrupter do not license closing it with a comma.",
+   "distractors": {
+    "0": {
+     "trap": "mismatched pair",
+     "why": "A comma cannot close an interrupter opened with an em-dash; the commas inside belong to the interrupter and do not pair with the opening dash."
+    },
+    "1": {
+     "trap": "missing closing mark",
+     "why": "With no punctuation, the dash-opened interrupter is never closed and fuses into the main clause."
+    },
+    "3": {
+     "trap": "wrong mark for a parenthetical",
+     "why": "A semicolon joins independent clauses and cannot close a parenthetical or pair with an em-dash."
+    }
+   }
+  },
+  {
+   "num": 18,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "Semicolons in a complex series",
+   "difficulty": "Super Hard",
+   "frame": "Boundaries (super-comma series): list items that each contain internal commas must be separated by semicolons; the established later semicolon sets the pattern the blank must follow.",
+   "passage": "The catalog honored three of the observatory's analysts: Williamina Fleming, who classified more than ten thousand ______ Antonia Maury, who devised a finer spectral scheme; and Annie Jump Cannon, whose system astronomers still use today.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "stars,",
+    "stars, and",
+    "stars:",
+    "stars;"
+   ],
+   "answer_index": 3,
+   "rationale": "Each item in the list already contains an internal comma (a name plus a 'who' clause), so the items must be divided by semicolons to stay distinct—a pattern the sentence confirms with the semicolon before 'and Annie Jump Cannon.' A semicolon after 'stars' is required.",
+   "distractors": {
+    "0": {
+     "trap": "ambiguous comma in a complex series",
+     "why": "A plain comma is indistinguishable from the commas inside each item, blurring where one item ends and the next begins."
+    },
+    "1": {
+     "trap": "improper item separator",
+     "why": "Adding 'and' mid-list creates a false coordination and still fails to separate the comma-laden items cleanly."
+    },
+    "2": {
+     "trap": "colon misuse",
+     "why": "A colon introduces a list or explanation; it cannot separate items within a series already underway."
+    }
+   }
+  },
+  {
+   "num": 19,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "Pronoun-antecedent agreement",
+   "difficulty": "Hard",
+   "frame": "FSS pronoun-antecedent agreement across an appositive: the singular antecedent 'plume' is camouflaged by an intervening appositive full of plural nouns, requiring the singular possessive 'its.'",
+   "passage": "A volcanic plume, a churning column of ash, gas, and shattered rock thrust skyward in seconds, can generate lightning when ______ particles collide repeatedly and exchange electrical charge.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "their",
+    "they're",
+    "its",
+    "it's"
+   ],
+   "answer_index": 2,
+   "rationale": "The pronoun refers back to the singular subject 'plume,' not to the plural nouns inside the appositive ('ash, gas, and shattered rock'). The singular possessive 'its' agrees with that antecedent.",
+   "distractors": {
+    "0": {
+     "trap": "agreement error",
+     "why": "'Their' is plural and mistakenly agrees with the nouns in the appositive rather than with the singular antecedent 'plume.'"
+    },
+    "1": {
+     "trap": "contraction for 'they are'",
+     "why": "'They're' means 'they are' and is both ungrammatical here and not a possessive."
+    },
+    "3": {
+     "trap": "contraction for 'it is'",
+     "why": "'It's' means 'it is'; the sentence needs the possessive 'its,' which has no apostrophe."
+    }
+   }
+  },
+  {
+   "num": 20,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "Possessive nouns",
+   "difficulty": "Super Hard",
+   "frame": "FSS possessive (deeper camouflage): the cue 'two different' fixes a plural possessor for 'knotting habits,' so a plural possessive is required; the singular 'Each quipu's' nearby primes the wrong singular form, against a plain plural and a nonstandard double-s genitive.",
+   "passage": "Each quipu's meaning rests on conventions that no single key unlocks. Sifting through dozens of cords, researchers keep finding that two different ______ knotting habits—the spacing, the ply, the direction of each twist—could yield identical-looking cords encoding entirely different sums, proof that interpretation cannot ignore whose hands tied the strands.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "recordkeeper's",
+    "recordkeepers'",
+    "recordkeepers",
+    "recordkeepers's"
+   ],
+   "answer_index": 1,
+   "rationale": "'Two different ______ knotting habits' has two recordkeepers possessing the knotting habits, so the possessive must be plural. A regular plural already ending in -s forms the possessive with an apostrophe alone: 'recordkeepers'.'",
+   "distractors": {
+    "0": {
+     "trap": "singular possessive",
+     "why": "'Recordkeeper's' is singular, but 'two different' specifies more than one recordkeeper, so the possessive must be plural."
+    },
+    "2": {
+     "trap": "plain plural, no possessive",
+     "why": "'Recordkeepers' is a plural with no apostrophe and cannot show possession of the knotting habits."
+    },
+    "3": {
+     "trap": "nonstandard possessive form",
+     "why": "'Recordkeepers's' is not a standard possessive for a regular plural noun that already ends in -s."
+    }
+   }
+  },
+  {
+   "num": 21,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "Logical comparison",
+   "difficulty": "Super Hard",
+   "frame": "FSS logical comparison: participation rates must be compared with other participation rates, so the clause-completion must use 'those of'; distractors illogically compare rates with firms, circumstances, or workers.",
+   "passage": "Behavioral economists emphasize how powerfully a default can shape behavior. In companies that enroll new employees in a retirement plan automatically, the participation rates routinely exceed ______",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "those of firms that instead require their workers to sign up for the plan themselves.",
+    "firms that instead require their workers to take the initiative and sign up on their own.",
+    "when workers at other firms must take the initiative to sign up for the plan themselves.",
+    "the workers who must take the initiative to enroll themselves in a retirement plan elsewhere."
+   ],
+   "answer_index": 0,
+   "rationale": "The sentence compares participation rates in one kind of firm with participation rates in another, so the second term of the comparison must also be rates. 'Those of firms that … require their workers to sign up' uses 'those' to stand in for 'participation rates,' making the comparison logical and parallel.",
+   "distractors": {
+    "1": {
+     "trap": "illogical comparison",
+     "why": "This compares participation rates with firms themselves rather than with another set of rates."
+    },
+    "2": {
+     "trap": "illogical comparison",
+     "why": "'Exceed when …' compares a rate with a circumstance, not with a comparable quantity."
+    },
+    "3": {
+     "trap": "illogical comparison",
+     "why": "This compares participation rates with workers instead of with the workers' rates, breaking the parallel."
+    }
+   }
+  },
+  {
+   "num": 22,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "Transitions (result): the steady, unstoppable decline in viability (cause) prompts curators to test and regenerate the collection (response); the relation is consequence, against contrast, example, and comparison traps.",
+   "passage": "No seed remains viable indefinitely, even in a seed bank's cold, desiccated vaults. With each passing decade the share of a stored lot that will still sprout creeps downward, an erosion no amount of careful freezing can wholly arrest. ______, curators withdraw a sample from cold storage at intervals, attempt to germinate it, and—if too few seedlings emerge—regenerate the entire accession from a fresh harvest.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "However,",
+    "For example,",
+    "Likewise,",
+    "Consequently,"
+   ],
+   "answer_index": 3,
+   "rationale": "Because viability inevitably declines over the decades, curators respond by periodically testing germination and regenerating the accession. The second sentence states the consequence of the first, so the result transition 'Consequently' is logical.",
+   "distractors": {
+    "0": {
+     "trap": "REL-CONTRAST",
+     "why": "'However' signals opposition, but the curators' testing follows from the decline rather than contradicting it."
+    },
+    "1": {
+     "trap": "REL-EXAMPLE",
+     "why": "'For example' would introduce an instance of the prior idea, yet the sentence describes a response to the decline, not an example of it."
+    },
+    "2": {
+     "trap": "REL-COMPARISON",
+     "why": "'Likewise' marks similarity between parallel ideas, which does not fit a cause-and-response relationship."
+    }
+   }
+  },
+  {
+   "num": 23,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "Transitions (emphasis/intensification): the final sentence restates and sharpens the active-role claim ('not merely tolerated; they actively help set the threshold'), calling for an emphasizing transition.",
+   "passage": "Researchers once assumed that the immune system simply tolerated gut bacteria, ignoring them as harmless. Newer work tells a more active story. The bacteria release signaling molecules that adjust how strongly nearby immune cells react. ______, the microbes are not merely tolerated; they actively help set the immune system's threshold for alarm.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "In fact,",
+    "Nevertheless,",
+    "For instance,",
+    "Earlier,"
+   ],
+   "answer_index": 0,
+   "rationale": "The final sentence restates and intensifies the preceding point that the bacteria actively adjust immune cells, sharpening 'not merely tolerated' into 'actively help set the threshold.' The emphasizing transition 'In fact' fits this intensifying restatement.",
+   "distractors": {
+    "1": {
+     "trap": "REL-CONTRAST",
+     "why": "'Nevertheless' signals a concession, but the last sentence reinforces, not opposes, the active-role claim."
+    },
+    "2": {
+     "trap": "REL-EXAMPLE",
+     "why": "'For instance' would introduce a specific example, yet the sentence offers a stronger general restatement instead."
+    },
+    "3": {
+     "trap": "REL-SEQUENCE",
+     "why": "'Earlier' marks time order, but the sentence advances the current claim rather than referring to a prior moment."
+    }
+   }
+  },
+  {
+   "num": 24,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "Transitions (contrast): rulers wanted the houses closed, yet closing them proved nearly impossible; the relation is contrast, against result, example, and comparison distractors.",
+   "passage": "Coffeehouses gave city dwellers a place to exchange news beyond the mosque and the palace, and rulers worried about what was said there. Closing the houses, ______, proved nearly impossible: each ban was quietly ignored or quickly reversed, and within weeks the cups and the conversation returned.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "therefore,",
+    "however,",
+    "for instance,",
+    "likewise,"
+   ],
+   "answer_index": 1,
+   "rationale": "The rulers wanted the houses gone, but the attempt to close them failed as bans were ignored and reversed. That opposition between intent and outcome calls for the contrast transition 'however.'",
+   "distractors": {
+    "0": {
+     "trap": "REL-RESULT",
+     "why": "'Therefore' marks a consequence, but the rulers' worry did not cause closing to be impossible; the two ideas conflict rather than follow."
+    },
+    "2": {
+     "trap": "REL-EXAMPLE",
+     "why": "'For instance' would signal an illustration of the prior point, not the reversal of the rulers' aim that the sentence describes."
+    },
+    "3": {
+     "trap": "REL-COMPARISON",
+     "why": "'Likewise' indicates similarity, which contradicts the opposition between wanting the houses shut and being unable to shut them."
+    }
+   }
+  },
+  {
+   "num": 25,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "Rhetorical Synthesis (illustrate with a specific example): the goal is to give a concrete case of researchers linking a quipu to recorded goods; only the Incahuasi note delivers a specific example.",
+   "passage": "While researching a topic, a student took the following notes:\n\n- Quipus are knotted cords made by the Inca to record information.\n- Most quipu knots follow a decimal system that records numbers.\n- About one-third of surviving quipus have no numerical knots at all.\n- At the Incahuasi site, one cord was found beside storehouses of peanuts, chili peppers, and beans.\n- Researchers matched groups of knots on that cord to the specific crops stored nearby.",
+   "stem": "The student wants to illustrate, with a specific example, how researchers have linked a quipu to the goods it recorded. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "Quipus, knotted cords made by the Inca, recorded information, and most of their knots follow a decimal system, though about a third of surviving examples lack numerical knots entirely.",
+    "Researchers have learned a great deal about quipus, and some surviving cords have proven far easier to interpret than scholars working a century ago would have predicted.",
+    "At the Incahuasi site, a cord was found beside storehouses of peanuts, chili peppers, and beans, and researchers matched groups of its knots to the specific crops stored nearby.",
+    "Because about one-third of surviving quipus contain no numerical knots, scholars suspect that many cords recorded information other than simple counts of goods and laborers."
+   ],
+   "answer_index": 2,
+   "rationale": "The goal asks for a specific example of researchers tying a quipu to the goods it recorded. Choice C names the Incahuasi cord found by storehouses of particular crops and the matching of its knots to those crops—a concrete, fully specified example.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS",
+     "why": "This offers general background about quipus and the decimal system but provides no specific example of linking a cord to recorded goods."
+    },
+    "1": {
+     "trap": "GOAL-MISS",
+     "why": "This is a vague summary of progress with no concrete case, failing the requirement for a specific example."
+    },
+    "3": {
+     "trap": "GOAL-MISS",
+     "why": "This addresses the non-numerical cords in the abstract rather than illustrating the goods-linking example the goal requires."
+    }
+   }
+  },
+  {
+   "num": 26,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "Rhetorical Synthesis (emphasize a similarity, deeper camouflage): the goal is to stress shared features of repair cafés and tool libraries; two distractors name both institutions—one to contrast their ages, one to contrast their functions—so only the choice foregrounding common traits emphasizes the similarity.",
+   "passage": "While researching a topic, a student took the following notes:\n\n- Repair cafés are free events where volunteers help people mend broken items.\n- Tool libraries lend drills, saws, and other equipment for short loan periods.\n- Both are staffed almost entirely by volunteers and charge their users nothing.\n- Both describe their core mission as sharing practical skills, not merely saving members money.\n- Repair cafés began in Amsterdam in 2009; tool libraries trace back to the 1970s.",
+   "stem": "The student wants to emphasize a similarity between repair cafés and tool libraries. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "Repair cafés, first held in Amsterdam in 2009, are considerably younger than tool libraries, the earliest of which had begun lending equipment to neighbors as far back as the 1970s.",
+    "Repair cafés and tool libraries alike are staffed almost entirely by volunteers, charge their users nothing, and define their central mission as the sharing of practical skills rather than mere saving of money.",
+    "At a typical repair café, volunteers guide visitors through mending broken household goods—worn toasters, torn jackets, balky bicycles—free of charge, sending each owner home with both a working object and a new skill.",
+    "Although both institutions plainly serve their neighborhoods, tool libraries exist to lend out equipment for short-term projects, whereas repair cafés concentrate instead on mending the possessions people already own."
+   ],
+   "answer_index": 1,
+   "rationale": "The goal is to emphasize a similarity. Only choice B presents shared features drawn from the notes—both rely almost entirely on volunteers, charge nothing, and define their mission as sharing practical skills—thereby foregrounding what the two institutions have in common.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS",
+     "why": "This names both institutions but emphasizes a difference—their relative ages—rather than a similarity."
+    },
+    "2": {
+     "trap": "GOAL-MISS",
+     "why": "This describes only repair cafés, so it cannot emphasize anything the two institutions share."
+    },
+    "3": {
+     "trap": "GOAL-MISS",
+     "why": "Despite the opening nod to 'both,' this choice draws a contrast between the two institutions' functions instead of emphasizing a similarity."
+    }
+   }
+  },
+  {
+   "num": 27,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "Rhetorical Synthesis (state the problem and the result): the goal pairs the detection problem with the network's outcome; only the choice that names both the difficulty and the trial result satisfies it.",
+   "passage": "While researching a topic, a student took the following notes:\n\n- Volcanic ash clouds endanger aircraft but are hard to spot at night or during storms.\n- Satellites can miss small or fast-rising eruptions.\n- Volcanic lightning produces strong radio pulses that travel thousands of kilometers.\n- Researchers built a network of radio sensors to detect these pulses.\n- In a 2018 trial, the network located several eruptions within minutes, before satellites confirmed them.",
+   "stem": "The student wants to state the problem researchers faced and the result of the solution they tested. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "Volcanic lightning generates powerful radio pulses that can travel thousands of kilometers from an erupting volcano, a phenomenon researchers have studied for several years now.",
+    "Because ash clouds threaten aircraft yet are easily missed at night or during storms, monitoring eruptions reliably has long been difficult for scientists to do.",
+    "In a 2018 field trial, a new network of radio sensors located several eruptions within minutes, sometimes before orbiting satellites had confirmed them at all.",
+    "Because ash clouds are easily missed at night or in storms, researchers built a radio-sensor network that, in a 2018 trial, located several eruptions within minutes—often before satellites confirmed them."
+   ],
+   "answer_index": 3,
+   "rationale": "The goal requires both the problem and the result. Choice D states the problem (ash clouds easily missed at night or in storms) and the result of the tested solution (the radio-sensor network located eruptions within minutes in a 2018 trial, often beating satellites), satisfying both parts.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS",
+     "why": "This states a mechanism about radio pulses but names neither the monitoring problem nor the trial's result."
+    },
+    "1": {
+     "trap": "GOAL-MISS",
+     "why": "This states only the problem and stops before reporting the result of the solution that was tested."
+    },
+    "2": {
+     "trap": "GOAL-MISS",
+     "why": "This reports only the result of the trial and omits the underlying detection problem the goal also requires."
+    }
+   }
+  }
+ ],
+ "figures": [
+  {
+   "id": "germination_table",
+   "type": "table",
+   "title": "Germination after 10 years of storage, by species and seed-moisture level",
+   "x_label": "Species and storage moisture level",
+   "y_label": "Germination rate (%)",
+   "series": [
+    {
+     "label": "Foxglove, 8% moisture",
+     "value": 41
+    },
+    {
+     "label": "Foxglove, 3% moisture",
+     "value": 72
+    },
+    {
+     "label": "Wild lupine, 8% moisture",
+     "value": 55
+    },
+    {
+     "label": "Wild lupine, 3% moisture",
+     "value": 81
+    },
+    {
+     "label": "Marsh marigold, 8% moisture",
+     "value": 63
+    },
+    {
+     "label": "Marsh marigold, 3% moisture",
+     "value": 60
+    },
+    {
+     "label": "Yellow rattle, 8% moisture",
+     "value": 38
+    },
+    {
+     "label": "Yellow rattle, 3% moisture",
+     "value": 66
+    }
+   ]
+  }
+ ]
+}

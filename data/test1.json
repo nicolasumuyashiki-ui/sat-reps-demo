@@ -1,235 +1,930 @@
 {
-  "test_id": "test1",
-  "module": 1,
-  "difficulty": "standard",
-  "title_en": "Module 1 — Test 1 (Sample)",
-  "title_jp": "Module 1 — Test 1（サンプル）",
-  "notes": "DRAFT / SAMPLE BANK — these 6 items exercise every render path the engine supports (plain passage, *emphasis*, Text 1/Text 2 cross-text via \\n, rhetorical synthesis with bullet notes, figure-backed item, and three distinct SEC subtypes). Replace with the real 27-question bank produced by SAT_RW_作問プロンプト_v1.md before shipping.",
-
-  "questions": [
-
-    {
-      "num": 1,
-      "domain": "Craft and Structure",
-      "skill": "Words in Context",
-      "difficulty": "easy",
-      "passage": "Marine biologist Edith Widder has spent decades studying bioluminescence — the production of light by living organisms. Far from being a *rare* curiosity, she argues, the trait is one of the most common in the deep ocean, where the majority of species can produce some form of light.",
-      "stem": "As used in the text, what does the word \"rare\" most nearly mean?",
-      "figure": null,
-      "choices": [
-        "Undercooked.",
-        "Valuable.",
-        "Uncommon.",
-        "Delicate."
-      ],
-      "answer_index": 2,
-      "rationale": "Widder is correcting a presumed view of bioluminescence as a fringe phenomenon, then asserts the trait is actually *common* in the deep ocean. The contrast (\"Far from being … one of the most common\") requires \"rare\" to mean the opposite of \"common\" — i.e., \"uncommon.\"",
-      "distractors": {
-        "0": { "trap": "T7", "why": "\"Undercooked\" is a literal sense of \"rare\" (as for steak) but is irrelevant in a biology passage. Choosing it means matching dictionary entries rather than reading the contrast in the passage." },
-        "1": { "trap": "T6", "why": "Bioluminescence may well be \"valuable\" scientifically, but \"valuable\" does not produce the contrast the sentence sets up against \"common.\" The author is not arguing about worth." },
-        "3": { "trap": "T7", "why": "\"Delicate\" picks up a connotation occasionally attached to \"rare\" specimens (e.g., a \"rare\" flower) but does not fit the opposition with \"common\" that the sentence demands." }
-      }
+ "test_id": "test1",
+ "module": 1,
+ "tier_mix": {
+  "Hard": 11,
+  "Super Hard": 16
+ },
+ "title_en": "Reading & Writing — Module 1",
+ "title_jp": "Reading & Writing — Module 1",
+ "questions": [
+  {
+   "num": 1,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "a dash restatement defines the blank by spelling out the quality in plain terms",
+   "passage": "The critic praised the bandleader’s arrangements above all for their ______ — a refusal to let any single instrument dominate, so that cornet, piano, and reeds traded the melody as equals from one chorus to the next.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "exuberance",
+    "evenhandedness",
+    "restraint",
+    "novelty"
+   ],
+   "answer_index": 1,
+   "rationale": "The dash restates the blank: “a refusal to let any single instrument dominate” and instruments trading the melody “as equals.” The quality being named is balance among parts — “evenhandedness.”",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "The music may well be exuberant, which makes the word feel right, but the dash defines a quality of balance, not high spirits; it captures a true-seeming detail that is not what is being praised."
     },
-
-    {
-      "num": 2,
-      "domain": "Information and Ideas",
-      "skill": "Central Ideas and Details",
-      "difficulty": "medium",
-      "passage": "Historians long credited the printing press alone with the rapid spread of literacy in early modern Europe. Recent scholarship complicates that picture. While Gutenberg's invention undoubtedly lowered the per-page cost of books, scholars now point to a parallel and arguably more decisive factor: the emergence of vernacular schoolrooms — small, often church-affiliated institutions that taught reading in local languages rather than Latin. Without these schoolrooms, the argument runs, cheap books would have had few readers prepared to use them.",
-      "stem": "Which choice best states the main idea of the text?",
-      "figure": null,
-      "choices": [
-        "The printing press is no longer believed to have contributed to the spread of literacy in early modern Europe.",
-        "Recent scholarship argues that the spread of literacy in early modern Europe depended on vernacular schoolrooms as well as on the printing press.",
-        "Vernacular schoolrooms taught reading more effectively than the printing press allowed.",
-        "Early modern European readers preferred books in local languages to those in Latin."
-      ],
-      "answer_index": 1,
-      "rationale": "The passage opens with the older view (printing press alone) and then advances a corrective: vernacular schoolrooms were a *parallel and arguably more decisive* factor. The main idea joins the two — not press alone, but press together with schoolrooms.",
-      "distractors": {
-        "0": { "trap": "T5", "why": "Overstates the revision. The passage says press \"undoubtedly\" lowered cost; it does not claim the press played no role. \"No longer believed to have contributed\" is too strong." },
-        "2": { "trap": "T8", "why": "Confused comparison. The passage compares two *factors* in literacy's spread; it does not rank classroom teaching against printing as instructional methods." },
-        "3": { "trap": "T6", "why": "An incidental detail (instruction was in local languages) is promoted to the main idea. The author's central claim is about literacy's spread, not reader preference." }
-      }
+    "2": {
+     "trap": "T3",
+     "why": "“Restraint” partly matches “a refusal to let any single instrument dominate,” but it implies holding back overall rather than sharing the lead equally, missing the parity the restatement stresses."
     },
-
-    {
-      "num": 3,
-      "domain": "Craft and Structure",
-      "skill": "Cross-Text Connections",
-      "difficulty": "hard",
-      "passage": "Text 1\nIn debates over urban housing, economists have generally argued that the cleanest way to lower rents is to permit more construction. New supply, the argument goes, eases competition for existing units and pulls prices downward across the market.\nText 2\nSociologist Mei Lin counters that recent studies in a half-dozen U.S. cities show new market-rate buildings concentrating in higher-income areas, where additional supply does little for the lower-income renters most exposed to rising rents. The aggregate logic of supply and demand, she suggests, can mask very uneven effects across neighborhoods.",
-      "stem": "Based on the texts, how would Lin (Text 2) most likely respond to the argument presented in Text 1?",
-      "figure": null,
-      "choices": [
-        "By agreeing that new construction is the most effective way to lower rents in any neighborhood.",
-        "By conceding the market-wide logic but arguing that it understates uneven local impacts.",
-        "By denying that supply has any effect on prices in housing markets.",
-        "By proposing that lower-income renters relocate to higher-income neighborhoods."
-      ],
-      "answer_index": 1,
-      "rationale": "Lin does not reject Text 1's market-wide reasoning outright (\"the aggregate logic of supply and demand … can mask\"); she accepts it as aggregate but argues it conceals uneven neighborhood-level effects. \"Conceding the market-wide logic but arguing it understates uneven local impacts\" captures both halves.",
-      "distractors": {
-        "0": { "trap": "T3", "why": "Reversed. Lin is challenging, not endorsing, the supply-side framing as a complete answer." },
-        "2": { "trap": "T5", "why": "Too extreme. Lin does not deny supply has any effect — she questions where the effect lands. \"No effect\" goes further than the passage." },
-        "3": { "trap": "T1", "why": "Out of scope. Lin says nothing about where renters should live; she diagnoses an unequal distribution of benefits." }
-      }
-    },
-
-    {
-      "num": 4,
-      "domain": "Information and Ideas",
-      "skill": "Command of Evidence (Quantitative)",
-      "difficulty": "medium",
-      "passage": "Agronomists in a 2024 field trial compared four soil-management practices on identical wheat plots in eastern Washington, measuring soil organic carbon (SOC) — a proxy for long-term soil health — after three growing seasons. The team hypothesized that practices reducing mechanical disturbance would retain the most SOC.",
-      "stem": "Which choice best uses the data in the graph to support the team's hypothesis?",
-      "figure": "soil_carbon",
-      "choices": [
-        "Conventional tillage retained the highest SOC at 28 g/kg.",
-        "No-till retained the highest SOC at 41 g/kg, while conventional tillage retained the lowest at 28 g/kg.",
-        "Cover crop plots retained more SOC than conventional tillage but less than reduced tillage.",
-        "All four practices retained roughly the same level of SOC, around 35 g/kg."
-      ],
-      "answer_index": 1,
-      "rationale": "The hypothesis predicts that less mechanical disturbance → more retained SOC. The graph shows no-till (least disturbance) at 41 g/kg and conventional tillage (most disturbance) at 28 g/kg — i.e., the lowest-disturbance practice retained the most SOC and the highest-disturbance practice the least. That is the cleanest support for the hypothesis.",
-      "distractors": {
-        "0": { "trap": "T3", "why": "Reverses the data. Conventional tillage is the lowest bar (28), not the highest." },
-        "2": { "trap": "T2", "why": "Half-right at best. Cover crop (36) does exceed conventional tillage (28), but reduced tillage (33) is lower than cover crop, not higher — the ordering is wrong, and the choice does not actually speak to the hypothesis about disturbance." },
-        "3": { "trap": "T5", "why": "Contradicts the graph: the four bars span 28 to 41, a 13-point gap, not \"roughly the same.\" The choice would have to be supported by similar values, which the figure does not show." }
-      }
-    },
-
-    {
-      "num": 5,
-      "domain": "Expression of Ideas",
-      "skill": "Rhetorical Synthesis",
-      "difficulty": "medium",
-      "passage": "While researching the Atacama Desert in Chile, a student took the following notes:\n\n- The Atacama is one of the driest non-polar deserts on Earth.\n- Some weather stations there have recorded no measurable rainfall for decades.\n- NASA tests Mars-rover instruments in the Atacama because the soil chemistry resembles Martian regolith.\n- The 2023 Mars Sample Return mission used Atacama field sites to calibrate its sampling protocols.\n- Calibration runs reduced sampling errors in the mission's first operational phase by an estimated 18 percent.",
-      "stem": "The student wants to emphasize the practical value of the Atacama for the Mars Sample Return mission. Which choice most effectively uses the relevant information from the notes to accomplish this goal?",
-      "figure": null,
-      "choices": [
-        "The Atacama Desert in Chile is one of the driest non-polar deserts on Earth, with some weather stations recording no measurable rainfall for decades.",
-        "Because the Atacama's soil chemistry resembles Martian regolith, NASA tests Mars-rover instruments there.",
-        "Field calibrations in the Atacama for the 2023 Mars Sample Return mission reduced sampling errors in the mission's first operational phase by an estimated 18 percent.",
-        "Although the Atacama is one of the driest non-polar deserts on Earth, NASA uses it as a testing ground for Mars instruments."
-      ],
-      "answer_index": 2,
-      "rationale": "The student's stated goal is to *emphasize the practical value* of the Atacama for the *Mars Sample Return mission* specifically. Only choice C names that mission, names a concrete benefit (calibration), and quantifies the value (an 18 percent reduction in sampling error). The other options either omit the mission, omit the practical outcome, or both.",
-      "distractors": {
-        "0": { "trap": "T6", "why": "Describes the desert's dryness — true and from the notes, but neither names the Mars Sample Return mission nor mentions any practical value for it." },
-        "1": { "trap": "T6", "why": "Names NASA's instrument testing — closer — but does not connect to the *Mars Sample Return mission* the student wants to emphasize, and gives no quantified or otherwise practical outcome." },
-        "3": { "trap": "T7", "why": "Combines two true facts but the framing (\"Although … driest, NASA uses it\") is contrastive rhetoric, not emphasis of practical mission value. The mission name is absent." }
-      }
-    },
-
-    {
-      "num": 6,
-      "domain": "Standard English Conventions",
-      "skill": "Subject-Verb Agreement",
-      "difficulty": "easy",
-      "passage": "A team of researchers studying coral reefs ______ that even brief marine heat waves can trigger lasting changes in reef community composition.",
-      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-      "figure": null,
-      "choices": [
-        "have shown",
-        "show",
-        "has shown",
-        "are showing"
-      ],
-      "answer_index": 2,
-      "rationale": "The subject is the singular noun \"team,\" not the plural \"researchers\" inside the modifying phrase \"of researchers studying coral reefs.\" A singular subject takes a singular verb form: \"has shown.\"",
-      "distractors": {
-        "0": { "trap": "SVA-INTERVENING-PLURAL", "why": "Mistakes the nearer plural noun \"researchers\" (inside a prepositional phrase) for the actual subject. The subject is the singular head noun \"team.\"" },
-        "1": { "trap": "SVA-INTERVENING-PLURAL", "why": "Same root error as A — treating \"researchers\" as the subject. \"Show\" is also a present-tense form that doesn't fit the report-of-finding context the sentence sets up." },
-        "3": { "trap": "SVA-INTERVENING-PLURAL", "why": "\"Are showing\" agrees with a plural subject, but the head noun is singular (\"team\"). The progressive aspect is also a poor fit for a claim about what the team's research has already established." }
-      }
-    },
-
-    {
-      "num": 7,
-      "domain": "Standard English Conventions",
-      "skill": "Possessive Apostrophe",
-      "difficulty": "medium",
-      "passage": "After the storm passed, the city assessed the damage to the ______ historic waterfront district.",
-      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-      "figure": null,
-      "choices": [
-        "citys'",
-        "citys",
-        "city's",
-        "cities"
-      ],
-      "answer_index": 2,
-      "rationale": "One city possesses one historic waterfront district: a singular possessive, formed by adding apostrophe + s to the singular noun. \"City's\" is correct.",
-      "distractors": {
-        "0": { "trap": "POSS-MISPLACED-APOS", "why": "Places the apostrophe after a non-existent plural \"citys.\" Plural possessive would require the correctly spelled plural \"cities'\" — and the context is singular anyway." },
-        "1": { "trap": "POSS-NO-APOS", "why": "Omits the apostrophe entirely and is also a misspelled plural. No possessive is formed." },
-        "3": { "trap": "POSS-PLURAL-NOT-POSS", "why": "\"Cities\" is the correct plural of \"city\" but signals no possession; the sentence requires the district to belong to the city." }
-      }
-    },
-
-    {
-      "num": 8,
-      "domain": "Standard English Conventions",
-      "skill": "Modifier Placement",
-      "difficulty": "medium",
-      "passage": "______ the violinist began the piece with an unusual variation on the opening theme.",
-      "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-      "figure": null,
-      "choices": [
-        "Walking onto the stage in a black gown,",
-        "Walking onto the stage in a black gown by the violinist,",
-        "Walked onto the stage in a black gown,",
-        "After walking onto the stage in a black gown by the audience,"
-      ],
-      "answer_index": 0,
-      "rationale": "The introductory participial phrase \"Walking onto the stage in a black gown\" must modify the subject of the main clause. The subject is \"the violinist\" — the person who walked onto the stage — so the unmarked participial phrase attaches cleanly to her.",
-      "distractors": {
-        "1": { "trap": "MOD-DOUBLE-AGENT", "why": "Tries to name the agent twice — once inside the modifier (\"by the violinist\") and again as the main-clause subject. The result is ungrammatical and redundant." },
-        "2": { "trap": "MOD-TENSE-MISMATCH", "why": "\"Walked\" is a finite past-tense verb, not a participle, so the result is a comma splice between two independent clauses, not a modifier attaching to a subject." },
-        "3": { "trap": "MOD-DANGLING", "why": "The agent named inside the modifier (\"by the audience\") doesn't match the main-clause subject (\"the violinist\"). Classic dangling/illogically attached modifier." }
-      }
-    },
-
-    {
-      "num": 9,
-      "domain": "Expression of Ideas",
-      "skill": "Transitions",
-      "difficulty": "easy",
-      "passage": "Most introductory chemistry texts present the periodic table as the unambiguous discovery of Dmitri Mendeleev in 1869. ______ several near-contemporaries — among them Julius Lothar Meyer in Germany — had independently arrived at strikingly similar arrangements within the same decade.",
-      "stem": "Which choice completes the text with the most logical transition?",
-      "figure": null,
-      "choices": [
-        "For instance,",
-        "In fact,",
-        "Therefore,",
-        "Similarly,"
-      ],
-      "answer_index": 1,
-      "rationale": "The first sentence presents a tidy textbook view; the second sentence complicates that view by naming rivals who arrived at similar arrangements. \"In fact,\" introduces a corrective elaboration that pushes against the prior generalization — exactly the relationship the two sentences have.",
-      "distractors": {
-        "0": { "trap": "TRANS-EXAMPLE-NOT-EXAMPLE", "why": "\"For instance\" would introduce a supporting example of the prior claim. Meyer's case is not an example of Mendeleev's sole discovery; it's a counterexample." },
-        "2": { "trap": "TRANS-CAUSE-NOT-CAUSE", "why": "\"Therefore\" implies the second sentence follows logically from the first. The sentences are in tension, not in cause-and-effect." },
-        "3": { "trap": "TRANS-COMPARE-NOT-COMPARE", "why": "\"Similarly\" presumes the two sentences make parallel observations. Here the second sentence revises the first rather than parallels it." }
-      }
+    "3": {
+     "trap": "T4",
+     "why": "“Novelty” introduces originality, a quality the passage never mentions; it lies outside the dash’s definition of equal exchange among instruments."
     }
-
-  ],
-
-  "figures": [
-    {
-      "id": "soil_carbon",
-      "type": "bar",
-      "title": "Soil Organic Carbon (SOC) after 3 growing seasons, by soil-management practice",
-      "x_label": "Soil-management practice",
-      "y_label": "Soil organic carbon (g/kg)",
-      "series": [
-        { "label": "Conventional tillage", "value": 28 },
-        { "label": "Reduced tillage",      "value": 33 },
-        { "label": "Cover crop",           "value": 36 },
-        { "label": "No-till",              "value": 41 }
-      ]
+   }
+  },
+  {
+   "num": 2,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "a contrast frame opposes an old dismissal, and a concrete clue names the quality teeming with life",
+   "passage": "Early naturalists dismissed the kelp forest as a sodden wilderness, yet to the biologist who later mapped its tiers of life the same waters proved astonishingly ______: every frond and holdfast harbored its own dense congregation of feeders, grazers, and hunters.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "fecund",
+    "pristine",
+    "verdant",
+    "precarious"
+   ],
+   "answer_index": 0,
+   "rationale": "The contrast (“dismissed … as a sodden wilderness, yet … proved astonishingly ___”) and the clue that “every frond and holdfast harbored its own dense congregation of feeders, grazers, and hunters” call for a word meaning teeming with life: “fecund.”",
+   "distractors": {
+    "1": {
+     "trap": "T8",
+     "why": "The forest may indeed be unspoiled, a true-seeming impression, but the clue names abundant living things, not purity; “pristine” captures a real quality that is beside the point."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "“Verdant” is partly right in suggesting lushness, yet it denotes green plant growth rather than the dense animal life the clue specifies, matching the wrong dimension of richness."
+    },
+    "3": {
+     "trap": "T5",
+     "why": "“Precarious” reverses the sense; the waters proved richly inhabited, not unstable or perilous, so it opposes the contrast the sentence builds."
     }
-  ]
+   }
+  },
+  {
+   "num": 3,
+   "domain": "Craft and Structure",
+   "skill": "Words in Context",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "a contrast frame fixes the blank on the dimension of cost named by the surrounding clue",
+   "passage": "Before 1840 the cost of a letter, reckoned by distance and by the number of sheets it held, could rival a day-laborer’s wage; under Rowland Hill’s uniform penny rate, by contrast, sending one became almost ______, and within a few years the nation’s mail had more than doubled.",
+   "stem": "Which choice completes the text with the most logical and precise word or phrase?",
+   "figure": null,
+   "choices": [
+    "effortless",
+    "instantaneous",
+    "costless",
+    "burdensome"
+   ],
+   "answer_index": 2,
+   "rationale": "The contrast (“could rival a day-laborer’s wage … by contrast … almost ___”) and the “uniform penny rate” fix the missing word on the dimension of cost: the reform made sending a letter nearly free, so “costless” fits.",
+   "distractors": {
+    "0": {
+     "trap": "T3",
+     "why": "The reform did make sending simpler — prepaid, with no haggling — so “effortless” captures a genuine ease, but the contrast drawn here is monetary (a wage versus a penny), so it matches the wrong dimension."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "Railway delivery was indeed fast, a true associated detail, yet the sentence contrasts cost, not speed, so “instantaneous” answers a question the clue does not ask."
+    },
+    "3": {
+     "trap": "T5",
+     "why": "“Burdensome” reverses the logic; the penny rate lightened the cost of a letter rather than making it expensive."
+    }
+   }
+  },
+  {
+   "num": 4,
+   "domain": "Craft and Structure",
+   "skill": "Text Structure and Purpose",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "an evidence sentence underpins the essay’s corrective turn against the opening claim",
+   "passage": "Histories of early photography tend to celebrate a handful of male studio owners, leaving the impression that the daguerreotype was an exclusively masculine craft. In fact, women operated portrait studios in dozens of American towns during the 1840s and 1850s, advertising in local papers and training apprentices of their own. *Surviving business ledgers and newspaper notices, only recently catalogued, reveal names that no standard history mentions.* Because their plates were rarely signed, however, the work of these women was easily folded into the reputations of male contemporaries, and their contributions slipped out of the record.",
+   "stem": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+   "figure": null,
+   "choices": [
+    "It introduces the passage’s main argument that women were deliberately barred from professional photography.",
+    "It points to recently examined records that document the overlooked women the passage describes.",
+    "It explains the chief reason that these women’s daguerreotypes were so rarely signed by their makers.",
+    "It concedes that male studio owners in fact produced most of the surviving daguerreotypes."
+   ],
+   "answer_index": 1,
+   "rationale": "The underlined sentence names the evidence — newly catalogued ledgers and notices — that backs the essay’s corrective claim that women ran studios despite their absence from histories. Its function is to ground that correction in documentary proof.",
+   "distractors": {
+    "0": {
+     "trap": "T5",
+     "why": "The passage says women were overlooked, not deliberately barred; the sentence supplies evidence of their activity rather than introducing an argument about exclusion, reversing its role."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "Why the plates were rarely signed is addressed in the final sentence, not the underlined one; this answer attaches the wrong function by borrowing a nearby detail."
+    },
+    "3": {
+     "trap": "T8",
+     "why": "It is true elsewhere that male owners dominate the record, but the underlined sentence asserts the opposite emphasis — that overlooked women are documented — so the answer twists a real point into the wrong function."
+    }
+   }
+  },
+  {
+   "num": 5,
+   "domain": "Craft and Structure",
+   "skill": "Text Structure and Purpose",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "problem-then-remedy-then-payoff exposition with the purpose stated only obliquely",
+   "passage": "Conventional concrete is brittle in a particular way: as it ages, hairline cracks open, admit water, and let that moisture corrode the steel skeleton within, so that a structure’s decline often begins invisibly. A recently engineered alternative answers this vulnerability from the inside. Dormant bacteria and a mineral they can metabolize are folded into the wet mix; should a crack later breach the surface and admit water, the microbes rouse, feed, and secrete calcium carbonate, knitting the fissure closed before corrosion can take hold. Trials remain preliminary, but their early results hint that such a material might lengthen the working lives of bridges and tunnels while trimming both repair budgets and the emissions that attend continual replacement.",
+   "stem": "Which choice best describes the main purpose of the text?",
+   "figure": null,
+   "choices": [
+    "To warn that the steel reinforcement hidden inside conventional concrete corrodes far faster than most engineers have assumed.",
+    "To trace, step by step, the chemical reaction through which embedded bacteria convert their mineral food into protective calcium carbonate.",
+    "To weigh the repair costs of aging bridges against the expense of replacing them outright.",
+    "To describe how a newly developed self-healing concrete counters a costly weakness and why it may prove worthwhile."
+   ],
+   "answer_index": 3,
+   "rationale": "The text first names a costly weakness of ordinary concrete (cracks admit water that corrodes the steel within), then explains how the new material seals its own cracks from inside, and closes with its projected benefits. Choice D captures both the mechanism and the payoff that organize the passage.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "Corrosion of the hidden steel is raised only to set up the problem in the first sentence; presenting it as the text’s purpose, and overstating its speed, mistakes a single setup detail for the whole."
+    },
+    "1": {
+     "trap": "T3",
+     "why": "The chemical mechanism is described, but only as one part of the passage; treating the step-by-step reaction as the sole purpose ignores both the problem it solves and the benefits the text stresses."
+    },
+    "2": {
+     "trap": "T4",
+     "why": "Costs appear only briefly as one projected benefit; the text never weighs repair against replacement, so this purpose lies outside its scope."
+    }
+   }
+  },
+  {
+   "num": 6,
+   "domain": "Craft and Structure",
+   "skill": "Cross-Text Connections",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "the two texts offer competing causes for the same phenomenon",
+   "passage": "Text 1\nWhistled languages survive mainly in places like the Canary island of La Gomera and the mountain villages of northern Turkey — landscapes scored by deep valleys and steep ridges. The reason is acoustic. A whistle, concentrated in a narrow band of high frequencies, cuts through open air and carries across a gorge far better than a shout, which scatters and fades. Where neighbors are separated by impassable ravines, a sound that can leap from ridge to ridge is enormously useful. It is the terrain, more than anything else, that explains where these remarkable languages took root.\nText 2\nIt is tempting to credit mountains for the world’s whistled languages, but the pattern is wider than that. Whistled speech has been documented among farmers in flat Amazonian forests and among groups on open savanna, where no ravine demands it. What these settings share is not relief but distance: people working far apart outdoors — herding, clearing fields, hunting — who must exchange quick messages without crossing the gap on foot. Rugged terrain may favor whistling, yet it is the demand for long-range outdoor communication, not the shape of the land, that best predicts where whistled languages emerge.",
+   "stem": "Based on the texts, how would the author of Text 2 most likely respond to the explanation offered in Text 1 for why whistled languages developed?",
+   "figure": null,
+   "choices": [
+    "By contending that rugged terrain alone cannot explain whistled languages, since they also arise in flat regions wherever people must communicate across long outdoor distances.",
+    "By agreeing that mountainous terrain is the single most decisive factor but adding that a region’s climate and prevailing winds also shape where whistling appears.",
+    "By granting that whistled speech exists in some flat areas while still insisting that rugged terrain remains the main reason such languages ever developed at all.",
+    "By suggesting that the world’s whistled languages are now steadily disappearing as telephones and radios reach even the most remote rural communities."
+   ],
+   "answer_index": 0,
+   "rationale": "Text 2 cites whistled speech in flat Amazonian forests and open savanna to argue that distance, not terrain, best predicts where the languages emerge. The author would therefore counter Text 1’s terrain explanation by pointing to those flat-region cases.",
+   "distractors": {
+    "1": {
+     "trap": "T8",
+     "why": "Text 2 explicitly downgrades terrain from the decisive factor to one that merely “may favor” whistling, so calling it the single most decisive factor concedes the very point Text 2 disputes, even while sounding balanced."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "This partly echoes Text 2’s flat-region evidence but then keeps Text 1’s conclusion that terrain is the main cause, which is exactly the claim Text 2 rejects."
+    },
+    "3": {
+     "trap": "T4",
+     "why": "Neither text discusses the decline of whistled languages or modern technology; this response is outside the scope of the debate over their cause."
+    }
+   }
+  },
+  {
+   "num": 7,
+   "domain": "Craft and Structure",
+   "skill": "Cross-Text Connections",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "the two texts assign rival primary purposes to the same body of records",
+   "passage": "Text 1\nThe great astronomical tables of the Maya were, at bottom, a farmer’s almanac. In a tropical lowland with only subtle seasonal cues, knowing when the rains would arrive was a matter of survival. By tracking the sun’s position and the heliacal risings of bright stars, scribes could anchor the agricultural year and tell villages when to clear, burn, and plant their fields. The mathematics was sophisticated, but its purpose was grounded in the soil: a dependable calendar meant dependable harvests for a growing population.\nText 2\nThere is little doubt the Maya watched the sky with care, yet reading their codices as planting guides mistakes the evidence. The Dresden Codex devotes its longest tables not to the sun and the seasons but to Venus, a body nearly irrelevant to the farming year. Those tables are bound up with omens — warnings of danger tied to the planet’s first dawn appearance — and with the timing of royal ceremonies and warfare. The precision the scribes pursued served prophecy and statecraft; forecasting the harvest was, at most, a secondary concern.",
+   "stem": "Based on the texts, how would the author of Text 2 most likely respond to the claim in Text 1 about the primary purpose of the Maya astronomical tables?",
+   "figure": null,
+   "choices": [
+    "By conceding that the tables did help schedule planting but insisting that this agricultural use emerged only late, long after their original ceremonial function.",
+    "By accepting that the tables carefully tracked Venus but treating that tracking as merely a refinement of the same agricultural calendar that Text 1 already describes.",
+    "By arguing that the tables’ principal purpose was divinatory and political — fixing auspicious dates for rituals, coronations, and warfare — rather than guiding the planting year.",
+    "By claiming that the Maya never actually achieved the astronomical precision that tracking either the seasons or their rituals dependably would have required."
+   ],
+   "answer_index": 2,
+   "rationale": "Text 2 stresses that the longest tables track Venus, a body “nearly irrelevant to the farming year,” and tie it to omens, ceremonies, and warfare. Its author would answer Text 1 by reassigning the tables’ chief purpose to prophecy and statecraft, not agriculture.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "Text 2 allows that planting use was “at most, a secondary concern,” but it never claims this use came late after a ceremonial original; the answer grafts a sequence onto Text 2 that it does not assert."
+    },
+    "1": {
+     "trap": "T3",
+     "why": "This borrows Text 2’s real emphasis on Venus yet folds it back into Text 1’s agricultural calendar, preserving the very conclusion Text 2 sets out to overturn."
+    },
+    "3": {
+     "trap": "T6",
+     "why": "Both texts treat the scribes as highly precise — Text 2 even praises “the precision the scribes pursued” — so denying their precision contradicts both passages and overstates the case."
+    }
+   }
+  },
+  {
+   "num": 8,
+   "domain": "Information and Ideas",
+   "skill": "Central Ideas and Details",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "apparent disorder is reframed as deliberate design",
+   "passage": "European observers in the seventeenth century frequently described Indigenous fields as disorderly, comparing the tangle of corn, beans, and squash unfavorably with the neat furrows of their own farms. Yet the apparent disorder was a finely tuned design. The cornstalks gave the climbing beans a pole; the beans, hosting bacteria that fix nitrogen, replenished the soil the corn depleted; and the broad squash leaves shaded out weeds while holding in moisture. What looked like neglect was in fact an integrated system that sustained fertility season after season, without the fallow years that European fields required.",
+   "stem": "Which choice best states the main idea of the text?",
+   "figure": null,
+   "choices": [
+    "European farmers throughout the colonies eventually abandoned their own familiar methods and took up Indigenous intercropping once they recognized just how productive the practice could be.",
+    "Corn, beans, and squash were the only three crops that Indigenous communities ever proved willing to cultivate together within a single mounded field.",
+    "Indigenous fields reliably produced substantially larger harvests than the neighboring European fields because their crops were planted far more densely in the same ground.",
+    "What European observers dismissed as mere disorder was in fact a sophisticated system in which each crop supported the others and preserved the soil’s fertility across many seasons."
+   ],
+   "answer_index": 3,
+   "rationale": "The passage contrasts the Europeans’ charge of “disorder” with a description of how each crop helps the others and keeps the soil fertile “season after season.” Choice D restates that central reframing of apparent neglect as integrated design.",
+   "distractors": {
+    "0": {
+     "trap": "T7",
+     "why": "Whether Europeans adopted the methods is plausible but never stated; the text only reports their dismissive view, so the claim is unsupported by the passage."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "The three crops are named as examples of the system, but the text never says they were the only crops grown; the answer overstates a real detail into an exclusive claim."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "The passage emphasizes sustained fertility, not harvest size, and offers no yield comparison; this answer borrows the comparison-with-Europe frame while distorting it into an unsupported claim about quantity."
+    }
+   }
+  },
+  {
+   "num": 9,
+   "domain": "Information and Ideas",
+   "skill": "Central Ideas and Details",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "a reputation is a misreading: an apprentice’s realization, withheld until the final clause, recasts the master’s gift as inference rather than certainty",
+   "passage": "For three years Noor had inked her master’s coastlines exactly as he dictated them, trusting that every inlet and shoal corresponded to some surveyed reality. She had taken his unhesitating hand for proof of firsthand knowledge. The illusion held until a returning captain, laughing, described a bay the master had charted with perfect confidence and yet had never seen — a bay rendered wholly from a sailor’s secondhand report. Only then did she grasp what the maps truly were: not transcriptions of a known coast but reasoned arguments about a probable one. Her master’s gift, she understood at last, lay not in certainty but in the disciplined craft of inference.",
+   "stem": "Which choice best states the main idea of the text?",
+   "figure": null,
+   "choices": [
+    "Noor concludes that her master had knowingly deceived his clients by selling them charts of coastlines and harbors that he himself had never once visited or surveyed.",
+    "Noor resolves to abandon cartography entirely upon discovering that several of her master’s most celebrated charts in fact contained serious and embarrassing factual errors.",
+    "Noor decides that patient, faithful copying ultimately matters far more to a working cartographer than any amount of dangerous firsthand exploration of distant and uncharted coasts.",
+    "Noor comes to see that her master’s admired charts were skilled, well-informed conjecture about a probable world rather than the flawless certainty she had long taken them to embody."
+   ],
+   "answer_index": 3,
+   "rationale": "The closing lines redefine the charts as “reasoned arguments about a probable” coast and locate the master’s gift in “the disciplined craft of inference.” The passage turns on Noor’s realization that his precision was informed conjecture, not certainty — choice D.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "The master did chart a bay he had never seen, which makes “deception” tempting, but the text frames this as reasoned inference from a sailor’s report, not fraud; the answer hardens a real detail into an unsupported charge."
+    },
+    "1": {
+     "trap": "T4",
+     "why": "Noor never considers quitting, and the passage records insight, not disillusionment; this outcome is invented and falls outside the text."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "Copying is mentioned only as Noor’s former routine; the passage’s point is the nature of the charts, so elevating copying over exploration seizes a minor detail and misses the central realization."
+    }
+   }
+  },
+  {
+   "num": 10,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Textual",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "a hypothesis isolates a second cause; the right finding separates it from the obvious one",
+   "passage": "For decades, the dramatic comeback of sea otters was treated as the whole explanation for the recovery of kelp forests along the Pacific coast: otters eat sea urchins, urchins eat kelp, and so more otters meant more kelp. A research team has now questioned whether otters deserve all the credit. They note that a second major predator of urchins, the sunflower sea star, was devastated by a wasting disease in the 2010s, and that urchin numbers exploded in many areas during exactly those years. The team hypothesizes that the loss of sea stars — not merely the historical scarcity of otters — was a key driver of the urchin outbreaks that stripped the kelp, and that restoring sea stars could matter as much as protecting the otters.",
+   "stem": "Which finding, if true, would most directly support the research team’s hypothesis?",
+   "figure": null,
+   "choices": [
+    "Along the Pacific coast, the kelp forests that recovered most quickly were generally those bordering bays with the largest resident sea otter populations.",
+    "Before the wasting disease struck, sunflower sea stars and sea otters were only rarely observed hunting in the very same stretches of coastal water.",
+    "In bays where sea otters remained abundant but sunflower sea stars had died off, urchin populations still surged and kelp cover fell sharply during those years.",
+    "Sea urchins are known to graze on several species of red and brown algae in addition to the tall kelp that forms the coastal forests."
+   ],
+   "answer_index": 2,
+   "rationale": "The hypothesis is that losing sea stars, independent of otters, drove the urchin outbreaks. A case where otters stayed abundant yet urchins surged and kelp fell once sea stars vanished isolates the sea star as the decisive factor, directly supporting the claim.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "Faster recovery near large otter populations is consistent with the old otters-only story and does nothing to show that sea stars matter independently; it tempts because it is true-sounding yet supports the rival explanation."
+    },
+    "1": {
+     "trap": "T1",
+     "why": "Whether the two predators hunted in the same waters shifts the question to their spatial overlap rather than testing whether sea-star loss caused the urchin outbreaks."
+    },
+    "3": {
+     "trap": "T4",
+     "why": "What else urchins eat is irrelevant to whether sea-star decline drove their population surge; the detail lies outside the causal claim being tested."
+    }
+   }
+  },
+  {
+   "num": 11,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Textual",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "a conclusion credits the living mechanism; the right finding shows the rival abiotic mechanism suffices even with the microbes removed — the team’s own decisive test",
+   "passage": "A research team built a self-healing concrete by folding capsules of dormant bacteria, along with a mineral the microbes can metabolize, into the wet mix. In laboratory specimens, cracks resealed within weeks, and the team attributed the repair specifically to the bacteria: revived by infiltrating water, the microbes were said to precipitate the calcium carbonate that plugged each fissure — rather than the abiotic mineral deposition that can also occur as ordinary wet concrete cures. The decisive test, they acknowledged, would be to demonstrate that such sealing fails to occur in otherwise identical material from which all living microbes have been excluded.",
+   "stem": "Which finding, if true, would most directly weaken the research team’s conclusion?",
+   "figure": null,
+   "choices": [
+    "The embedded bacteria could sometimes persist in their dormant state for as long as two years before a crack finally formed and admitted the water needed to revive them.",
+    "Otherwise identical specimens prepared with no bacteria whatsoever resealed their cracks just as completely whenever they were subjected to the very same cycles of wetting and drying.",
+    "Cracks wider than roughly one millimeter were observed to reseal noticeably more slowly than the narrower fissures that tended to open closer to each specimen’s exposed surface.",
+    "Chemical analysis revealed that the limestone filling the sealed cracks carried the distinctive isotopic signature associated specifically with the metabolic activity of living bacteria."
+   ],
+   "answer_index": 1,
+   "rationale": "The team itself defined the decisive test: sealing must fail where no living microbes are present. Bacteria-free specimens that reseal just as completely under identical wet-dry cycling show that abiotic mineral deposition can account for the repair, directly undercutting the conclusion that the bacteria are responsible.",
+   "distractors": {
+    "0": {
+     "trap": "T8",
+     "why": "Prolonged dormancy is consistent with — even expected under — the bacterial mechanism; it reads as relevant detail but does nothing to challenge the conclusion."
+    },
+    "2": {
+     "trap": "T1",
+     "why": "A difference in sealing speed by crack width shifts attention to the rate of repair rather than to whether bacteria or plain chemistry caused it."
+    },
+    "3": {
+     "trap": "T5",
+     "why": "A bacterial isotopic signature would strengthen, not weaken, the conclusion that microbes did the sealing, so it points the opposite way from what the question asks."
+    }
+   }
+  },
+  {
+   "num": 12,
+   "domain": "Information and Ideas",
+   "skill": "Command of Evidence: Quantitative",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "the data must be read for a trend in the marginal effect, not a single comparison; the diminishing step-by-step drops are the crux",
+   "passage": "Trees temper the heat of city streets in two ways: by shading dark, heat-absorbing surfaces and by transpiring water vapor that carries warmth upward and away. Curious how sharply this relief scales with the extent of leaf cover, a research team sorted one city’s neighborhoods into four bands by the share of ground their canopy shaded, then logged each band’s mean temperature on summer afternoons, when the urban heat island peaks. They anticipated cooler readings where canopy was densest, but their real question was marginal: whether every additional increment of cover bought the same degree of cooling, or whether the returns diminished as neighborhoods grew leafier. Summarizing the figures, a student wrote that ______",
+   "stem": "Which choice best uses data from the graph to complete the statement?",
+   "figure": "canopy_temp",
+   "choices": [
+    "although the leafier bands were unmistakably cooler overall, the extra cooling won with each successive ten-point gain in canopy cover dwindled as the neighborhoods reached the higher bands.",
+    "because afternoon temperatures dropped by the very same amount between every pair of adjacent bands, each ten-point increase in canopy cover delivered one identical increment of cooling throughout.",
+    "the neighborhoods in the highest canopy band actually registered warmer afternoons than those in the lowest band, implying that adding more tree cover modestly raised local temperatures overall.",
+    "the coolest neighborhoods owed their lower afternoon temperatures to influences unrelated to canopy, since cover and temperature failed to move together across the four bands at all."
+   ],
+   "answer_index": 0,
+   "rationale": "Mean temperatures fall across the four bands (96.2, 92.8, 90.4, 89.1 °F), so leafier neighborhoods are cooler — but the successive drops shrink from 3.4 to 2.4 to 1.3 °F. That diminishing marginal cooling is exactly what choice A describes.",
+   "distractors": {
+    "1": {
+     "trap": "T8",
+     "why": "The graph does show cooling at every step, which makes a tidy linear reading tempting, but the drops are unequal (3.4, 2.4, 1.3 °F), so an identical benefit per band misreads the data."
+    },
+    "2": {
+     "trap": "T5",
+     "why": "The highest-canopy band is the coolest (89.1 °F), not the warmest, so this reverses the graph’s clear downward trend."
+    },
+    "3": {
+     "trap": "T1",
+     "why": "Cover and temperature do move together — every rise in canopy lowers the mean — so attributing the cooling to unrelated factors shifts away from what the graph actually shows."
+    }
+   }
+  },
+  {
+   "num": 13,
+   "domain": "Information and Ideas",
+   "skill": "Inferences",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "a built-in correction implies the scribes tracked and adjusted for accumulating error",
+   "passage": "Maya astronomers recorded the synodic period of Venus as 584 days, remarkably close to the modern value. But because the true period is slightly less than that, a table left unchanged for centuries would gradually drift out of step with the sky. The surviving Dresden Codex includes correction tables that periodically subtract a few days, nudging the count back into alignment. From the existence of these built-in adjustments, it is reasonable to conclude that the scribes who maintained the records ______",
+   "stem": "Which choice most logically completes the text?",
+   "figure": null,
+   "choices": [
+    "recognized that their original figure for Venus slowly accumulated small errors over the years and deliberately built periodic corrections into the tables to keep their predictions aligned with the sky.",
+    "had quietly abandoned any direct observation of the night sky and simply copied the planetary figures recorded in their much older and largely inherited reference books.",
+    "valued the planet Venus chiefly for its ritual and ceremonial associations rather than for any genuine usefulness in predicting exactly where it would next appear at dawn.",
+    "were never actually able to measure the synodic period of Venus with even rough precision, despite the many centuries of careful and patient recording that lay behind them."
+   ],
+   "answer_index": 0,
+   "rationale": "Correction tables that periodically subtract days only make sense if the scribes knew their fixed figure drifted over time and meant to keep predictions matching observation. The built-in adjustments imply awareness of accumulating error and a deliberate fix.",
+   "distractors": {
+    "1": {
+     "trap": "T8",
+     "why": "Scribes did copy from earlier tables, which lends this surface plausibility, but periodic corrections require continued comparison with the sky, contradicting the idea that observation was abandoned."
+    },
+    "2": {
+     "trap": "T3",
+     "why": "Venus did carry ritual meaning elsewhere in Maya thought, yet this passage is about the corrections’ predictive function, so the ritual reading borrows an outside detail and ignores the clue."
+    },
+    "3": {
+     "trap": "T5",
+     "why": "A figure “remarkably close to the modern value,” refined by corrections, indicates considerable precision, so concluding the scribes could not measure the period reverses the evidence."
+    }
+   }
+  },
+  {
+   "num": 14,
+   "domain": "Information and Ideas",
+   "skill": "Inferences",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "dependence on a host language’s sounds bounds who can understand the whistle",
+   "passage": "Whistled forms of spoken languages, such as Silbo on the island of La Gomera, encode the vowels and consonants of speech as changes in pitch and melody. Because a whistle carries far better than a shout across deep ravines, herders historically used it to send messages over distances where ordinary speech fails. Crucially, a whistled language is not a separate code with its own vocabulary; it tracks, sound for sound, the spoken tongue of the same community. From this dependence it follows that a community’s whistled speech ______",
+   "stem": "Which choice most logically completes the text?",
+   "figure": null,
+   "choices": [
+    "necessarily conveys a far narrower range of possible everyday messages than the complete spoken language from which its own whistled form has been directly derived.",
+    "is best regarded as a fully independent language that merely happens to resemble the ordinary spoken tongue used within that very same local community.",
+    "can be fully understood only by listeners who already know the spoken language it is based on, since its meaning rides entirely on that language’s sounds.",
+    "would remain roughly equally intelligible to virtually any skilled whistler, regardless of which particular spoken language he or she may already happen to know beforehand."
+   ],
+   "answer_index": 2,
+   "rationale": "The passage stresses that whistling tracks the local spoken tongue “sound for sound” and has no vocabulary of its own. If its meaning depends entirely on those sounds, only someone who knows the underlying spoken language can decode it.",
+   "distractors": {
+    "0": {
+     "trap": "T1",
+     "why": "The text never compares the message range of whistled and spoken forms; claiming the whistle conveys less shifts to an unsupported limitation rather than following from the stated dependence."
+    },
+    "1": {
+     "trap": "T8",
+     "why": "The whistle does resemble the spoken tongue, which makes this tempting, but the passage explicitly denies that it is a separate, independent code, so the answer contradicts the very sentence it leans on."
+    },
+    "3": {
+     "trap": "T5",
+     "why": "If meaning rides on a specific language’s sounds, the whistle cannot be equally intelligible to whistlers who do not know that language, which reverses the passage’s logic."
+    }
+   }
+  },
+  {
+   "num": 15,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "semicolon with conjunctive adverb",
+   "difficulty": "Hard",
+   "frame": "two independent clauses joined by a conjunctive adverb require a semicolon before and a comma after; intervening modifiers camouflage where the clauses meet",
+   "passage": "The two coves diverged within a single season. In the northern cove, where the otters returned early and thinned the urchin ranks to almost nothing, the kelp ______ in the southern cove, abandoned by the otters for good, the seafloor stayed a barren plain of urchins and bare rock.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "rebounded, however,",
+    "rebounded; however,",
+    "rebounded however,",
+    "rebounded; however"
+   ],
+   "answer_index": 1,
+   "rationale": "Two independent clauses (“… the kelp rebounded” and “in the southern cove … the seafloor stayed a barren plain …”) are joined by the conjunctive adverb “however,” which needs a semicolon before it and a comma after it. Only choice B punctuates both boundaries correctly, even though the intervening modifiers obscure where the clauses meet.",
+   "distractors": {
+    "0": {
+     "trap": "COMMA-SPLICE",
+     "why": "A comma before “however” joins two independent clauses with only a comma, producing a comma splice rather than the required semicolon."
+    },
+    "2": {
+     "trap": "FUSED-RUNON",
+     "why": "With no mark before “however,” the two independent clauses run together as a fused sentence."
+    },
+    "3": {
+     "trap": "MISSING-COMMA",
+     "why": "The semicolon before “however” is correct, but dropping the comma after the conjunctive adverb leaves the boundary incompletely punctuated."
+    }
+   }
+  },
+  {
+   "num": 16,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "colon before an explanation",
+   "difficulty": "Hard",
+   "frame": "a complete clause introduces a noun phrase that specifies it, calling for a colon",
+   "passage": "Among the many cycles the Maya scribes followed, one received especially close ______ the 584-day journey of Venus, whose first reappearance at dawn was believed to carry powerful and dangerous omens for kings and crops alike.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "attention:",
+    "attention,",
+    "attention;",
+    "attention"
+   ],
+   "answer_index": 0,
+   "rationale": "The clause “one received especially close attention” is complete, and what follows names and explains that one cycle. A colon correctly introduces this specifying noun phrase: “…close attention: the 584-day journey of Venus….”",
+   "distractors": {
+    "1": {
+     "trap": "FAULTY-APPOSITIVE-COMMA",
+     "why": "A comma makes “the 584-day journey of Venus” read as an appositive renaming “attention,” which is illogical, since the journey is the cycle, not the attention."
+    },
+    "2": {
+     "trap": "WRONG-SEMICOLON",
+     "why": "A semicolon must join two independent clauses, but “the 584-day journey of Venus…” is a noun phrase, not a clause."
+    },
+    "3": {
+     "trap": "FUSED-RUNON",
+     "why": "With no punctuation, the clause and the explanatory phrase run together without the mark the structure requires."
+    }
+   }
+  },
+  {
+   "num": 17,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "comma with coordinating conjunction",
+   "difficulty": "Super Hard",
+   "frame": "two independent clauses joined by a coordinating conjunction take a comma before it; a long intervening adverbial after “and” camouflages the second clause’s subject",
+   "passage": "For the price of a single penny, a clerk in London could now post a letter to a cousin in distant ______ within a day or two, carried through the night by the new mail trains, that letter would be lying on the cousin’s breakfast table.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "Edinburgh and",
+    "Edinburgh; and",
+    "Edinburgh: and",
+    "Edinburgh, and"
+   ],
+   "answer_index": 3,
+   "rationale": "Two independent clauses — “a clerk … could now post a letter to a cousin in distant Edinburgh” and “within a day or two … that letter would be lying on the cousin’s breakfast table” — are joined by the coordinating conjunction “and,” so a comma belongs before it. The long adverbial that follows “and” hides the second clause’s subject, but choice D supplies the required comma.",
+   "distractors": {
+    "0": {
+     "trap": "FUSED-RUNON",
+     "why": "Omitting the comma before “and” fuses two independent clauses into a run-on."
+    },
+    "1": {
+     "trap": "WRONG-SEMICOLON",
+     "why": "A semicolon should not stand directly before a coordinating conjunction joining two clauses; the pairing is nonstandard."
+    },
+    "2": {
+     "trap": "WRONG-COLON",
+     "why": "A colon must follow a complete clause and introduce an explanation or list, not link two independent clauses with “and.”"
+    }
+   }
+  },
+  {
+   "num": 18,
+   "domain": "Standard English Conventions",
+   "skill": "Boundaries",
+   "convention": "no punctuation with a restrictive clause",
+   "difficulty": "Super Hard",
+   "frame": "a restrictive relative clause that identifies the subject must not be set off by punctuation",
+   "passage": "Historians are only now recovering their stories. The early ______ ran portrait studios across the American frontier during the 1840s have been almost entirely absent from standard accounts of photography’s first decade.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "women, who",
+    "women who",
+    "women; who",
+    "women: who"
+   ],
+   "answer_index": 1,
+   "rationale": "The clause “who ran portrait studios across the American frontier during the 1840s” identifies which women the sentence is about and is essential to its meaning. A restrictive clause takes no punctuation, so “women who” is correct.",
+   "distractors": {
+    "0": {
+     "trap": "WRONG-NONRESTRICTIVE-COMMA",
+     "why": "A comma before “who” signals a nonrestrictive clause, wrongly treating the defining information as removable and leaving the subject unspecified."
+    },
+    "2": {
+     "trap": "WRONG-SEMICOLON",
+     "why": "A semicolon would need an independent clause on each side, but “who ran portrait studios…” is a dependent relative clause, creating a fragment."
+    },
+    "3": {
+     "trap": "WRONG-COLON",
+     "why": "A colon must follow a complete clause introducing an explanation; placing one before a restrictive “who” clause is ungrammatical."
+    }
+   }
+  },
+  {
+   "num": 19,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "dangling modifier",
+   "difficulty": "Hard",
+   "frame": "the introductory modifier must attach to the noun it logically describes",
+   "passage": "Aging bridges and tunnels are pushing engineers to invent materials that demand far less upkeep over their long working lives. Designed to mend its own cracks without any human intervention, ______",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "the new concrete seals small fractures on its own as dormant bacteria inside it revive and deposit limestone.",
+    "engineers embedded colonies of dormant bacteria that deposit hard limestone whenever water seeps into a fresh fracture.",
+    "dormant bacteria within the cement mix deposit limestone whenever water happens to reach a newly opened fracture.",
+    "the necessary repair occurs all on its own whenever the bacteria deposit limestone to seal a widening fracture."
+   ],
+   "answer_index": 0,
+   "rationale": "The opening modifier “Designed to mend its own cracks” must describe the noun that follows. Only the concrete is designed to mend its own cracks, so “the new concrete” must be the subject, as in choice A.",
+   "distractors": {
+    "1": {
+     "trap": "DANGLER-UNFIXED",
+     "why": "Making “engineers” the subject says the engineers were “designed to mend its own cracks,” which is illogical and leaves the modifier dangling."
+    },
+    "2": {
+     "trap": "DANGLER-UNFIXED",
+     "why": "With “dormant bacteria” as the subject, the modifier claims the bacteria were designed to mend their own cracks, misattributing the description."
+    },
+    "3": {
+     "trap": "DANGLER-UNFIXED",
+     "why": "“The necessary repair” cannot be the thing “designed to mend its own cracks,” so the introductory phrase still has no logical noun to modify."
+    }
+   }
+  },
+  {
+   "num": 20,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "subject-verb agreement",
+   "difficulty": "Super Hard",
+   "frame": "a singular subject is separated from its verb by an unusually long appositive crowded with plural nouns; the verb must still agree with the singular head",
+   "passage": "The intricate interdependence of the three crops that Indigenous farmers mounded together in a single hill — corn lending the beans a pole, beans feeding nitrogen to the soil, squash shading out the weeds — ______ a fertility that European monocultures, for all their tidy furrows, could rarely match.",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "sustain",
+    "have sustained",
+    "sustains",
+    "are sustaining"
+   ],
+   "answer_index": 2,
+   "rationale": "The simple subject is the singular noun “interdependence,” not any of the plural nouns in the long intervening appositive (“corn … beans … squash … weeds”). A singular subject takes the singular present-tense verb “sustains.”",
+   "distractors": {
+    "0": {
+     "trap": "SVA-ATTRACTION",
+     "why": "“Sustain” is plural, agreeing with the nearby plural nouns rather than the true singular subject “interdependence.”"
+    },
+    "1": {
+     "trap": "SVA-ATTRACTION",
+     "why": "“Have sustained” is plural; the singular subject would require “has sustained,” so the verb is pulled toward the intervening plurals."
+    },
+    "3": {
+     "trap": "SVA-ATTRACTION",
+     "why": "“Are sustaining” is plural and disagrees with the singular subject “interdependence,” attracted to the list of crops between subject and verb."
+    }
+   }
+  },
+  {
+   "num": 21,
+   "domain": "Standard English Conventions",
+   "skill": "Form, Structure, and Sense",
+   "convention": "parallel structure in a series",
+   "difficulty": "Super Hard",
+   "frame": "the third item in a series must match the verb-phrase form of the first two",
+   "passage": "To carry a message across a deep valley, a skilled whistler must stretch out the vowels, exaggerate the rise and fall of the pitch, and ______",
+   "stem": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+   "figure": null,
+   "choices": [
+    "the consonants are flattened into brief, abrupt glides of sound.",
+    "flattening the consonants into brief, abrupt glides of sound.",
+    "consonants that are flattened into brief, abrupt glides of sound.",
+    "flatten the consonants into brief, abrupt glides of sound."
+   ],
+   "answer_index": 3,
+   "rationale": "The series uses base-form verb phrases: “stretch out the vowels,” “exaggerate the rise and fall.” The third item must match, so “flatten the consonants” keeps the structure parallel.",
+   "distractors": {
+    "0": {
+     "trap": "NOT-PARALLEL",
+     "why": "A passive independent clause (“the consonants are flattened”) breaks from the base-verb pattern of the first two items."
+    },
+    "1": {
+     "trap": "NOT-PARALLEL",
+     "why": "The gerund “flattening” shifts form away from the base verbs “stretch” and “exaggerate,” disrupting the parallel series."
+    },
+    "2": {
+     "trap": "NOT-PARALLEL",
+     "why": "The relative clause “consonants that are flattened” is a noun phrase, not a verb phrase, so it cannot complete the parallel list of actions."
+    }
+   }
+  },
+  {
+   "num": 22,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "two opposed conditions are set side by side, requiring a contrast transition",
+   "passage": "Sea otters prey heavily on sea urchins, and their presence keeps urchin numbers in check. Where otters are abundant, urchins stay sparse and the kelp forests grow thick and tall. Where the otters have been hunted out, ______ urchins multiply unchecked and graze the kelp down to bare rock.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "therefore,",
+    "by contrast,",
+    "for example,",
+    "likewise,"
+   ],
+   "answer_index": 1,
+   "rationale": "The sentence sets the otter-free condition against the otter-rich one just described, with opposite outcomes for kelp. “By contrast” correctly marks this opposition between the two situations.",
+   "distractors": {
+    "0": {
+     "trap": "REL-CAUSE",
+     "why": "“Therefore” signals that the absence of otters follows as a consequence of the prior sentence, but the two clauses describe contrasting conditions, not cause and effect."
+    },
+    "2": {
+     "trap": "REL-EXEMPLIFICATION",
+     "why": "“For example” would make the otter-free case an instance of the otter-rich case, when in fact it is its opposite."
+    },
+    "3": {
+     "trap": "REL-SIMILARITY",
+     "why": "“Likewise” signals a parallel outcome, but the outcome here is reversed — kelp is stripped rather than flourishing."
+    }
+   }
+  },
+  {
+   "num": 23,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "the closing sentence re-expresses the evidence in plainer terms — a restatement, not a consequence; the cause/restatement distinction is the crux",
+   "passage": "Listeners had long taken the singer’s phrasing for pure spontaneity, as if each catch of breath and trailing pause arrived unbidden in the heat of performance. The rehearsal tapes, recovered decades later, complicate that romance: the very same hesitations recur, note for note, across take after take. ______ what listeners had taken for spur-of-the-moment invention was in fact a fixed design, settled well before the microphones were ever switched on.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "Consequently,",
+    "Even so,",
+    "In other words,",
+    "For instance,"
+   ],
+   "answer_index": 2,
+   "rationale": "The final sentence does not add a new result; it restates what the evidence means — hesitations identical in every take amount to fixed, rehearsed design. “In other words” signals this re-expression of the same point.",
+   "distractors": {
+    "0": {
+     "trap": "REL-CAUSE",
+     "why": "“Consequently” casts the conclusion as an effect produced by the recurrence, but the design causes the recurrence, not the reverse; the sentence interprets the evidence rather than drawing a consequence from it."
+    },
+    "1": {
+     "trap": "REL-CONCESSION",
+     "why": "“Even so” signals contrast or concession, yet the closing sentence agrees with and clarifies the evidence instead of opposing it."
+    },
+    "3": {
+     "trap": "REL-EXEMPLIFICATION",
+     "why": "“For instance” promises an example of a general claim, but the clause is itself the conclusion, not an illustration of it."
+    }
+   }
+  },
+  {
+   "num": 24,
+   "domain": "Expression of Ideas",
+   "skill": "Transitions",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "the second sentence amplifies and confirms the first, requiring an intensifying transition",
+   "passage": "For the Maya, the Venus tables were never a purely scholarly exercise. The planet’s movements were read as omens, and its first dawn appearance was thought to threaten kings and crops alike. ______ the rhythms of statecraft bent to the tables: coronations were scheduled, and wars were launched, to align with the planet’s reappearances.",
+   "stem": "Which choice completes the text with the most logical transition?",
+   "figure": null,
+   "choices": [
+    "In contrast,",
+    "For instance,",
+    "Nevertheless,",
+    "Indeed,"
+   ],
+   "answer_index": 3,
+   "rationale": "The final sentence does not merely give one example; it escalates the claim that the tables were “never a purely scholarly exercise” to the sweeping point that all of statecraft bent to them. “Indeed” signals this confirming intensification.",
+   "distractors": {
+    "0": {
+     "trap": "REL-CONTRAST",
+     "why": "“In contrast” promises opposition, but the closing sentence reinforces rather than challenges the idea that the tables had practical, non-scholarly weight."
+    },
+    "1": {
+     "trap": "REL-EXEMPLIFICATION",
+     "why": "“For instance” would frame the bending of statecraft as a single example, yet the clause makes a comprehensive claim that amplifies the point rather than illustrating it."
+    },
+    "2": {
+     "trap": "REL-CONCESSION",
+     "why": "“Nevertheless” concedes a counterpoint, but no contrast is being granted; the sentence simply strengthens the preceding assertion."
+    }
+   }
+  },
+  {
+   "num": 25,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Hard",
+   "frame": "emphasize a difference between documented activity and the historical record",
+   "passage": "While researching a topic, a student took the following notes:\n\n- Daguerreotypy, introduced in 1839, was the first photographic process to be adopted widely.\n- In the 1840s and 1850s, women ran daguerreotype portrait studios in many American towns.\n- These women advertised their services in local newspapers and trained their own apprentices.\n- Because the plates were rarely signed, their work was often credited to male contemporaries.\n- Standard histories of photography mention very few of these women by name.",
+   "stem": "The student wants to emphasize a contrast between the women’s documented activity and their place in standard histories. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "Daguerreotypy, first introduced back in 1839, was the earliest photographic process to be adopted widely, and women soon began operating their own portrait studios.",
+    "Women who ran their own daguerreotype studios advertised their portrait services in local newspapers and trained apprentices of their own throughout the 1840s and 1850s.",
+    "Although women actively ran daguerreotype studios and trained their own apprentices across many American towns, standard histories of photography still mention very few of them by name.",
+    "Because the delicate plates these women produced were so rarely signed, much of their work ended up being credited instead to their male contemporaries of the period."
+   ],
+   "answer_index": 2,
+   "rationale": "The goal is a contrast between what the women did and how histories treat them. Choice C pairs their documented activity (running studios, training apprentices) against their near-absence from standard histories, using “although” to mark the opposition.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS-NOCONTRAST",
+     "why": "This strings together the origin of daguerreotypy and the women’s activity as a sequence, offering no contrast with the historical record."
+    },
+    "1": {
+     "trap": "GOAL-MISS-ONESIDE",
+     "why": "It describes only the women’s activity and never mentions their absence from histories, so no contrast is set up."
+    },
+    "3": {
+     "trap": "GOAL-MISS-CAUSE",
+     "why": "This explains why the women were overlooked rather than emphasizing the contrast between their activity and their standing in the histories."
+    }
+   }
+  },
+  {
+   "num": 26,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "introduce an unfamiliar reform by stating plainly what it was and when it began; each distractor names the reform yet leads with an effect, a narrow feature, or pre-reform background",
+   "passage": "While researching a topic, a student took the following notes:\n\n- Before 1840, the British recipient — not the sender — paid for each letter, at a rate set by distance and by the number of sheets.\n- Because postage was dear, recipients frequently refused delivery rather than pay.\n- In 1840, Rowland Hill’s reform replaced that system with a flat penny rate, prepaid by the sender, for any letter up to half an ounce.\n- The reform introduced the Penny Black, the world’s first adhesive postage stamp.\n- Within a few years, the annual volume of letters in Britain more than doubled.",
+   "stem": "The student wants to introduce the Penny Post reform to an audience unfamiliar with it. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "Within just a few years of its 1840 debut, the Penny Post had so lowered the cost of writing that the annual volume of letters sent across Britain more than doubled.",
+    "Introduced in Britain in 1840, the Penny Post let a sender prepay a flat rate of a single penny to send any letter up to half an ounce anywhere in the country.",
+    "Among the innovations of the 1840 Penny Post was the Penny Black, now celebrated as the world’s first adhesive postage stamp and a prized possession among collectors.",
+    "Before the 1840 reform, the recipient of a letter, not its sender, had to pay a charge that rose with distance and with every additional sheet enclosed."
+   ],
+   "answer_index": 1,
+   "rationale": "To introduce the reform to a newcomer, the student needs a self-contained statement of what the Penny Post was and when it began. Choice B names the 1840 date, the flat penny rate, the prepaid-by-sender feature, and the half-ounce limit — a complete definition that assumes no prior knowledge.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS-EFFECT",
+     "why": "Though it names the Penny Post and its date, this leads with the doubling of letter volume — an effect of the reform — and never says what the reform actually changed, so a newcomer still would not understand it."
+    },
+    "2": {
+     "trap": "GOAL-MISS-DETAIL",
+     "why": "Opening on the Penny Black spotlights one narrow feature and presumes familiarity with the larger reform it belonged to, failing to introduce the topic."
+    },
+    "3": {
+     "trap": "GOAL-MISS-BACKGROUND",
+     "why": "This describes the old recipient-pays system rather than the new reform, so the reader still would not learn what the Penny Post itself was."
+    }
+   }
+  },
+  {
+   "num": 27,
+   "domain": "Expression of Ideas",
+   "skill": "Rhetorical Synthesis",
+   "convention": null,
+   "difficulty": "Super Hard",
+   "frame": "present the study’s main finding, contrasting treated samples with controls",
+   "passage": "While researching a topic, a student took the following notes:\n\n- A research team tested a self-healing concrete containing dormant bacteria and a mineral food source.\n- When a crack admitted water, the bacteria revived and produced limestone that filled the crack.\n- In the trials, treated samples sealed cracks up to about 0.8 millimeter wide within several weeks.\n- Untreated control samples left similar cracks open.\n- The team also measured how much of their original watertightness the sealed samples regained.",
+   "stem": "The student wants to present the study’s main finding. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+   "figure": null,
+   "choices": [
+    "The research team tested a new self-healing concrete that contained both dormant bacteria and a separate mineral food source for those bacteria to consume.",
+    "Whenever a fresh crack admits water, the dormant bacteria sealed inside the concrete revive and begin producing the limestone that gradually fills the opening.",
+    "To assess the new material, the researchers carefully measured how much of their original watertightness the sealed concrete samples were eventually able to regain.",
+    "In the team’s trials, the bacterial concrete sealed cracks up to about 0.8 millimeter wide within several weeks, while untreated control samples left comparable cracks open."
+   ],
+   "answer_index": 3,
+   "rationale": "A study’s main finding is its result. Choice D reports the outcome — treated concrete sealed cracks up to about 0.8 mm within weeks while controls did not — contrasting treatment with control, which is exactly what the finding consists of.",
+   "distractors": {
+    "0": {
+     "trap": "GOAL-MISS-SETUP",
+     "why": "This describes the materials tested, that is, the study’s setup, rather than reporting what the trials found."
+    },
+    "1": {
+     "trap": "GOAL-MISS-MECHANISM",
+     "why": "This explains the general mechanism of self-repair rather than the specific result the trials produced."
+    },
+    "2": {
+     "trap": "GOAL-MISS-METHOD",
+     "why": "This states what the researchers measured — a method — without reporting the finding that the measurement yielded."
+    }
+   }
+  }
+ ],
+ "figures": [
+  {
+   "id": "canopy_temp",
+   "type": "bar",
+   "title": "Mean Summer Afternoon Temperature by Neighborhood Tree-Canopy Cover",
+   "x_label": "Share of ground shaded by tree canopy",
+   "y_label": "Mean afternoon temperature (°F)",
+   "series": [
+    {
+     "label": "Under 10% canopy",
+     "value": 96.2
+    },
+    {
+     "label": "10% to 20% canopy",
+     "value": 92.8
+    },
+    {
+     "label": "20% to 30% canopy",
+     "value": 90.4
+    },
+    {
+     "label": "Over 30% canopy",
+     "value": 89.1
+    }
+   ]
+  }
+ ]
 }
