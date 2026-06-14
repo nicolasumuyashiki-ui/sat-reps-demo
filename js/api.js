@@ -1,14 +1,20 @@
 /* ============================================================
-   TCK Reps Demo — API client
+   TCK Reps for SAT (Demo) — API client
    ============================================================
-   Talks to the shared TCK Reps GAS backend, but only against the
-   trial-tier endpoints (signupTrial / loginTrial / recoverTrialPass)
-   which write/read the USERS_TRIAL sheet. The full app's endpoints
-   are not used here so the demo cannot accidentally pollute paid-tier
-   data.
+   Talks to the TCK Reps GAS backend, but only against the
+   SAT-tier endpoints (signupSat / loginSat / recoverSatPass)
+   which write/read a DEDICATED USERS_SAT sheet — a separate pool
+   from the TOEFL demo's USERS_TRIAL. A TOEFL-demo or paid-course
+   account does NOT grant access here.
+
+   The deployment URL is shared (one Apps Script project, routed by
+   the `action` param). Override per-deployment via
+   SAT_CONFIG.apiUrlOverride without editing this file.
    ============================================================ */
 
-var API_URL = 'https://script.google.com/macros/s/AKfycbwjI8n86Cu1ar1IsPffyq9mboDrUNpG-SsVpFtURjP6AmCFHD3Zbw5_qcJJUksz_UDyyw/exec';
+var API_URL = (typeof SAT_CONFIG !== 'undefined' && SAT_CONFIG.apiUrlOverride)
+  ? SAT_CONFIG.apiUrlOverride
+  : 'https://script.google.com/macros/s/AKfycbwjI8n86Cu1ar1IsPffyq9mboDrUNpG-SsVpFtURjP6AmCFHD3Zbw5_qcJJUksz_UDyyw/exec';
 
 function _jsonpRequest(url) {
   return new Promise(function(resolve, reject) {
@@ -44,51 +50,40 @@ function _jsonpRequest(url) {
 }
 
 var Api = {
-  /* Demo signup — creates a row in the USERS_TRIAL sheet.
+  /* SAT signup — creates a row in the dedicated USERS_SAT sheet.
      Returns { success, userId, userName, email, error? }. */
   signup: function(id, pass, name, email) {
-    return _jsonpRequest(API_URL + '?action=signupTrial'
+    return _jsonpRequest(API_URL + '?action=signupSat'
       + '&id=' + encodeURIComponent(id)
       + '&pass=' + encodeURIComponent(pass)
       + '&name=' + encodeURIComponent(name)
       + '&email=' + encodeURIComponent(email));
   },
 
-  /* Demo login — verifies against USERS_TRIAL.
+  /* SAT login — verifies against USERS_SAT only.
      Returns { success, userId, userName, email, error? }. */
   login: function(id, pass) {
-    return _jsonpRequest(API_URL + '?action=loginTrial'
+    return _jsonpRequest(API_URL + '?action=loginSat'
       + '&id=' + encodeURIComponent(id)
       + '&pass=' + encodeURIComponent(pass));
   },
 
-  /* Demo password recovery — generates a fresh temp password,
-     stores it, and emails the user. They must change it on next
-     login (server enforces TTL).
+  /* SAT password recovery — issues a fresh temp password against
+     USERS_SAT and emails it (server enforces a 24h TTL).
      Returns { success, error? }. */
   recover: function(email) {
-    return _jsonpRequest(API_URL + '?action=recoverTrialPass'
+    return _jsonpRequest(API_URL + '?action=recoverSatPass'
       + '&email=' + encodeURIComponent(email));
   },
 
-  /* Save a completed practice attempt to the shared ANSWERS sheet.
-     Trial users live in USERS_TRIAL, but answers are written to the
-     same sheet as paid users — verifyAnyUser_ on the server reads
-     either pool so each user only sees their own data.
-     `setName` is e.g. "CTW P1 Set 1", "Email P1", "SAT R&W · test1".
-
-     Reads the user via Auth (tck_demo_user) and falls back to the
-     legacy kickstart_user key so the same client works whether it's
-     dropped into TCK Reps Demo or SAT Reps Demo. */
+  /* Save a completed module attempt to the ANSWERS sheet. The user
+     is read from the SAT session (Auth → tck_sat_user). `setName`
+     is "SAT R&W · <test_id>". The SAT-prefixed set name keeps these
+     rows distinguishable from TOEFL rows in the shared sheet. */
   saveAnswers: function(setName, answers, score, meta) {
     var user = {};
-    try {
-      if (typeof Auth !== 'undefined' && Auth.getUser) user = Auth.getUser() || {};
-      if (!user || !user.userId) {
-        user = JSON.parse(sessionStorage.getItem('tck_demo_user')
-                       || sessionStorage.getItem('kickstart_user') || '{}');
-      }
-    } catch(e) { user = {}; }
+    try { if (typeof Auth !== 'undefined' && Auth.getUser) user = Auth.getUser() || {}; }
+    catch(e) { user = {}; }
     meta = meta || {};
     var url = API_URL + '?action=saveAnswers'
       + '&userId='   + encodeURIComponent(user.userId   || '')
@@ -100,32 +95,5 @@ var Api = {
       + '&harderTotal='   + encodeURIComponent(meta.harderTotal   || 0)
       + '&attemptNumber=' + encodeURIComponent(meta.attemptNumber || 1);
     return _jsonpRequest(url);
-  },
-
-  /* Student-side: fetch the logged-in trial user's own past attempts
-     for a specific (task, practice [, set]). GAS forces userId equal
-     to the verified user so callers can't read someone else's data. */
-  getMyAnswers: function(task, practice, set, id, pass) {
-    var u = JSON.parse(sessionStorage.getItem('kickstart_user') || '{}');
-    var p = pass || sessionStorage.getItem('kickstart_pass') || '';
-    return _jsonpRequest(API_URL + '?action=getMyAnswers'
-      + '&id='       + encodeURIComponent(id || u.userId || '')
-      + '&pass='     + encodeURIComponent(p)
-      + '&task='     + encodeURIComponent(task)
-      + '&practice=' + encodeURIComponent(practice)
-      + '&set='      + encodeURIComponent(set || ''));
-  },
-
-  /* Returns the trial user's own recordings (RECORDINGS / RECORDINGS_PT
-     filtered server-side). Currently unused — demo speaking pages don't
-     upload to GAS — but wired so student-history.js can render an
-     empty Speaking section gracefully and so future demo enhancements
-     don't need another API change. */
-  listMyRecordings: function(id, pass) {
-    var u = JSON.parse(sessionStorage.getItem('kickstart_user') || '{}');
-    var p = pass || sessionStorage.getItem('kickstart_pass') || '';
-    return _jsonpRequest(API_URL + '?action=listMyRecordings'
-      + '&id='   + encodeURIComponent(id || u.userId || '')
-      + '&pass=' + encodeURIComponent(p));
   }
 };

@@ -1,12 +1,13 @@
 /* ============================================================
-   TCK Reps Demo — Trial Auth
+   TCK Reps for SAT (Demo) — Auth
    ============================================================
-   Demo-tier auth: signupTrial / loginTrial / recoverTrialPass
-   endpoints write/read against the USERS_TRIAL sheet on the
-   shared TCK Reps GAS backend. Sessions are stored in
-   sessionStorage under tck_demo_user, separate from the
-   production-tier kickstart_user key so that running both apps
-   in the same browser doesn't cross-contaminate.
+   SAT demo auth is a SEPARATE pool from the TOEFL Reps demo.
+   It talks to the signupSat / loginSat / recoverSatPass endpoints
+   (USERS_SAT sheet) and stores its session under `tck_sat_user`,
+   distinct from the TOEFL demo's `tck_demo_user`. A person who
+   signed up for the TOEFL demo (or for the paid TCK Reps course)
+   is NOT automatically logged in here — they must create or use a
+   SAT account.
    ============================================================ */
 
 function tckRootPrefix() {
@@ -20,7 +21,9 @@ function tckRootPrefix() {
 }
 
 var Auth = {
-  SESSION_KEY: 'tck_demo_user',
+  /* SAT-only session key. Intentionally different from the TOEFL
+     demo's `tck_demo_user` so the two demos never share a login. */
+  SESSION_KEY: 'tck_sat_user',
 
   require: function() {
     if (!this.getUser()) {
@@ -46,6 +49,8 @@ var Auth = {
 
   logout: function() {
     sessionStorage.removeItem(this.SESSION_KEY);
+    // Drop the stashed password used for authenticated reads.
+    try { sessionStorage.removeItem('tck_sat_pass'); } catch (e) {}
     location.href = tckRootPrefix() + 'index.html';
   },
 
@@ -59,28 +64,3 @@ var Auth = {
       '<span>' + (u.userName || u.userId) + '</span>';
   }
 };
-
-/* ============================================================
-   Student-history loader — on answer / tips pages, inject
-   js/student-history.js so the logged-in trial user can review
-   their past attempts. Mirror of the main-app loader (sans the
-   admin overlay variant since demo has no admin mode).
-   ============================================================ */
-(function(){
-  if (typeof location === 'undefined') return;
-  if (!/practice-\d+(?:-set-\d+)?(?:-answers|-tips)\.html(?:[?#]|$)/.test(location.pathname + location.search)) return;
-  var here = (document.currentScript && document.currentScript.src) || '';
-  if (!here) {
-    var scripts = document.getElementsByTagName('script');
-    for (var i = 0; i < scripts.length; i++) {
-      var s = scripts[i].src || '';
-      if (/\/auth\.js(\?|$)/.test(s)) { here = s; break; }
-    }
-  }
-  if (!here) return;
-  var historySrc = here.replace(/\/auth\.js(\?[^#]*)?(\#.*)?$/, '/student-history.js');
-  var tag = document.createElement('script');
-  tag.src = historySrc;
-  tag.defer = true;
-  document.head.appendChild(tag);
-})();

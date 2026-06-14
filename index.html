@@ -209,7 +209,7 @@ body{font-family:var(--font-jp);background:var(--cream);color:var(--ink-900);lin
 /* If already logged into the shared TCK Reps session, swap CTAs to menu. */
 (function(){
   try {
-    var u = JSON.parse(sessionStorage.getItem('tck_demo_user'));
+    var u = JSON.parse(sessionStorage.getItem('tck_sat_user'));
     if (!u || !u.userId) return;
     document.querySelectorAll('a[href="login.html"]').forEach(function(a){
       a.setAttribute('href', 'menu.html');

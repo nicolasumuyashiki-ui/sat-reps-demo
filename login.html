@@ -195,8 +195,8 @@ h2{font-family:var(--font-en);font-size:1.35em;font-weight:800;color:var(--green
   </div>
 
   <div class="shared-account">
-    <span class="jp"><strong>TCK Reps シリーズ共通アカウント</strong>です。TOEFL Reps Demo に登録済みの方は、そのままログインいただけます。</span>
-    <span class="en"><strong>Shared across TCK Reps series.</strong> If you already have a TOEFL Reps Demo account, sign in with the same credentials.</span>
+    <span class="jp"><strong>SAT 専用のアカウント</strong>です。TOEFL Reps Demo や本講座のアカウントとは別に、こちらで新規登録してください。</span>
+    <span class="en"><strong>This account is SAT-only.</strong> It's separate from the TOEFL Reps demo and the paid course — please create a new account here.</span>
   </div>
 </div>
 
@@ -244,7 +244,7 @@ function tMsg(jp, en) {
 
 function saveAndGo(res, pass) {
   Auth.setUser({ userId: res.userId, userName: res.userName, email: res.email || '' });
-  if (pass) sessionStorage.setItem('kickstart_pass', pass);
+  if (pass) sessionStorage.setItem('tck_sat_pass', pass);
   var ret = new URLSearchParams(location.search).get('return') || 'menu.html';
   if (!/^[\w\-./?=&%]+$/.test(ret) || ret.indexOf('://') !== -1) ret = 'menu.html';
   location.href = ret;

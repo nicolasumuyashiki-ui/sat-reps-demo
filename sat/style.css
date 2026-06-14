@@ -7,6 +7,16 @@
    ============================================================ */
 
 *,*::before,*::after{box-sizing:border-box}
+
+/* CRITICAL: the HTML `hidden` attribute must win over the component
+   `display:flex/grid` rules below. Without this, #screenStart,
+   #screenQuestion, #screenEndReview and #topNav all paint at once
+   (their .qa-wrap/.endreview-wrap/.top-nav rules set display:flex,
+   which overrides the UA `[hidden]{display:none}` on equal-or-lower
+   priority). Keep this rule above every component that toggles via
+   the `hidden` attribute in JS. */
+[hidden]{display:none !important}
+
 body{
   font-family:var(--font-en),var(--font-jp);
   background:var(--cream);
